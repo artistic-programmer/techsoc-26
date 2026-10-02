@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Top Left: Rounded / Quarter arc shape -->
+  <path d="M12 44C12 26.3269 26.3269 12 44 12V44H12Z" fill="#1D4ED8"/>
+  <!-- Top Right: Circle -->
+  <circle cx="72" cy="28" r="16" fill="#1D4ED8"/>
+  <!-- Bottom Left: Circle -->
+  <circle cx="28" cy="72" r="16" fill="#1D4ED8"/>
+  <!-- Bottom Right: Rounded / Quarter arc shape -->
+  <path d="M56 56H88V88C70.3269 88 56 73.6731 56 56Z" fill="#1D4ED8"/>
+</svg>

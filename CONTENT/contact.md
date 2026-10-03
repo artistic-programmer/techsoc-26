@@ -8,11 +8,11 @@
 
 ## Social Links
 
-- GitHub:
-- LinkedIn:
-- Instagram:
+- GitHub: https://github.com/p-society/
+- LinkedIn: https://www.linkedin.com/company/tech-society-iiitbh/
+- Instagram: https://www.instagram.com/techsociiitbh/
 - YouTube:
-- Discord:
+- Discord: https://discord.gg/GgWYNmw4p
 
 ## Join TechSoc
 

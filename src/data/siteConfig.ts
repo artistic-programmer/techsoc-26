@@ -6,7 +6,7 @@ import { SiteConfig } from "@/types";
  */
 
 export const siteConfig: SiteConfig = {
-  name: "TechSoc",
+  name: "Tech Society IIIT Bhubaneswar",
   overview: "",
   contact: {
     officialEmail: "",
@@ -14,11 +14,11 @@ export const siteConfig: SiteConfig = {
     partnershipEmail: "",
   },
   socials: {
-    github: "",
-    linkedin: "",
-    instagram: "",
+    github: "https://github.com/p-society/",
+    linkedin: "https://www.linkedin.com/company/tech-society-iiitbh/",
+    instagram: "https://www.instagram.com/techsociiitbh/",
     youtube: "",
-    discord: "",
+    discord: "https://discord.gg/GgWYNmw4p",
   },
   join: {
     joinLink: "",

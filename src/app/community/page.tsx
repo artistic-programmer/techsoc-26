@@ -2,10 +2,20 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
-import { Navbar, Footer, MarqueeTicker, DomainFilterGrid } from "@/components";
+import {
+  Navbar,
+  Footer,
+  MarqueeTicker,
+  DomainFilterGrid,
+  PersonAvatar,
+} from "@/components";
+import { gdgLeads } from "@/data/team";
+
+const GDG_CHAPTER_URL =
+  "https://gdg.community.dev/gdg-on-campus-international-institute-of-information-technology-bhubaneswar-india/";
 
 export const metadata: Metadata = {
-  title: "Community | TechSoc IIIT Bhubaneswar",
+  title: "Community | Tech Society IIIT Bhubaneswar",
   description:
     "A multidisciplinary engine of student developers, system architects, AI researchers, and designers across specialized technical domains at IIIT Bhubaneswar.",
 };
@@ -229,7 +239,9 @@ export default function CommunityPage() {
 
                   <div className="flex flex-wrap items-center gap-4 pt-4">
                     <a
-                      href="#gdg"
+                      href={GDG_CHAPTER_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-5 py-3 bg-secondary-container text-ink-black font-label-md text-label-md uppercase tracking-wider border-[2.5px] border-ink-black shadow-[4px_4px_0px_#121212] hover:shadow-[6px_6px_0px_#121212] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all font-bold"
                     >
                       <span>[ VISIT GDG CHAPTER PORTAL ]</span>
@@ -293,6 +305,38 @@ export default function CommunityPage() {
                       </div>
                     </div>
                   </div>
+                </div>
+              </div>
+
+              {/* GDG Leads */}
+              <div className="mt-10 pt-8 border-t-[3px] border-ink-black">
+                <span className="font-label-sm text-label-sm uppercase font-bold text-primary tracking-widest block mb-1">
+                  CHAPTER LEADERSHIP
+                </span>
+                <h3 className="font-headline-lg text-headline-sm sm:text-headline-md text-ink-black uppercase font-bold mb-6">
+                  GDG ON CAMPUS LEADS
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                  {gdgLeads.map((lead) => (
+                    <div
+                      key={lead.name}
+                      className="flex items-center gap-4 p-4 bg-surface-white border-[2.5px] border-ink-black shadow-[4px_4px_0px_#121212]"
+                    >
+                      <PersonAvatar
+                        member={lead}
+                        sizes="96px"
+                        className="w-24 h-24 rounded-lg flex-shrink-0 shadow-[2px_2px_0px_#121212]"
+                      />
+                      <div className="min-w-0">
+                        <h4 className="font-headline-sm text-[17px] leading-tight uppercase text-ink-black font-bold">
+                          {lead.name}
+                        </h4>
+                        <span className="inline-block mt-1.5 px-2 py-0.5 bg-secondary-container font-label-sm text-[10px] uppercase font-bold rounded border border-ink-black">
+                          {lead.label}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

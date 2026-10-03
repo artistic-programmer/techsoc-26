@@ -13,7 +13,7 @@ export * from "./events/KnowledgeVault";
 export * from "./projects/ProjectCard";
 export * from "./domains/DomainCard";
 export * from "./team/TeamMemberCard";
-export * from "./team/TeamDomainLeads";
+export * from "./team/TeamRoster";
 export * from "./filters/FilterTabs";
 export * from "./faq/FaqAccordion";
 export * from "./faq/ConnectFaq";

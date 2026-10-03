@@ -10,7 +10,7 @@ import {
 } from "@/components";
 
 export const metadata: Metadata = {
-  title: "Events & Hackathons | TechSoc IIIT Bhubaneswar",
+  title: "Events & Hackathons | Tech Society IIIT Bhubaneswar",
   description:
     "Official calendar of national hackathons, technical speaker masterclasses, competitive CTFs, and developer workshops hosted by TechSoc at IIIT Bhubaneswar.",
 };

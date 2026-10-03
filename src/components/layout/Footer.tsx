@@ -50,6 +50,8 @@ export const Footer: React.FC = () => {
             <div className="flex items-center gap-3 pt-2">
               <a
                 href={siteConfig.socials.github || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="GitHub"
                 className="p-2 bg-surface-white border-2 border-ink-black shadow-[2px_2px_0px_#121212] hover:bg-secondary-container transition-all flex items-center justify-center active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
               >
@@ -59,6 +61,8 @@ export const Footer: React.FC = () => {
               </a>
               <a
                 href={siteConfig.socials.discord || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Discord"
                 className="p-2 bg-surface-white border-2 border-ink-black shadow-[2px_2px_0px_#121212] hover:bg-secondary-container transition-all flex items-center justify-center active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
               >
@@ -68,6 +72,8 @@ export const Footer: React.FC = () => {
               </a>
               <a
                 href={siteConfig.socials.linkedin || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn"
                 className="p-2 bg-surface-white border-2 border-ink-black shadow-[2px_2px_0px_#121212] hover:bg-secondary-container transition-all flex items-center justify-center active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
               >
@@ -172,7 +178,7 @@ export const Footer: React.FC = () => {
       <div className="border-t-[3px] border-ink-black bg-secondary-container py-4 px-4">
         <div className="max-w-[1280px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
           <p className="font-body-sm text-body-sm text-ink-black font-semibold">
-            © 2026 TechSociety, IIIT Bhubaneswar. Built with passion by
+            © 2026 Tech Society IIIT Bhubaneswar. Built with passion by
             students, for students.
           </p>
           <div className="flex items-center gap-4 font-label-sm text-label-sm uppercase font-bold text-ink-black">

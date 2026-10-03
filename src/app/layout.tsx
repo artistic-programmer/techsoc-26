@@ -15,7 +15,12 @@ const workSans = Work_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "TechSoc | Official Technical Society of IIIT Bhubaneswar",
+  title: "Tech Society IIIT Bhubaneswar",
+  icons: {
+    icon: [{ url: "/brand/emblem.svg", type: "image/svg+xml" }],
+    shortcut: "/brand/emblem.svg",
+    apple: "/brand/emblem.svg",
+  },
   description:
     "Where students build the future. The premier engineering collective and technical society at IIIT Bhubaneswar.",
 };

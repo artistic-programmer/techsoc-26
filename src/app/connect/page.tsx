@@ -5,9 +5,9 @@ import { faqs } from "@/data/faqs";
 import { siteConfig } from "@/data/siteConfig";
 
 export const metadata: Metadata = {
-  title: "Connect & Collaborate | TechSoc IIIT Bhubaneswar",
+  title: "Connect & Collaborate | Tech Society IIIT Bhubaneswar",
   description:
-    "Get in touch with TechSoc IIIT Bhubaneswar. Connect with our student developer community, collaborate on open-source projects, sponsor technical initiatives, or reach out to our team.",
+    "Get in touch with Tech Society IIIT Bhubaneswar. Connect with our student developer community, collaborate on open-source projects, sponsor technical initiatives, or reach out to our team.",
 };
 
 const tickerItems = [
@@ -24,7 +24,7 @@ const tickerItems = [
 const channels = [
   {
     name: "GitHub Org",
-    handle: "github.com/techsoc",
+    handle: "github.com/p-society",
     badge: "REPOSITORIES",
     badgeColor: "bg-accent-mint",
     icon: "terminal",
@@ -36,7 +36,7 @@ const channels = [
   },
   {
     name: "LinkedIn",
-    handle: "TechSoc IIIT Bhubaneswar",
+    handle: "Tech Society IIITBH",
     badge: "NETWORK",
     badgeColor: "bg-secondary-container",
     icon: "hub",
@@ -48,7 +48,7 @@ const channels = [
   },
   {
     name: "Instagram",
-    handle: "@techsoc",
+    handle: "@techsociiitbh",
     badge: "CAMPUS VIBES",
     badgeColor: "bg-accent-coral text-on-secondary",
     icon: "photo_camera",
@@ -60,7 +60,7 @@ const channels = [
   },
   {
     name: "YouTube",
-    handle: "TechSoc IIIT Bhubaneswar",
+    handle: "Tech Society IIIT Bhubaneswar",
     badge: "STREAMS",
     badgeColor: "bg-surface-white",
     icon: "smart_display",
@@ -201,6 +201,7 @@ export default function ConnectPage() {
                     <a
                       className="w-full sm:w-auto inline-flex items-center justify-center gap-2 sm:gap-3 px-4 sm:px-6 py-3.5 sm:py-4 bg-secondary-container text-ink-black font-headline-sm text-[16px] sm:text-headline-sm uppercase tracking-wider border-[3px] border-ink-black shadow-[6px_6px_0px_#121212] hover:shadow-[8px_8px_0px_#121212] hover:-translate-x-1 hover:-translate-y-1 active:translate-x-1 active:translate-y-1 active:shadow-[1px_1px_0px_#121212] rounded-lg transition-all text-center font-bold max-w-full"
                       href={discordUrl}
+                      target="_blank"
                       rel="noopener noreferrer"
                     >
                       <span className="material-symbols-outlined text-[24px] sm:text-[28px] shrink-0">sports_esports</span>
@@ -475,6 +476,7 @@ export default function ConnectPage() {
               <a
                 className="px-6 sm:px-8 py-3.5 sm:py-4 bg-ink-black text-canvas-cream font-headline-sm text-[16px] sm:text-headline-sm uppercase tracking-wider border-[2.5px] border-ink-black shadow-[4px_4px_0px_#121212] hover:bg-primary hover:text-on-primary hover:shadow-[6px_6px_0px_#121212] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-[0px_0px_0px_#121212] rounded-lg transition-all shrink-0 font-bold max-w-full text-center"
                 href={discordUrl}
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 ENTER DISCORD SERVER ↗

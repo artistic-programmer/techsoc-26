@@ -33,9 +33,9 @@ const defaultFaqs: DefaultFaq[] = [
   {
     category: "HACKATHONS",
     badgeStyle: "bg-tertiary-fixed text-ink-black",
-    question: "How do I participate in Enigma?",
+    question: "How do I participate in campus hackathons and D³ Technotfest?",
     answer:
-      "Enigma is our flagship annual hackathon. Registrations open during the hackathon cycle on campus community portals. Inter-college teams and campus squads are eligible to participate.",
+      "Registrations for campus hackathons and flagship events like Craft N Code '26 at D³ Technotfest open through official event portals. Both inter-college teams and campus squads are eligible to participate.",
   },
   {
     category: "PARTNERSHIPS",

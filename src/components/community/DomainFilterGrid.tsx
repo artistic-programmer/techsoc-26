@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
+import { domainTeams, gdgLeads } from "@/data/team";
 
-interface DomainData {
+interface DomainCardItem {
   id: string;
   badge: string;
   badgeBg: string;
@@ -14,124 +14,156 @@ interface DomainData {
   stack: string[];
   metric: string;
   wing: "dev" | "ai" | "design";
-  isWide?: boolean;
+  roadmapUrl: string;
+  leadsText?: string;
 }
 
-const DOMAINS: DomainData[] = [
-  {
-    id: "web-dev",
-    badge: "DOMAIN • 01",
-    badgeBg: "bg-accent-cyan",
-    badgeText: "text-ink-black",
-    title: "Web Development",
-    description:
-      "Full-stack application architecture, performant frontends, GraphQL/tRPC APIs, edge compute, and scalable microservices.",
-    icon: "language",
-    stack: ["React 19", "Next.js", "Node.js", "PostgreSQL", "Tailwind"],
-    metric: "ACTIVE GUILD CONTRIBUTORS",
-    wing: "dev",
-  },
-  {
-    id: "app-dev",
-    badge: "DOMAIN • 02",
-    badgeBg: "bg-accent-mint",
-    badgeText: "text-ink-black",
-    title: "App Development",
-    description:
-      "Cross-platform mobile apps, native device integration, offline-first architectures, state machines, and app store deployment.",
-    icon: "smartphone",
-    stack: ["Flutter", "Kotlin", "Jetpack Compose", "SwiftUI"],
-    metric: "ACTIVE APP BUILDERS",
-    wing: "dev",
-  },
-  {
-    id: "ai-ml",
-    badge: "DOMAIN • 03",
-    badgeBg: "bg-[#F43F5E]",
-    badgeText: "text-surface-white",
-    title: "AI / Machine Learning",
-    description:
-      "Deep learning pipelines, LLM fine-tuning, computer vision on edge devices, RAG architectures, and model quantization.",
-    icon: "psychology",
-    stack: ["PyTorch", "HuggingFace", "OpenCV", "LangChain", "CUDA"],
-    metric: "AI & ML RESEARCH TRACK",
-    wing: "ai",
-  },
-  {
-    id: "cybersec",
-    badge: "DOMAIN • 04",
-    badgeBg: "bg-secondary-container",
-    badgeText: "text-ink-black",
-    title: "CyberSec & CTF",
-    description:
-      "Offensive security, binary exploitation, reverse engineering, cryptography, web penetration testing, and competitive CTF squads.",
-    icon: "security",
-    stack: ["Burp Suite", "Ghidra", "Wireshark", "GDB/Pwn"],
-    metric: "CTF & SECURITY SQUAD",
-    wing: "ai",
-  },
-  {
-    id: "comp-prog",
-    badge: "DOMAIN • 05",
-    badgeBg: "bg-accent-coral",
-    badgeText: "text-surface-white",
-    title: "Comp Programming",
-    description:
-      "Advanced algorithms, dynamic programming, graph theory, mathematical proofs, and speed coding for ICPC and Codeforces.",
-    icon: "code_blocks",
-    stack: ["C++20 (STL)", "Codeforces", "AtCoder", "CSES Problemset"],
-    metric: "ALGORITHMIC PRACTICE SQUAD",
-    wing: "design",
-  },
-  {
-    id: "ui-ux",
-    badge: "DOMAIN • 06",
-    badgeBg: "bg-primary-container",
-    badgeText: "text-surface-white",
-    title: "UI/UX & Product Design",
-    description:
-      "High-impact design systems, NeoBrutalist typography, user journey mapping, design tokens, and rapid Figma-to-code pipelines.",
-    icon: "palette",
-    stack: ["Figma Tokens", "Spline 3D", "Design Systems", "Prototyping"],
-    metric: "PRODUCT & UI/UX SQUAD",
-    wing: "design",
-  },
-  {
-    id: "cloud-devops",
-    badge: "DOMAIN • 07",
-    badgeBg: "bg-surface-container-highest",
-    badgeText: "text-ink-black",
-    title: "Cloud Computing & DevOps",
-    description:
-      "Server administration, container orchestration, automated release pipelines (CI/CD), and keeping society services deployed across campus environments.",
-    icon: "cloud",
-    stack: [
-      "Docker",
-      "Kubernetes",
-      "GitHub Actions",
-      "Terraform",
-      "Linux SysAdmin",
-      "Prometheus",
-    ],
-    metric: "INFRA STATUS: OPERATIONAL",
-    wing: "dev",
-    isWide: true,
-  },
-];
-
-type FilterWing = "all" | "dev" | "ai" | "design";
-
 export const DomainFilterGrid: React.FC = () => {
-  const [activeWing, setActiveWing] = useState<FilterWing>("all");
+  const [activeWing, setActiveWing] = useState<"all" | "dev" | "ai" | "design">("all");
 
-  const filterTabs = [
-    { id: "all" as FilterWing, label: "ALL", count: 7 },
-    { id: "dev" as FilterWing, label: "DEV & CLOUD", count: 3 },
-    { id: "ai" as FilterWing, label: "AI & CYBER", count: 2 },
-    { id: "design" as FilterWing, label: "DESIGN & CP", count: 2 },
+  const webDevTeam = domainTeams.find((d) => d.id === "web-dev");
+  const appDevTeam = domainTeams.find((d) => d.id === "app-dev");
+  const aiTeam = domainTeams.find((d) => d.id === "ai-ml");
+  const cpTeam = domainTeams.find((d) => d.id === "cp");
+  const infosecTeam = domainTeams.find((d) => d.id === "infosec");
+  const designTeam = domainTeams.find((d) => d.id === "design");
+
+  const technicalDomains: DomainCardItem[] = [
+    {
+      id: "web-dev",
+      badge: "DOMAIN • 01",
+      badgeBg: "bg-accent-cyan",
+      badgeText: "text-ink-black",
+      title: "Web Development",
+      description:
+        webDevTeam?.description ||
+        "Full-stack application architecture, performant frontends, GraphQL/tRPC APIs, edge compute, and scalable microservices.",
+      icon: "language",
+      stack: webDevTeam?.stack || ["Next.js", "React 19", "TypeScript", "Tailwind", "Node.js"],
+      metric: `${webDevTeam?.members?.length || 9} MEMBERS • 2 LEADS`,
+      wing: "dev",
+      roadmapUrl: webDevTeam?.roadmapUrl || "https://roadmap.sh/frontend",
+      leadsText: webDevTeam?.leads.map((l) => l.name).join(", "),
+    },
+    {
+      id: "app-dev",
+      badge: "DOMAIN • 02",
+      badgeBg: "bg-accent-mint",
+      badgeText: "text-ink-black",
+      title: "App Development",
+      description:
+        appDevTeam?.description ||
+        "Cross-platform mobile apps, native device integration, offline architectures, and modern Android/iOS development.",
+      icon: "smartphone",
+      stack: appDevTeam?.stack || ["Flutter", "Kotlin", "Jetpack Compose", "Android SDK"],
+      metric: `${appDevTeam?.members?.length || 4} MEMBERS • 1 LEAD`,
+      wing: "dev",
+      roadmapUrl: appDevTeam?.roadmapUrl || "https://roadmap.sh/android",
+      leadsText: appDevTeam?.leads.map((l) => l.name).join(", "),
+    },
+    {
+      id: "ai-ml",
+      badge: "DOMAIN • 03",
+      badgeBg: "bg-[#F43F5E]",
+      badgeText: "text-surface-white",
+      title: "AI / Machine Learning",
+      description:
+        aiTeam?.description ||
+        "Deep learning pipelines, LLM fine-tuning, computer vision on edge devices, RAG architectures, and model quantization.",
+      icon: "psychology",
+      stack: aiTeam?.stack || ["PyTorch", "HuggingFace", "Python", "OpenCV", "LangChain"],
+      metric: `${aiTeam?.members?.length || 16} MEMBERS • 2 LEADS`,
+      wing: "ai",
+      roadmapUrl: aiTeam?.roadmapUrl || "https://roadmap.sh/ai-engineer",
+      leadsText: aiTeam?.leads.map((l) => l.name).join(", "),
+    },
+    {
+      id: "cloud-devops",
+      badge: "DOMAIN • 04",
+      badgeBg: "bg-secondary-fixed",
+      badgeText: "text-ink-black",
+      title: "Cloud & DevOps",
+      description:
+        "Server administration, container orchestration, CI/CD release pipelines, and keeping society infrastructure deployed across campus.",
+      icon: "cloud",
+      stack: ["Docker", "Kubernetes", "GitHub Actions", "Linux", "Terraform"],
+      metric: "INFRA STATUS: OPERATIONAL",
+      wing: "dev",
+      roadmapUrl: "https://roadmap.sh/devops",
+    },
+    {
+      id: "cybersec",
+      badge: "DOMAIN • 05",
+      badgeBg: "bg-secondary-container",
+      badgeText: "text-ink-black",
+      title: "CyberSec & CTF",
+      description:
+        infosecTeam?.description ||
+        "Offensive security, binary exploitation, reverse engineering, cryptography, and competitive CTF squads.",
+      icon: "security",
+      stack: infosecTeam?.stack || ["Burp Suite", "Ghidra", "Wireshark", "GDB/Pwn"],
+      metric: `${infosecTeam?.members?.length || 9} MEMBERS • 1 LEAD`,
+      wing: "ai",
+      roadmapUrl: infosecTeam?.roadmapUrl || "https://roadmap.sh/cyber-security",
+      leadsText: infosecTeam?.leads.map((l) => l.name).join(", "),
+    },
+    {
+      id: "comp-prog",
+      badge: "DOMAIN • 06",
+      badgeBg: "bg-accent-coral",
+      badgeText: "text-surface-white",
+      title: "Comp Programming",
+      description:
+        cpTeam?.description ||
+        "Advanced algorithms, dynamic programming, graph theory, mathematical proofs, and speed coding for collegiate contests.",
+      icon: "code_blocks",
+      stack: cpTeam?.stack || ["C++20 (STL)", "Codeforces", "AtCoder", "Algorithms"],
+      metric: `${cpTeam?.members?.length || 8} MEMBERS • 2 LEADS`,
+      wing: "design",
+      roadmapUrl: cpTeam?.roadmapUrl || "https://roadmap.sh/datastructures-and-algorithms",
+      leadsText: cpTeam?.leads.map((l) => l.name).join(", "),
+    },
+    {
+      id: "ui-ux",
+      badge: "DOMAIN • 07",
+      badgeBg: "bg-primary-container",
+      badgeText: "text-surface-white",
+      title: "UI/UX & Design",
+      description:
+        designTeam?.description ||
+        "High-impact design systems, NeoBrutalist typography, user journey mapping, design tokens, and rapid Figma-to-code pipelines.",
+      icon: "palette",
+      stack: designTeam?.stack || ["Figma Tokens", "Design Systems", "Prototyping", "UI/UX"],
+      metric: `${designTeam?.members?.length || 4} MEMBERS • 1 LEAD`,
+      wing: "design",
+      roadmapUrl: designTeam?.roadmapUrl || "https://roadmap.sh/ux-design",
+      leadsText: designTeam?.leads.map((l) => l.name).join(", "),
+    },
+    {
+      id: "gdg-campus",
+      badge: "DOMAIN • 08",
+      badgeBg: "bg-accent-mint",
+      badgeText: "text-ink-black",
+      title: "GDG on Campus",
+      description:
+        "Official student chapter facilitating industry training tracks, Google Cloud Study Jams, Flutter Sprints, and Solution Challenge entries.",
+      icon: "hub",
+      stack: ["Google Cloud", "Flutter", "Android", "Web Technologies"],
+      metric: `${gdgLeads.length} CHAPTER LEADS`,
+      wing: "dev",
+      roadmapUrl: "https://gdg.community.dev/",
+      leadsText: gdgLeads.map((l) => l.name).join(", "),
+    },
   ];
 
-  const filteredDomains = DOMAINS.filter((d) => {
+  const filterTabs = [
+    { id: "all" as const, label: "ALL", count: 8 },
+    { id: "dev" as const, label: "DEV & CLOUD", count: 3 },
+    { id: "ai" as const, label: "AI & CYBER", count: 2 },
+    { id: "design" as const, label: "DESIGN & CP", count: 3 },
+  ];
+
+  const filteredDomains = technicalDomains.filter((d) => {
     if (activeWing === "all") return true;
     return d.wing === activeWing;
   });
@@ -139,7 +171,7 @@ export const DomainFilterGrid: React.FC = () => {
   return (
     <div>
       {/* Section Header with NeoBrutalist Badge and Filter Tabs */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
         <div className="flex flex-col gap-2">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent-cyan/20 border-2 border-ink-black w-max">
             <span className="material-symbols-outlined text-[16px] text-ink-black">
@@ -183,118 +215,86 @@ export const DomainFilterGrid: React.FC = () => {
         </div>
       </div>
 
-      {/* Domain Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-        {filteredDomains.map((domain) => {
-          if (domain.isWide) {
-            return (
-              <div
-                key={domain.id}
-                className="bg-surface-white border-[3px] border-ink-black shadow-[6px_6px_0px_#121212] p-6 flex flex-col justify-between group hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[8px_8px_0px_#121212] transition-all md:col-span-2 lg:col-span-3"
-              >
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-                  <div className="lg:col-span-8">
-                    <div className="flex flex-wrap items-center gap-3 mb-3">
-                      <span
-                        className={`px-3 py-1 ${domain.badgeBg} ${domain.badgeText || "text-ink-black"} border-2 border-ink-black font-label-sm text-label-sm uppercase font-bold shadow-[2px_2px_0px_#121212]`}
-                      >
-                        {domain.badge}
-                      </span>
-                      <span className="font-label-sm text-label-sm text-accent-mint uppercase font-bold">
-                        CAMPUS CLOUD INFRASTRUCTURE
-                      </span>
-                    </div>
-                    <h3 className="font-headline-sm text-headline-sm text-ink-black uppercase font-bold">
-                      {domain.title}
-                    </h3>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant mt-2 max-w-2xl leading-relaxed">
-                      {domain.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2 mt-4">
-                      {domain.stack.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-2.5 py-1 bg-surface-container border border-ink-black font-label-sm text-label-sm font-semibold"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+      {/* Mobile Swipe Hint */}
+      <div className="flex sm:hidden items-center justify-between text-on-surface-variant font-label-sm text-[11px] uppercase font-bold mb-3 px-1">
+        <span className="flex items-center gap-1.5 text-ink-black">
+          <span className="material-symbols-outlined text-[16px] text-primary animate-pulse">
+            swipe
+          </span>
+          SWIPE TO EXPLORE DOMAINS →
+        </span>
+        <span>{filteredDomains.length} DOMAINS</span>
+      </div>
 
-                  <div className="lg:col-span-4 flex flex-col justify-end items-start lg:items-end gap-3 border-t lg:border-t-0 lg:border-l-2 border-ink-black pt-4 lg:pt-0 lg:pl-6">
-                    <span className="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold">
-                      {domain.metric}
-                    </span>
-                    <Link
-                      href="/connect"
-                      className="px-5 py-2.5 bg-ink-black text-surface-white font-label-md text-label-md uppercase tracking-wider border-2 border-ink-black shadow-[3px_3px_0px_#0037b0] hover:bg-primary active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all font-bold"
-                    >
-                      JOIN CLOUD SQUAD →
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            );
-          }
-
-          return (
-            <div
-              key={domain.id}
-              className="bg-surface-white border-[3px] border-ink-black shadow-[6px_6px_0px_#121212] p-6 flex flex-col justify-between group hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[8px_8px_0px_#121212] transition-all"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span
-                    className={`px-3 py-1 ${domain.badgeBg} ${domain.badgeText || "text-ink-black"} border-2 border-ink-black font-label-sm text-label-sm uppercase font-bold shadow-[2px_2px_0px_#121212]`}
-                  >
-                    {domain.badge}
-                  </span>
-                  <div className="w-10 h-10 bg-surface-container border-2 border-ink-black flex items-center justify-center">
-                    <span className="material-symbols-outlined text-[24px] text-ink-black">
-                      {domain.icon}
-                    </span>
-                  </div>
-                </div>
-
-                <h3 className="font-headline-sm text-headline-sm text-ink-black uppercase font-bold">
-                  {domain.title}
-                </h3>
-                <p className="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">
-                  {domain.description}
-                </p>
-
-                <div className="mt-4 pt-4 border-t-2 border-ink-black">
-                  <span className="font-label-sm text-label-sm uppercase font-bold text-ink-black block mb-2">
-                    CORE STACK:
-                  </span>
-                  <div className="flex flex-wrap gap-1.5">
-                    {domain.stack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-0.5 bg-surface-container border border-ink-black font-label-sm text-label-sm"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-surface-container-highest flex items-center justify-between">
-                <span className="font-label-sm text-label-sm text-on-surface-variant font-bold">
-                  {domain.metric}
-                </span>
-                <Link
-                  href="/connect"
-                  className="inline-flex items-center gap-1 font-label-sm text-label-sm text-ink-black uppercase font-bold hover:text-primary group-hover:underline"
+      {/* Domain Cards Horizontal Scroll on Mobile / Grid on Desktop */}
+      <div className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth pb-6 pt-1 px-1 -mx-4 sm:mx-0 sm:px-0 gap-5 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:overflow-x-visible sm:pb-0">
+        {filteredDomains.map((domain) => (
+          <div
+            key={domain.id}
+            className="snap-start flex-shrink-0 w-[82vw] max-w-[310px] sm:w-auto sm:max-w-none bg-surface-white border-[3px] border-ink-black shadow-[5px_5px_0px_#121212] p-5 sm:p-6 flex flex-col justify-between group hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[7px_7px_0px_#121212] transition-all"
+          >
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <span
+                  className={`px-3 py-1 ${domain.badgeBg} ${
+                    domain.badgeText || "text-ink-black"
+                  } border-2 border-ink-black font-label-sm text-label-sm uppercase font-bold shadow-[2px_2px_0px_#121212]`}
                 >
-                  ROADMAP →
-                </Link>
+                  {domain.badge}
+                </span>
+                <div className="w-10 h-10 bg-surface-container border-2 border-ink-black flex items-center justify-center">
+                  <span className="material-symbols-outlined text-[24px] text-ink-black">
+                    {domain.icon}
+                  </span>
+                </div>
+              </div>
+
+              <h3 className="font-headline-sm text-headline-sm text-ink-black uppercase font-bold">
+                {domain.title}
+              </h3>
+              <p className="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">
+                {domain.description}
+              </p>
+
+              {domain.leadsText && (
+                <div className="mt-3 text-[12px] font-label-sm uppercase text-on-surface-variant font-bold">
+                  <span className="text-ink-black">LEAD:</span> {domain.leadsText}
+                </div>
+              )}
+
+              <div className="mt-4 pt-4 border-t-2 border-ink-black">
+                <span className="font-label-sm text-label-sm uppercase font-bold text-ink-black block mb-2">
+                  CORE STACK:
+                </span>
+                <div className="flex flex-wrap gap-1.5">
+                  {domain.stack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-2 py-0.5 bg-surface-container border border-ink-black font-label-sm text-label-sm"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
-          );
-        })}
+
+            <div className="mt-6 pt-4 border-t border-surface-container-highest flex items-center justify-between">
+              <span className="font-label-sm text-[11px] text-on-surface-variant font-bold">
+                {domain.metric}
+              </span>
+              <a
+                href={domain.roadmapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 font-label-sm text-label-sm text-ink-black uppercase font-bold hover:text-primary group-hover:underline"
+              >
+                <span>ROADMAP</span>
+                <span className="material-symbols-outlined text-[14px]">open_in_new</span>
+              </a>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

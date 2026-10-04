@@ -7,6 +7,7 @@ import {
   MarqueeTicker,
   EventsDirectory,
   KnowledgeVault,
+  D3FeaturedSection,
 } from "@/components";
 
 export const metadata: Metadata = {
@@ -86,12 +87,17 @@ export default function EventsPage() {
           </div>
         </section>
 
-        {/* SECTION 1: Featured & Upcoming (Interactive Directory with Filters) */}
+        {/* SECTION 1: Flagship Featured Event: D³ TECHNOTFEST 2026 */}
+        <section className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+          <D3FeaturedSection />
+        </section>
+
+        {/* SECTION 2: Upcoming Sessions & Competitions (Interactive Directory) */}
         <section className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 pb-16">
           <EventsDirectory />
         </section>
 
-        {/* SECTION 2: Hackathon Arena */}
+        {/* SECTION 3: Hackathon Arena */}
         <section className="w-full bg-secondary-container border-y-[3px] border-ink-black py-16">
           <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
             {/* Section Header */}
@@ -168,7 +174,7 @@ export default function EventsPage() {
             <div className="flex items-center gap-3 pb-6">
               <span className="material-symbols-outlined text-[24px] text-ink-black">trophy</span>
               <h3 className="font-headline-md text-headline-md text-ink-black uppercase font-bold">
-                PAST ENIGMA HALL OF FAME
+                CAMPUS HACKATHON REPOSITORY ARCHIVE
               </h3>
             </div>
 
@@ -197,7 +203,9 @@ export default function EventsPage() {
                     TRACK: HARDWARE / IOT
                   </span>
                   <a
-                    href="#"
+                    href="https://github.com/p-society"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="font-label-md text-label-md uppercase text-primary font-bold hover:underline flex items-center gap-0.5"
                   >
                     [ DEMO REPO ]{" "}
@@ -230,7 +238,9 @@ export default function EventsPage() {
                     TRACK: HEALTHTECH
                   </span>
                   <a
-                    href="#"
+                    href="https://github.com/p-society"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="font-label-md text-label-md uppercase text-primary font-bold hover:underline flex items-center gap-0.5"
                   >
                     [ PROJECT OVERVIEW ]{" "}
@@ -263,7 +273,9 @@ export default function EventsPage() {
                     TRACK: CRYPTOGRAPHY
                   </span>
                   <a
-                    href="#"
+                    href="https://github.com/p-society"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="font-label-md text-label-md uppercase text-primary font-bold hover:underline flex items-center gap-0.5"
                   >
                     [ REPOSITORY ]{" "}
@@ -275,144 +287,9 @@ export default function EventsPage() {
           </div>
         </section>
 
-        {/* SECTION 3: Knowledge Vault (Past Sessions with Search) */}
+        {/* SECTION 4: Knowledge Vault (Past Sessions with Search) */}
         <section className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <KnowledgeVault />
-        </section>
-
-        {/* SECTION 4: TechSoc Mentorship Cohorts */}
-        <section className="w-full bg-surface-white border-y-[3px] border-ink-black py-16">
-          <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-              {/* Left Column: Context */}
-              <div className="lg:col-span-5 flex flex-col gap-6">
-                <div className="flex flex-col gap-2">
-                  <span className="px-3 py-1 bg-accent-mint text-ink-black font-label-sm text-label-sm uppercase tracking-wider rounded-full shadow-[2px_2px_0px_#121212] border border-ink-black font-bold self-start">
-                    1-ON-1 &amp; SMALL POD ACCELERATION
-                  </span>
-                  <h2 className="font-display-xl text-headline-lg lg:text-display-xl text-ink-black uppercase leading-tight font-bold">
-                    TECHSOC MENTORSHIP COHORTS
-                  </h2>
-                  <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                    TechSoc connects interested juniors with senior student engineers
-                    and alumni mentors across dedicated project and research tracks.
-                  </p>
-                </div>
-
-                <div className="p-4 bg-canvas-cream rounded-xl shadow-[4px_4px_0px_#121212] border-2 border-ink-black flex items-center gap-4">
-                  <div className="w-12 h-12 bg-secondary-container rounded-lg flex items-center justify-center text-ink-black shadow-[2px_2px_0px_#121212] border border-ink-black flex-shrink-0">
-                    <span className="material-symbols-outlined text-[28px]">verified</span>
-                  </div>
-                  <div>
-                    <span className="font-headline-sm text-[16px] leading-[22px] uppercase text-ink-black font-bold block">
-                      PEER MENTORSHIP TRACK
-                    </span>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant">
-                      Mentees gain hands-on architectural experience, project guidance,
-                      and practical software engineering skills.
-                    </p>
-                  </div>
-                </div>
-
-                <div>
-                  <Link
-                    href="/connect"
-                    className="inline-flex items-center gap-2 px-6 py-3.5 bg-ink-black text-surface-white font-label-lg text-label-lg uppercase tracking-wider rounded-lg shadow-[5px_5px_0px_#121212] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all font-bold border-2 border-ink-black"
-                  >
-                    <span className="material-symbols-outlined text-[18px]">school</span>
-                    [ CONNECT WITH MENTORS ]
-                  </Link>
-                </div>
-              </div>
-
-              {/* Right Column: Process Steps Grid */}
-              <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {/* Step 1 */}
-                <div className="p-6 bg-canvas-cream rounded-xl shadow-[5px_5px_0px_#121212] border-2 border-ink-black flex flex-col justify-between">
-                  <div className="flex items-center justify-between pb-4">
-                    <span className="w-8 h-8 rounded-full bg-secondary-container text-ink-black font-label-lg text-label-lg font-bold flex items-center justify-center shadow-[2px_2px_0px_#121212] border border-ink-black">
-                      01
-                    </span>
-                    <span className="font-label-sm text-label-sm uppercase text-on-surface-variant font-bold">
-                      STAGE 1
-                    </span>
-                  </div>
-                  <div>
-                    <h4 className="font-headline-sm text-headline-sm text-ink-black uppercase font-bold">
-                      EXPRESS INTEREST
-                    </h4>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">
-                      Share your technical interests (Systems, AI, Cloud,
-                      Web, Security) and projects you want to build.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Step 2 */}
-                <div className="p-6 bg-canvas-cream rounded-xl shadow-[5px_5px_0px_#121212] border-2 border-ink-black flex flex-col justify-between">
-                  <div className="flex items-center justify-between pb-4">
-                    <span className="w-8 h-8 rounded-full bg-accent-mint text-ink-black font-label-lg text-label-lg font-bold flex items-center justify-center shadow-[2px_2px_0px_#121212] border border-ink-black">
-                      02
-                    </span>
-                    <span className="font-label-sm text-label-sm uppercase text-on-surface-variant font-bold">
-                      STAGE 2
-                    </span>
-                  </div>
-                  <div>
-                    <h4 className="font-headline-sm text-headline-sm text-ink-black uppercase font-bold">
-                      POD MATCHING
-                    </h4>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">
-                      Pairing with a domain lead or senior peer aligned with your
-                      learning goals.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Step 3 */}
-                <div className="p-6 bg-canvas-cream rounded-xl shadow-[5px_5px_0px_#121212] border-2 border-ink-black flex flex-col justify-between">
-                  <div className="flex items-center justify-between pb-4">
-                    <span className="w-8 h-8 rounded-full bg-accent-coral text-surface-white font-label-lg text-label-lg font-bold flex items-center justify-center shadow-[2px_2px_0px_#121212] border border-ink-black">
-                      03
-                    </span>
-                    <span className="font-label-sm text-label-sm uppercase text-on-surface-variant font-bold">
-                      STAGE 3
-                    </span>
-                  </div>
-                  <div>
-                    <h4 className="font-headline-sm text-headline-sm text-ink-black uppercase font-bold">
-                      CAPSTONE SPRINT
-                    </h4>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">
-                      Periodic architectural critiques, collaborative coding, code reviews,
-                      and shipping clean software.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Step 4 */}
-                <div className="p-6 bg-canvas-cream rounded-xl shadow-[5px_5px_0px_#121212] border-2 border-ink-black flex flex-col justify-between">
-                  <div className="flex items-center justify-between pb-4">
-                    <span className="w-8 h-8 rounded-full bg-primary text-surface-white font-label-lg text-label-lg font-bold flex items-center justify-center shadow-[2px_2px_0px_#121212] border border-ink-black">
-                      04
-                    </span>
-                    <span className="font-label-sm text-label-sm uppercase text-on-surface-variant font-bold">
-                      STAGE 4
-                    </span>
-                  </div>
-                  <div>
-                    <h4 className="font-headline-sm text-headline-sm text-ink-black uppercase font-bold">
-                      DEMO &amp; SHOWCASE
-                    </h4>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">
-                      Showcasing working software and demos to campus peers and
-                      community members.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </section>
 
         {/* SECTION 5: Call for Speakers & Builders */}

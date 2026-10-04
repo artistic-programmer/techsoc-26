@@ -10,17 +10,24 @@ export type EventStatus = "open" | "upcoming" | "completed" | "closed" | string;
 export interface EventItem {
   id: string;
   name: string;
+  title?: string;
+  slug?: string;
   date?: string;
   time?: string;
   venue?: string;
   category?: EventCategory;
+  shortDescription?: string;
   description?: string;
+  organizer?: string;
   registrationLink?: string;
+  externalLink?: string;
   image?: string;
   status?: EventStatus;
   theme?: string;
   link?: string;
-  highlights?: string;
+  highlights?: string | string[];
+  rules?: string[];
+  tags?: string[];
   photos?: string[];
   recording?: string;
 }

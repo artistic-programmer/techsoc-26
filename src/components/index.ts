@@ -10,6 +10,7 @@ export * from "./ui/MarqueeTicker";
 export * from "./events/EventCard";
 export * from "./events/EventsDirectory";
 export * from "./events/KnowledgeVault";
+export * from "./events/D3FeaturedSection";
 export * from "./projects/ProjectCard";
 export * from "./domains/DomainCard";
 export * from "./team/TeamMemberCard";

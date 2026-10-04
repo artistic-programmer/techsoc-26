@@ -17,7 +17,7 @@ export const EventsDirectory: React.FC = () => {
   ];
 
   // Logic to determine which cards show based on filter
-  const showEnigma =
+  const showD3 =
     activeFilter === "all" ||
     activeFilter === "hackathons" ||
     activeFilter === "competitions";
@@ -55,38 +55,38 @@ export const EventsDirectory: React.FC = () => {
         })}
       </div>
 
-      {/* Featured Header Label */}
+      {/* Section Header */}
       <div className="flex items-center justify-between pb-6">
         <div className="flex items-center gap-3">
           <span className="w-4 h-4 bg-accent-coral rounded-sm shadow-[2px_2px_0px_#121212]" />
           <h2 className="font-headline-lg text-headline-sm sm:text-headline-md md:text-headline-lg text-ink-black uppercase tracking-tight font-bold">
-            FEATURED &amp; UPCOMING
+            UPCOMING SESSIONS &amp; COMPETITIONS
           </h2>
         </div>
         <span className="hidden sm:inline-block font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant font-bold">
-          SPRING / SUMMER 2026
+          CAMPUS DIRECTORY
         </span>
       </div>
 
       <div className="flex flex-col gap-8">
-        {/* CARD 1: FLAGSHIP ENIGMA 2026 */}
-        {showEnigma && (
+        {/* CARD 1: CRAFT N CODE '26 // D³ FLAGSHIP HACKATHON */}
+        {showD3 && (
           <div className="bg-surface-white rounded-2xl shadow-[8px_8px_0px_#121212] border-[3px] border-ink-black p-6 sm:p-8 lg:p-10 relative overflow-hidden transition-all">
             {/* Top Decals Row */}
             <div className="flex flex-wrap items-center justify-between gap-3 pb-6 border-b-2 border-ink-black/10">
               <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                 <span className="px-3 py-1 bg-accent-coral text-surface-white font-label-md text-label-sm sm:text-label-md uppercase tracking-wider rounded-full shadow-[2px_2px_0px_#121212] font-bold">
-                  FLAGSHIP NATIONAL HACKATHON
+                  FLAGSHIP HACKATHON ARENA
                 </span>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-secondary-container text-ink-black font-label-md text-label-sm sm:text-label-md uppercase tracking-wider rounded-full shadow-[2px_2px_0px_#121212] font-bold">
-                  <span className="material-symbols-outlined text-[16px]">timer</span>
-                  IN-PERSON SPRINT
+                  <span className="material-symbols-outlined text-[16px]">terminal</span>
+                  D³ ARENA 01 // TECHSOC
                 </span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-accent-coral animate-ping" />
                 <span className="font-mono text-label-sm font-bold uppercase text-ink-black">
-                  STATUS: SCHEDULE TO BE ANNOUNCED
+                  STATUS: SCHEDULE TBA
                 </span>
               </div>
             </div>
@@ -96,16 +96,16 @@ export const EventsDirectory: React.FC = () => {
               {/* Left: Event Specs */}
               <div className="lg:col-span-7 flex flex-col gap-6">
                 <div>
-                  <span className="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant font-bold block mb-1">
-                    ANNUAL FLAGSHIP • TECHSOC × IIIT-BBSR
+                  <span className="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold block mb-1">
+                    24-HOUR NATIONAL COLLEGIATE HACKATHON // D³ 2026
                   </span>
                   <h3 className="font-display-xl text-[36px] sm:text-[48px] lg:text-[56px] tracking-tight uppercase leading-none text-ink-black font-extrabold">
-                    ENIGMA HACKATHON
+                    CRAFT N CODE &apos;26
                   </h3>
                   <p className="font-body-md text-body-md text-on-surface-variant mt-3 max-w-xl leading-relaxed">
-                    Eastern India&apos;s collegiate hackathon bringing together builders, hackers,
-                    and system designers. Non-stop coding, high-speed mentoring,
-                    and game-changing open-source prototypes.
+                    The 24-hour national hackathon sprint of D³ Technotfest 2026 at IIIT Bhubaneswar.
+                    Student developers and builders across campus cohorts collaborate to design,
+                    architect, and ship software prototypes under real-world pressure.
                   </p>
                 </div>
 
@@ -113,28 +113,28 @@ export const EventsDirectory: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   <div className="p-3 bg-canvas-cream rounded-lg shadow-[3px_3px_0px_#121212] border-2 border-ink-black">
                     <span className="font-label-sm text-[11px] uppercase tracking-wider text-on-surface-variant block font-bold">
+                      DURATION
+                    </span>
+                    <span className="font-headline-sm text-headline-sm text-ink-black font-bold">
+                      24 HOURS
+                    </span>
+                  </div>
+
+                  <div className="p-3 bg-canvas-cream rounded-lg shadow-[3px_3px_0px_#121212] border-2 border-ink-black">
+                    <span className="font-label-sm text-[11px] uppercase tracking-wider text-on-surface-variant block font-bold">
                       DATE
                     </span>
-                    <span className="font-headline-sm text-headline-sm text-ink-black font-bold">
-                      DATES TBA
-                    </span>
-                  </div>
-
-                  <div className="p-3 bg-canvas-cream rounded-lg shadow-[3px_3px_0px_#121212] border-2 border-ink-black">
-                    <span className="font-label-sm text-[11px] uppercase tracking-wider text-on-surface-variant block font-bold">
-                      TOTAL POOL
-                    </span>
                     <span className="font-headline-sm text-headline-sm text-accent-coral font-bold">
-                      DETAILS TBA
+                      TBA
                     </span>
                   </div>
 
                   <div className="p-3 bg-canvas-cream rounded-lg shadow-[3px_3px_0px_#121212] border-2 border-ink-black">
                     <span className="font-label-sm text-[11px] uppercase tracking-wider text-on-surface-variant block font-bold">
-                      LOCATION
+                      VENUE
                     </span>
-                    <span className="font-headline-sm text-headline-sm text-ink-black font-bold">
-                      Campus Auditorium
+                    <span className="font-headline-sm text-[15px] leading-tight text-ink-black font-bold">
+                      IIIT Bhubaneswar
                     </span>
                   </div>
                 </div>
@@ -142,14 +142,15 @@ export const EventsDirectory: React.FC = () => {
                 {/* Tracks Chips */}
                 <div>
                   <span className="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block mb-2 font-bold">
-                    HACKATHON TRACKS:
+                    SPRINT HIGHLIGHTS:
                   </span>
                   <div className="flex flex-wrap gap-2">
                     {[
-                      "Generative & Agentic AI",
-                      "Web3 & Decentralized Networks",
-                      "Public HealthTech",
-                      "Campus Utilities",
+                      "National Collegiate Teams",
+                      "Systems & Web Prototyping",
+                      "AI & Edge Computing",
+                      "Open Source Judging",
+                      "Zero Gatekeeping",
                     ].map((track) => (
                       <span
                         key={track}
@@ -164,18 +165,20 @@ export const EventsDirectory: React.FC = () => {
                 {/* Action Buttons */}
                 <div className="flex flex-wrap items-center gap-4 pt-2">
                   <a
-                    href="#register"
+                    href="https://d3fest.techsoc-iiitbbsr.com/events"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-secondary-container text-ink-black font-label-lg text-label-lg uppercase tracking-wider rounded-lg shadow-[4px_4px_0px_#121212] hover:shadow-[6px_6px_0px_#121212] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all font-bold border-2 border-ink-black"
                   >
                     <span className="material-symbols-outlined text-[20px]">rocket_launch</span>
-                    [ REGISTRATION DETAILS TBA ]
+                    [ REGISTER ON D³ PORTAL → ]
                   </a>
                   <a
-                    href="#"
+                    href="#d3-technotfest"
                     className="inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-surface-white text-ink-black font-label-lg text-label-lg uppercase tracking-wider rounded-lg shadow-[4px_4px_0px_#121212] hover:bg-surface-container hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all font-bold border-2 border-ink-black"
                   >
-                    <span className="material-symbols-outlined text-[20px]">info</span>
-                    EVENT OVERVIEW
+                    <span className="material-symbols-outlined text-[20px]">north</span>
+                    VIEW ALL 17 D³ ARENAS
                   </a>
                 </div>
               </div>
@@ -185,7 +188,7 @@ export const EventsDirectory: React.FC = () => {
                 <div className="relative rounded-xl overflow-hidden shadow-[6px_6px_0px_#121212] border-2 border-ink-black aspect-[4/3] bg-surface-container">
                   <Image
                     src="/images/events/enigma-live.jpg"
-                    alt="Collegiate hackathon session at IIIT Bhubaneswar"
+                    alt="D³ Technotfest at IIIT Bhubaneswar"
                     fill
                     sizes="(max-width: 1024px) 100vw, 40vw"
                     className="object-cover"
@@ -211,10 +214,10 @@ export const EventsDirectory: React.FC = () => {
                 {/* Partner Ribbon */}
                 <div className="p-3 bg-canvas-cream rounded-lg shadow-[3px_3px_0px_#121212] border-2 border-ink-black flex items-center justify-between">
                   <span className="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">
-                    PARTNERS &amp; SUPPORTERS
+                    ORGANIZED BY
                   </span>
                   <div className="flex items-center gap-2 font-label-sm text-label-sm uppercase text-ink-black font-bold">
-                    <span>COMMUNITY &amp; INDUSTRY PARTNERS</span>
+                    <span>TECHSOC × ARS</span>
                   </div>
                 </div>
               </div>

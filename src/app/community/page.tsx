@@ -10,6 +10,7 @@ import {
   PersonAvatar,
 } from "@/components";
 import { gdgLeads } from "@/data/team";
+import { siteConfig } from "@/data/siteConfig";
 
 const GDG_CHAPTER_URL =
   "https://gdg.community.dev/gdg-on-campus-international-institute-of-information-technology-bhubaneswar-india/";
@@ -81,7 +82,9 @@ export default function CommunityPage() {
 
               <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-4 justify-center lg:items-end pt-2">
                 <a
-                  href="#discord"
+                  href={siteConfig.socials.discord || "https://discord.gg/GgWYNmw4p"}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-primary text-on-primary font-headline-sm text-[16px] uppercase tracking-wider border-[3px] border-ink-black shadow-[5px_5px_0px_#121212] hover:shadow-[7px_7px_0px_#121212] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all text-center font-bold"
                 >
                   <span className="material-symbols-outlined text-[20px]">group_add</span>
@@ -362,88 +365,66 @@ export default function CommunityPage() {
               </span>
               <div>
                 <h2 className="font-headline-md text-headline-sm sm:text-headline-md text-ink-black uppercase font-bold">
-                  COMMUNITY PROGRAMS &amp; GUILDS
+                  COMMUNITY PROGRAMS &amp; RITUALS
                 </h2>
                 <p className="font-body-sm text-body-sm text-on-surface-variant">
-                  Continuous rituals that turn junior year beginners into industry-ready contributors.
+                  Continuous community rituals designed for learning, building, and showing up together.
                 </p>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {/* Program 1 */}
-              <div className="bg-surface-white border-[2.5px] border-ink-black p-5 shadow-[4px_4px_0px_#121212] flex flex-col justify-between">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Program 1: Hackathons */}
+              <div className="bg-surface-white border-[2.5px] border-ink-black p-6 shadow-[4px_4px_0px_#121212] flex flex-col justify-between">
                 <div>
                   <div className="font-label-sm text-label-sm uppercase font-bold text-accent-coral mb-2">
-                    WEEKLY RITUAL
+                    FLAGSHIP SPRINTS
                   </div>
                   <h4 className="font-title-lg text-title-lg text-ink-black font-bold mb-2">
-                    Code Jam &amp; Teardowns
+                    Hackathons
                   </h4>
                   <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-                    Members bring code for live reviews, pull request walkthroughs,
-                    and technical discussions.
+                    Collegiate hackathons and sprint competitions where students collaborate across domains to build and ship production software prototypes under tight deadlines.
                   </p>
                 </div>
                 <div className="mt-6 pt-3 border-t border-ink-black/20 font-label-sm text-label-sm text-ink-black font-bold uppercase">
-                  • CAMPUS SESSIONS • SCHEDULE TBA
+                  • ANNUAL SPRINTS • IIIT BHUBANESWAR
                 </div>
               </div>
 
-              {/* Program 2 */}
-              <div className="bg-surface-white border-[2.5px] border-ink-black p-5 shadow-[4px_4px_0px_#121212] flex flex-col justify-between">
+              {/* Program 2: Days of Productivity (DOP) */}
+              <div className="bg-surface-white border-[2.5px] border-ink-black p-6 shadow-[4px_4px_0px_#121212] flex flex-col justify-between">
                 <div>
                   <div className="font-label-sm text-label-sm uppercase font-bold text-primary mb-2">
-                    OPEN SOURCE
+                    SUMMER CONSISTENCY CHALLENGE
                   </div>
                   <h4 className="font-title-lg text-title-lg text-ink-black font-bold mb-2">
-                    Open Source Guild
+                    Days of Productivity (DOP)
                   </h4>
                   <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-                    Mentorship pods for global open source programs, foundation proposals,
-                    and contribution tracks.
+                    Days of Productivity (DOP): A 25-day summer consistency challenge where TechSoc members commit to learning, building, and showing up every day alongside the community.
                   </p>
                 </div>
                 <div className="mt-6 pt-3 border-t border-ink-black/20 font-label-sm text-label-sm text-ink-black font-bold uppercase">
-                  • PEER MENTORSHIP
+                  • 25-DAY CHALLENGE • COMMUNITY ACCOUNTABILITY
                 </div>
               </div>
 
-              {/* Program 3 */}
-              <div className="bg-surface-white border-[2.5px] border-ink-black p-5 shadow-[4px_4px_0px_#121212] flex flex-col justify-between">
+              {/* Program 3: Domain Sessions */}
+              <div className="bg-surface-white border-[2.5px] border-ink-black p-6 shadow-[4px_4px_0px_#121212] flex flex-col justify-between">
                 <div>
                   <div className="font-label-sm text-label-sm uppercase font-bold text-accent-mint mb-2">
-                    CAREER ENGINE
+                    WEEKLY LABS &amp; TEARDOWNS
                   </div>
                   <h4 className="font-title-lg text-title-lg text-ink-black font-bold mb-2">
-                    Alumni Network
+                    Domain Sessions
                   </h4>
                   <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-                    Direct connection with alumni working across technology domains and
-                    research organizations.
+                    Weekly hands-on workshops, system design teardowns, algorithm discussions, and peer code reviews organized by specialized technical domain leads.
                   </p>
                 </div>
                 <div className="mt-6 pt-3 border-t border-ink-black/20 font-label-sm text-label-sm text-ink-black font-bold uppercase">
-                  • 1-ON-1 SESSIONS
-                </div>
-              </div>
-
-              {/* Program 4 */}
-              <div className="bg-surface-white border-[2.5px] border-ink-black p-5 shadow-[4px_4px_0px_#121212] flex flex-col justify-between">
-                <div>
-                  <div className="font-label-sm text-label-sm uppercase font-bold text-ink-black mb-2">
-                    INNOVATION FUND
-                  </div>
-                  <h4 className="font-title-lg text-title-lg text-ink-black font-bold mb-2">
-                    Project Incubator
-                  </h4>
-                  <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-                    Guidance, peer reviews, technical architecture sessions, and design audits to turn ideas
-                    into working software.
-                  </p>
-                </div>
-                <div className="mt-6 pt-3 border-t border-ink-black/20 font-label-sm text-label-sm text-ink-black font-bold uppercase">
-                  • CAMPUS INNOVATION SUPPORT
+                  • PEER WORKSHOPS • ALL GUILDS
                 </div>
               </div>
             </div>
@@ -473,11 +454,13 @@ export default function CommunityPage() {
               </div>
 
               <a
-                href="#"
+                href={siteConfig.socials.github || "https://github.com/p-society"}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 bg-surface-white border-[2.5px] border-ink-black font-label-sm text-label-sm uppercase font-bold shadow-[3px_3px_0px_#121212] hover:bg-secondary-fixed transition-all self-start md:self-auto"
               >
                 <span className="material-symbols-outlined text-[18px]">terminal</span>
-                TECHSOC REPOSITORIES
+                <span>TECHSOC REPOSITORIES</span>
               </a>
             </div>
 
@@ -538,15 +521,11 @@ export default function CommunityPage() {
                       Built by <strong className="text-ink-black">Student Contributors</strong>
                     </span>
                     <div className="flex items-center gap-2">
-                      <button
-                        type="button"
-                        className="px-3 py-1.5 bg-surface-white border-2 border-ink-black font-label-sm text-label-sm uppercase font-bold hover:bg-secondary-container active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer"
-                      >
-                        DEMO APP
-                      </button>
                       <a
-                        href="#"
-                        className="px-3 py-1.5 bg-ink-black text-surface-white border-2 border-ink-black font-label-sm text-label-sm uppercase font-bold hover:bg-primary active:translate-x-0.5 active:translate-y-0.5 transition-all inline-block"
+                        href={siteConfig.socials.github || "https://github.com/p-society"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-3.5 py-1.5 bg-ink-black text-surface-white border-2 border-ink-black font-label-sm text-label-sm uppercase font-bold hover:bg-primary active:translate-x-0.5 active:translate-y-0.5 transition-all inline-block"
                       >
                         REPOSITORY
                       </a>
@@ -597,12 +576,14 @@ export default function CommunityPage() {
                     <span className="font-body-sm text-body-sm text-on-surface-variant">
                       Domain: <strong className="text-ink-black">Algorithms &amp; Systems</strong>
                     </span>
-                    <button
-                      type="button"
-                      className="px-3 py-1 bg-surface-white border-2 border-ink-black font-label-sm text-label-sm uppercase font-bold hover:bg-accent-mint active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer"
+                    <a
+                      href={siteConfig.socials.github || "https://github.com/p-society"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3.5 py-1 bg-surface-white border-2 border-ink-black font-label-sm text-label-sm uppercase font-bold hover:bg-accent-mint active:translate-x-0.5 active:translate-y-0.5 transition-all inline-block"
                     >
                       VIEW REPO
-                    </button>
+                    </a>
                   </div>
                 </div>
 
@@ -646,12 +627,14 @@ export default function CommunityPage() {
                     <span className="font-body-sm text-body-sm text-on-surface-variant">
                       Curated by <strong className="text-ink-black">Academic Guild</strong>
                     </span>
-                    <button
-                      type="button"
-                      className="px-3 py-1 bg-surface-white border-2 border-ink-black font-label-sm text-label-sm uppercase font-bold hover:bg-secondary-container active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer"
+                    <a
+                      href={siteConfig.socials.github || "https://github.com/p-society"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3.5 py-1 bg-surface-white border-2 border-ink-black font-label-sm text-label-sm uppercase font-bold hover:bg-secondary-container active:translate-x-0.5 active:translate-y-0.5 transition-all inline-block"
                     >
                       BROWSE ARCHIVE
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>

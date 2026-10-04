@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Navbar, Footer, MarqueeTicker } from "@/components";
+import { homeShowcaseEvents } from "@/data/events";
 
 export default function HomePage() {
   const marqueeItems = [
@@ -405,148 +406,101 @@ export default function HomePage() {
               </Link>
             </div>
 
-            {/* Event Cards: 3 Up Bento Style */}
+            {/* Event Cards: Structured Data Rendering */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              {/* Event 1: ENIGMA (Flagship Highlight) */}
-              <div className="bg-surface-white border-[3px] border-ink-black rounded-lg p-6 shadow-[6px_6px_0px_#121212] flex flex-col justify-between relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-28 h-28 bg-secondary-container/30 -rotate-45 translate-x-12 -translate-y-12 pointer-events-none" />
-                <div>
-                  <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-                    <div className="flex items-center gap-2">
-                      <span className="px-2.5 py-0.5 bg-secondary-container text-ink-black font-label-sm text-label-sm uppercase font-bold border-2 border-ink-black rounded shadow-[2px_2px_0px_#121212]">
-                        FLAGSHIP HACKATHON
-                      </span>
-                      <span className="px-2.5 py-0.5 bg-accent-mint text-ink-black font-label-sm text-label-sm uppercase font-bold border-2 border-ink-black rounded shadow-[2px_2px_0px_#121212]">
-                        UPCOMING
-                      </span>
-                    </div>
-                    <span className="font-mono text-label-sm uppercase text-accent-coral font-bold">
-                      DETAILS TBA
-                    </span>
-                  </div>
-
-                  <h3 className="font-headline-md text-headline-md uppercase text-ink-black font-bold tracking-tight mb-2">
-                    ANNUAL FLAGSHIP HACKATHON
-                  </h3>
-                  <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-6">
-                    Collegiate hackathon sprint bringing together student developers across domains to build and ship software prototypes.
-                  </p>
-
-                  <div className="space-y-2 border-t-2 border-ink-black pt-4 font-label-sm text-label-sm uppercase text-ink-black">
-                    <div className="flex items-center gap-2">
-                      <span className="material-symbols-outlined text-[18px] text-primary">calendar_month</span>
-                      <span className="font-bold">DATE: TO BE ANNOUNCED</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="material-symbols-outlined text-[18px] text-primary">location_on</span>
-                      <span>VENUE: IIIT BHUBANESWAR CAMPUS</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="material-symbols-outlined text-[18px] text-primary">group</span>
-                      <span>TEAMS: STUDENT COHORTS</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="pt-6 mt-6 border-t border-ink-black/20">
-                  <Link
-                    href="/events"
-                    className="w-full inline-flex items-center justify-center gap-2 py-3 bg-secondary-container text-ink-black font-label-lg text-label-lg uppercase tracking-wider font-bold border-[2.5px] border-ink-black shadow-[4px_4px_0px_#121212] hover:shadow-[6px_6px_0px_#121212] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all rounded"
+              {homeShowcaseEvents.map((event, idx) => {
+                const isFlagship = idx === 0 || event.slug === "d3";
+                return (
+                  <div
+                    key={event.id}
+                    className="bg-surface-white border-[3px] border-ink-black rounded-lg p-6 shadow-[6px_6px_0px_#121212] flex flex-col justify-between relative overflow-hidden"
                   >
-                    [ VIEW EVENT DETAILS → ]
-                  </Link>
-                </div>
-              </div>
+                    {isFlagship && (
+                      <div className="absolute top-0 right-0 w-28 h-28 bg-secondary-container/30 -rotate-45 translate-x-12 -translate-y-12 pointer-events-none" />
+                    )}
+                    <div>
+                      <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span
+                            className={`px-2.5 py-0.5 font-label-sm text-label-sm uppercase font-bold border-2 border-ink-black rounded shadow-[2px_2px_0px_#121212] ${
+                              isFlagship
+                                ? "bg-secondary-container text-ink-black"
+                                : idx === 1
+                                ? "bg-accent-cyan text-ink-black"
+                                : "bg-accent-mint text-ink-black"
+                            }`}
+                          >
+                            {event.category}
+                          </span>
+                          <span className="px-2.5 py-0.5 bg-accent-mint text-ink-black font-label-sm text-label-sm uppercase font-bold border-2 border-ink-black rounded shadow-[2px_2px_0px_#121212]">
+                            {event.status || "UPCOMING"}
+                          </span>
+                        </div>
+                        <span className="font-mono text-label-sm uppercase text-accent-coral font-bold">
+                          DETAILS TBA
+                        </span>
+                      </div>
 
-              {/* Event 2: ZERO TO PROD */}
-              <div className="bg-surface-white border-[3px] border-ink-black rounded-lg p-6 shadow-[5px_5px_0px_#121212] flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center justify-between gap-2 mb-4">
-                    <span className="px-2.5 py-0.5 bg-accent-cyan text-ink-black font-label-sm text-label-sm uppercase font-bold border-2 border-ink-black rounded shadow-[2px_2px_0px_#121212]">
-                      BOOTCAMP SERIES
-                    </span>
-                    <span className="font-mono text-label-sm text-on-surface-variant font-bold">
-                      UPCOMING
-                    </span>
+                      <h3
+                        className={`font-headline-md uppercase text-ink-black font-bold tracking-tight mb-2 ${
+                          isFlagship ? "text-headline-md" : "text-headline-sm"
+                        }`}
+                      >
+                        {event.title || event.name}
+                      </h3>
+                      {event.theme && (
+                        <p className="font-label-sm text-label-sm uppercase font-bold text-primary mb-2">
+                          &quot;{event.theme}&quot;
+                        </p>
+                      )}
+                      <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-6">
+                        {event.shortDescription || event.description}
+                      </p>
+
+                      <div className="space-y-2 border-t-2 border-ink-black pt-4 font-label-sm text-label-sm uppercase text-ink-black">
+                        <div className="flex items-center gap-2">
+                          <span className="material-symbols-outlined text-[18px] text-primary">
+                            calendar_month
+                          </span>
+                          <span className="font-bold">DATE: {event.date || "TO BE ANNOUNCED"}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <span className="material-symbols-outlined text-[18px] text-primary">
+                            location_on
+                          </span>
+                          <span>VENUE: {event.venue || "IIIT BHUBANESWAR"}</span>
+                        </div>
+                        {event.organizer && (
+                          <div className="flex items-center gap-2">
+                            <span className="material-symbols-outlined text-[18px] text-primary">
+                              group
+                            </span>
+                            <span>ORGANIZER: {event.organizer}</span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="pt-6 mt-6 border-t border-ink-black/20">
+                      {isFlagship ? (
+                        <Link
+                          href="/events"
+                          className="w-full inline-flex items-center justify-center gap-2 py-3 bg-secondary-container text-ink-black font-label-lg text-label-lg uppercase tracking-wider font-bold border-[2.5px] border-ink-black shadow-[4px_4px_0px_#121212] hover:shadow-[6px_6px_0px_#121212] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all rounded"
+                        >
+                          [ EXPLORE D³ FEST → ]
+                        </Link>
+                      ) : (
+                        <Link
+                          href="/events"
+                          className="w-full inline-flex items-center justify-center gap-2 py-3 bg-surface-white text-ink-black font-label-lg text-label-lg uppercase tracking-wider font-bold border-[2.5px] border-ink-black shadow-[4px_4px_0px_#121212] hover:bg-secondary-container hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all rounded"
+                        >
+                          [ VIEW EVENT DETAILS ]
+                        </Link>
+                      )}
+                    </div>
                   </div>
-
-                  <h3 className="font-headline-sm text-headline-sm uppercase text-ink-black font-bold tracking-tight mb-2">
-                    FULLSTACK WEB DEV BOOTCAMP
-                  </h3>
-                  <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-6">
-                    Hands-on training series covering modern web architecture, databases, and application deployment for campus builders.
-                  </p>
-
-                  <div className="space-y-2 border-t-2 border-ink-black pt-4 font-label-sm text-label-sm uppercase text-ink-black">
-                    <div className="flex items-center gap-2">
-                      <span className="material-symbols-outlined text-[18px] text-accent-cyan">event</span>
-                      <span className="font-bold">STARTS: TO BE ANNOUNCED</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="material-symbols-outlined text-[18px] text-accent-cyan">sensors</span>
-                      <span>MODE: WORKSHOP LABS + DISCORD</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="material-symbols-outlined text-[18px] text-accent-cyan">verified</span>
-                      <span>CAPSTONE: STUDENT UTILITY</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="pt-6 mt-6 border-t border-ink-black/20">
-                  <Link
-                    href="/events"
-                    className="w-full inline-flex items-center justify-center gap-2 py-3 bg-surface-white text-ink-black font-label-lg text-label-lg uppercase tracking-wider font-bold border-[2.5px] border-ink-black shadow-[4px_4px_0px_#121212] hover:bg-secondary-container hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all rounded"
-                  >
-                    [ VIEW DETAILS ]
-                  </Link>
-                </div>
-              </div>
-
-              {/* Event 3: NEURAL FORGE */}
-              <div className="bg-surface-white border-[3px] border-ink-black rounded-lg p-6 shadow-[5px_5px_0px_#121212] flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center justify-between gap-2 mb-4">
-                    <span className="px-2.5 py-0.5 bg-accent-mint text-ink-black font-label-sm text-label-sm uppercase font-bold border-2 border-ink-black rounded shadow-[2px_2px_0px_#121212]">
-                      TECH TALK &amp; LAB
-                    </span>
-                    <span className="font-mono text-label-sm text-on-surface-variant font-bold">
-                      UPCOMING
-                    </span>
-                  </div>
-
-                  <h3 className="font-headline-sm text-headline-sm uppercase text-ink-black font-bold tracking-tight mb-2">
-                    AI &amp; MACHINE LEARNING WORKSHOP
-                  </h3>
-                  <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-6">
-                    Hands-on workshop exploring machine learning models, API integration, and intelligent agent workflows.
-                  </p>
-
-                  <div className="space-y-2 border-t-2 border-ink-black pt-4 font-label-sm text-label-sm uppercase text-ink-black">
-                    <div className="flex items-center gap-2">
-                      <span className="material-symbols-outlined text-[18px] text-accent-mint">event</span>
-                      <span className="font-bold">DATE: TO BE ANNOUNCED</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="material-symbols-outlined text-[18px] text-accent-mint">code</span>
-                      <span>LAB RIG: BRING LAPTOP WITH DEV TOOLS</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="material-symbols-outlined text-[18px] text-accent-mint">mic</span>
-                      <span>SPEAKER: COMMUNITY &amp; GUEST SESSIONS</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="pt-6 mt-6 border-t border-ink-black/20">
-                  <Link
-                    href="/events"
-                    className="w-full inline-flex items-center justify-center gap-2 py-3 bg-surface-white text-ink-black font-label-lg text-label-lg uppercase tracking-wider font-bold border-[2.5px] border-ink-black shadow-[4px_4px_0px_#121212] hover:bg-secondary-container hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all rounded"
-                  >
-                    [ RSVP NOW — FREE ENTRY ]
-                  </Link>
-                </div>
-              </div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -563,25 +517,28 @@ export default function HomePage() {
                 BUILT BY TECHSOC
               </h2>
               <p className="font-body-md text-body-md text-on-surface-variant max-w-xl mt-1">
-                Open-source products and internal university utilities built, maintained, and deployed by our student community.
+                Open-source software, campus tools, and developer utilities engineered and maintained by the Programming Society community.
               </p>
             </div>
-            <Link
-              href="/community"
+            <a
+              href="https://github.com/p-society"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-secondary-container text-ink-black font-label-lg text-label-lg uppercase font-bold border-[2.5px] border-ink-black shadow-[4px_4px_0px_#121212] hover:shadow-[6px_6px_0px_#121212] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all self-start md:self-auto rounded"
             >
-              <span>[ EXPLORE ALL PRODUCTS → ]</span>
-            </Link>
+              <span>[ VIEW ALL REPOSITORIES → ]</span>
+              <span className="material-symbols-outlined text-[18px]">open_in_new</span>
+            </a>
           </div>
 
-          {/* Product Grid: 3 Cards */}
+          {/* Product Grid: 3 Repository-Focused Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Project 1: Campus Utility */}
+            {/* Repo Card 1 */}
             <div className="bg-surface-white border-[3px] border-ink-black rounded-lg p-6 shadow-[5px_5px_0px_#121212] flex flex-col justify-between hover:-translate-y-1 hover:shadow-[7px_7px_0px_#121212] transition-all">
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <span className="px-2.5 py-0.5 bg-accent-mint text-ink-black font-label-sm text-label-sm uppercase font-bold border-2 border-ink-black rounded shadow-[2px_2px_0px_#121212]">
-                    PROJECT IN PROGRESS
+                    OPEN SOURCE REPO
                   </span>
                   <span className="font-mono text-label-sm text-ink-black font-bold flex items-center gap-1">
                     <span className="material-symbols-outlined text-[16px] text-accent-coral">favorite</span>
@@ -608,34 +565,38 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-between pt-4 border-t-2 border-ink-black">
+              <div className="pt-4 border-t-2 border-ink-black flex items-center justify-between">
                 <a
-                  href="#"
-                  className="font-label-sm text-label-sm uppercase font-bold text-ink-black hover:text-primary flex items-center gap-1"
+                  href="https://github.com/p-society"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-label-sm text-label-sm uppercase font-bold text-ink-black hover:text-primary flex items-center gap-1.5"
                 >
-                  <span className="material-symbols-outlined text-[16px]">code</span>
-                  Repository
+                  <span className="material-symbols-outlined text-[16px]">terminal</span>
+                  <span>p-society</span>
                 </a>
                 <a
-                  href="#"
-                  className="px-3 py-1.5 bg-secondary-container text-ink-black font-label-sm text-label-sm uppercase font-bold border-2 border-ink-black shadow-[2px_2px_0px_#121212] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all rounded flex items-center gap-1"
+                  href="https://github.com/p-society"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3.5 py-1.5 bg-secondary-container text-ink-black font-label-sm text-label-sm uppercase font-bold border-2 border-ink-black shadow-[2px_2px_0px_#121212] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 transition-all rounded flex items-center gap-1"
                 >
-                  <span>PROJECT INFO</span>
+                  <span>GITHUB REPO</span>
                   <span className="material-symbols-outlined text-[14px]">open_in_new</span>
                 </a>
               </div>
             </div>
 
-            {/* Project 2: Coding Platform */}
+            {/* Repo Card 2 */}
             <div className="bg-surface-white border-[3px] border-ink-black rounded-lg p-6 shadow-[5px_5px_0px_#121212] flex flex-col justify-between hover:-translate-y-1 hover:shadow-[7px_7px_0px_#121212] transition-all">
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <span className="px-2.5 py-0.5 bg-secondary-container text-ink-black font-label-sm text-label-sm uppercase font-bold border-2 border-ink-black rounded shadow-[2px_2px_0px_#121212]">
-                    DEVELOPMENT STAGE
+                    OPEN SOURCE REPO
                   </span>
                   <span className="font-mono text-label-sm text-ink-black font-bold flex items-center gap-1">
-                    <span className="material-symbols-outlined text-[16px] text-primary">group</span>
-                    INTERNAL TOOL
+                    <span className="material-symbols-outlined text-[16px] text-primary">terminal</span>
+                    DEV TOOLING
                   </span>
                 </div>
 
@@ -658,34 +619,38 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-between pt-4 border-t-2 border-ink-black">
+              <div className="pt-4 border-t-2 border-ink-black flex items-center justify-between">
                 <a
-                  href="#"
-                  className="font-label-sm text-label-sm uppercase font-bold text-ink-black hover:text-primary flex items-center gap-1"
+                  href="https://github.com/p-society"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-label-sm text-label-sm uppercase font-bold text-ink-black hover:text-primary flex items-center gap-1.5"
                 >
-                  <span className="material-symbols-outlined text-[16px]">code</span>
-                  Repository
+                  <span className="material-symbols-outlined text-[16px]">terminal</span>
+                  <span>p-society</span>
                 </a>
                 <a
-                  href="#"
-                  className="px-3 py-1.5 bg-secondary-container text-ink-black font-label-sm text-label-sm uppercase font-bold border-2 border-ink-black shadow-[2px_2px_0px_#121212] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all rounded flex items-center gap-1"
+                  href="https://github.com/p-society"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3.5 py-1.5 bg-secondary-container text-ink-black font-label-sm text-label-sm uppercase font-bold border-2 border-ink-black shadow-[2px_2px_0px_#121212] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 transition-all rounded flex items-center gap-1"
                 >
-                  <span>PROJECT INFO</span>
+                  <span>GITHUB REPO</span>
                   <span className="material-symbols-outlined text-[14px]">open_in_new</span>
                 </a>
               </div>
             </div>
 
-            {/* Project 3: Feedback Utility */}
+            {/* Repo Card 3 */}
             <div className="bg-surface-white border-[3px] border-ink-black rounded-lg p-6 shadow-[5px_5px_0px_#121212] flex flex-col justify-between hover:-translate-y-1 hover:shadow-[7px_7px_0px_#121212] transition-all">
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <span className="px-2.5 py-0.5 bg-accent-coral text-surface-white font-label-sm text-label-sm uppercase font-bold border-2 border-ink-black rounded shadow-[2px_2px_0px_#121212]">
-                    PROTOTYPE
+                    OPEN SOURCE REPO
                   </span>
                   <span className="font-mono text-label-sm text-ink-black font-bold flex items-center gap-1">
                     <span className="material-symbols-outlined text-[16px] text-accent-mint">stars</span>
-                    COMMUNITY UTILITY
+                    CAMPUS SERVICE
                   </span>
                 </div>
 
@@ -708,19 +673,23 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-between pt-4 border-t-2 border-ink-black">
+              <div className="pt-4 border-t-2 border-ink-black flex items-center justify-between">
                 <a
-                  href="#"
-                  className="font-label-sm text-label-sm uppercase font-bold text-ink-black hover:text-primary flex items-center gap-1"
+                  href="https://github.com/p-society"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-label-sm text-label-sm uppercase font-bold text-ink-black hover:text-primary flex items-center gap-1.5"
                 >
-                  <span className="material-symbols-outlined text-[16px]">code</span>
-                  Repository
+                  <span className="material-symbols-outlined text-[16px]">terminal</span>
+                  <span>p-society</span>
                 </a>
                 <a
-                  href="#"
-                  className="px-3 py-1.5 bg-secondary-container text-ink-black font-label-sm text-label-sm uppercase font-bold border-2 border-ink-black shadow-[2px_2px_0px_#121212] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all rounded flex items-center gap-1"
+                  href="https://github.com/p-society"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3.5 py-1.5 bg-secondary-container text-ink-black font-label-sm text-label-sm uppercase font-bold border-2 border-ink-black shadow-[2px_2px_0px_#121212] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 transition-all rounded flex items-center gap-1"
                 >
-                  <span>PROJECT INFO</span>
+                  <span>GITHUB REPO</span>
                   <span className="material-symbols-outlined text-[14px]">open_in_new</span>
                 </a>
               </div>

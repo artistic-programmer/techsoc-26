@@ -466,174 +466,185 @@ export default function CommunityPage() {
 
             {/* Bento-style products showcase */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-              {/* PROJECT 1: FEATURED (7 cols) */}
+              {/* PROJECT 1: FEATURED (7 cols) - TypeRacer CLI */}
               <div className="lg:col-span-7 bg-surface-white border-[3px] border-ink-black shadow-[6px_6px_0px_#121212] flex flex-col justify-between overflow-hidden">
                 <div className="p-6">
                   <div className="flex items-center justify-between gap-4 mb-4">
                     <span className="px-3 py-1 bg-accent-mint text-ink-black border-2 border-ink-black font-label-sm text-label-sm uppercase font-bold shadow-[2px_2px_0px_#121212]">
-                      FLAGSHIP UTILITY
+                      TERMINAL / COMPETITION
                     </span>
                     <div className="flex items-center gap-1.5 text-ink-black font-label-sm text-label-sm font-bold">
-                      <span className="material-symbols-outlined text-[16px] text-secondary fill-1">
-                        star
+                      <span className="material-symbols-outlined text-[16px] text-accent-coral">
+                        terminal
                       </span>
-                      <span>ACTIVE REPOSITORY</span>
+                      <span>P-SOCIETY REPO</span>
                     </div>
                   </div>
 
                   <h3 className="font-headline-md text-headline-md text-ink-black uppercase font-bold">
-                    Campus Utility Platform
+                    TypeRacer CLI
                   </h3>
                   <p className="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed">
-                    The modern all-in-one web platform providing campus utilities, schedule updates,
-                    resource indexes, and student tooling.
+                    A terminal-based typing game and competition tool that lets users practise typing offline,
+                    compete in real-time online races, track performance with WPM and time statistics,
+                    request rematches, and compare online top-10 high scores.
                   </p>
 
                   <div className="flex flex-wrap gap-2 mt-4">
                     <span className="px-2.5 py-1 bg-canvas-cream border border-ink-black font-label-sm text-label-sm font-bold">
-                      Next.js
+                      Node.js
                     </span>
                     <span className="px-2.5 py-1 bg-canvas-cream border border-ink-black font-label-sm text-label-sm font-bold">
-                      PostgreSQL
+                      npm
                     </span>
                     <span className="px-2.5 py-1 bg-canvas-cream border border-ink-black font-label-sm text-label-sm font-bold">
-                      TypeScript
-                    </span>
-                    <span className="px-2.5 py-1 bg-canvas-cream border border-ink-black font-label-sm text-label-sm font-bold">
-                      Tailwind
+                      CLI Tool
                     </span>
                   </div>
                 </div>
 
-                {/* Mockup image slot */}
-                <div className="border-t-[3px] border-ink-black bg-surface-container p-4">
-                  <div className="border-2 border-ink-black shadow-[3px_3px_0px_#121212] overflow-hidden relative h-56 bg-surface-white">
-                    <Image
-                      src="/images/projects/campusflow-preview.jpg"
-                      alt="Campus utility interface preview"
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 55vw"
-                      className="object-cover object-top"
-                    />
+                {/* Terminal interface preview box */}
+                <div className="border-t-[3px] border-ink-black bg-ink-black p-5 text-surface-white font-mono">
+                  <div className="flex items-center gap-2 mb-3 pb-2 border-b border-surface-white/20">
+                    <span className="w-3 h-3 rounded-full bg-accent-coral inline-block" />
+                    <span className="w-3 h-3 rounded-full bg-secondary inline-block" />
+                    <span className="w-3 h-3 rounded-full bg-accent-mint inline-block" />
+                    <span className="text-[12px] text-surface-white/60 ml-2">typeracer-cli</span>
                   </div>
-                  <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
-                    <span className="font-body-sm text-body-sm text-on-surface-variant">
-                      Built by <strong className="text-ink-black">Student Contributors</strong>
+                  <div className="space-y-1 text-[13px]">
+                    <p className="text-accent-mint font-bold">$ npx typeracer-cli</p>
+                    <p className="text-surface-white/80 text-[12px]">&gt; Terminal-based typing and competition tool</p>
+                    <p className="text-surface-white/80 text-[12px]">&gt; Offline practice mode &amp; real-time online racing</p>
+                    <p className="text-surface-white/80 text-[12px]">&gt; Live WPM statistics, rematches &amp; top-10 high scores</p>
+                  </div>
+                  <div className="mt-4 pt-3 border-t border-surface-white/20 flex flex-wrap items-center justify-between gap-3 font-sans">
+                    <span className="font-body-sm text-body-sm text-surface-white/80">
+                      Organization: <strong className="text-surface-white">P-Society</strong>
                     </span>
-                    <div className="flex items-center gap-2">
-                      <a
-                        href={siteConfig.socials.github || "https://github.com/p-society"}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-3.5 py-1.5 bg-ink-black text-surface-white border-2 border-ink-black font-label-sm text-label-sm uppercase font-bold hover:bg-primary active:translate-x-0.5 active:translate-y-0.5 transition-all inline-block"
-                      >
-                        REPOSITORY
-                      </a>
-                    </div>
+                    <a
+                      href="https://github.com/p-society/typeracer-cli"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3.5 py-1.5 bg-secondary-container text-ink-black border-2 border-ink-black font-label-sm text-label-sm uppercase font-bold hover:bg-surface-white active:translate-x-0.5 active:translate-y-0.5 transition-all inline-flex items-center gap-1.5"
+                    >
+                      <span>GITHUB REPO</span>
+                      <span className="material-symbols-outlined text-[14px]">open_in_new</span>
+                    </a>
                   </div>
                 </div>
               </div>
 
               {/* PROJECT 2 & 3: STACKED (5 cols) */}
               <div className="lg:col-span-5 flex flex-col gap-8">
-                {/* PROJECT 2 */}
+                {/* PROJECT 2 - IIITBuzz */}
                 <div className="bg-surface-white border-[3px] border-ink-black shadow-[6px_6px_0px_#121212] p-6 flex flex-col justify-between">
                   <div>
                     <div className="flex items-center justify-between mb-3">
                       <span className="px-2.5 py-1 bg-secondary-container text-ink-black border border-ink-black font-label-sm text-label-sm uppercase font-bold shadow-[2px_2px_0px_#121212]">
-                        DEV TOOLING
+                        STUDENT FORUM
                       </span>
                       <span className="font-label-sm text-label-sm font-bold text-ink-black flex items-center gap-1">
-                        <span className="material-symbols-outlined text-[16px] text-secondary fill-1">
-                          star
+                        <span className="material-symbols-outlined text-[16px] text-primary">
+                          forum
                         </span>{" "}
-                        ACTIVE
+                        COMMUNITY
                       </span>
                     </div>
 
                     <h4 className="font-headline-sm text-headline-sm text-ink-black uppercase font-bold">
-                      Competitive Coding Utility
+                      IIITBuzz
                     </h4>
                     <p className="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
-                      A terminal tool that fetches competitive programming test cases, auto-compiles
-                      code snippets, and tests against tricky edge cases in milliseconds.
+                      A student-community and discussion platform for IIIT Bhubaneswar students to discuss
+                      topics, connect with batchmates, and seek advice.
                     </p>
 
                     <div className="flex flex-wrap gap-1.5 mt-3">
-                      <span className="px-2 py-0.5 bg-surface-container border border-ink-black font-label-sm text-label-sm font-medium">
-                        Rust
-                      </span>
-                      <span className="px-2 py-0.5 bg-surface-container border border-ink-black font-label-sm text-label-sm font-medium">
-                        CLI
-                      </span>
-                      <span className="px-2 py-0.5 bg-surface-container border border-ink-black font-label-sm text-label-sm font-medium">
-                        API Client
-                      </span>
+                      {[
+                        "TypeScript",
+                        "React Router",
+                        "Tailwind CSS",
+                        "shadcn/ui",
+                        "Fastify",
+                        "Node.js",
+                        "Drizzle ORM",
+                        "PostgreSQL",
+                        "Turborepo",
+                      ].map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2 py-0.5 bg-surface-container border border-ink-black font-label-sm text-label-sm font-medium"
+                        >
+                          {tech}
+                        </span>
+                      ))}
                     </div>
                   </div>
 
                   <div className="mt-6 pt-4 border-t-2 border-ink-black flex items-center justify-between">
                     <span className="font-body-sm text-body-sm text-on-surface-variant">
-                      Domain: <strong className="text-ink-black">Algorithms &amp; Systems</strong>
+                      Organization: <strong className="text-ink-black">P-Society</strong>
                     </span>
                     <a
-                      href={siteConfig.socials.github || "https://github.com/p-society"}
+                      href="https://github.com/p-society/iiitbuzz"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3.5 py-1 bg-surface-white border-2 border-ink-black font-label-sm text-label-sm uppercase font-bold hover:bg-accent-mint active:translate-x-0.5 active:translate-y-0.5 transition-all inline-block"
+                      className="px-3.5 py-1.5 bg-surface-white border-2 border-ink-black font-label-sm text-label-sm uppercase font-bold hover:bg-accent-mint active:translate-x-0.5 active:translate-y-0.5 transition-all inline-flex items-center gap-1"
                     >
-                      VIEW REPO
+                      <span>GITHUB REPO</span>
+                      <span className="material-symbols-outlined text-[14px]">open_in_new</span>
                     </a>
                   </div>
                 </div>
 
-                {/* PROJECT 3 */}
+                {/* PROJECT 3 - Chowkidaar */}
                 <div className="bg-surface-white border-[3px] border-ink-black shadow-[6px_6px_0px_#121212] p-6 flex flex-col justify-between">
                   <div>
                     <div className="flex items-center justify-between mb-3">
                       <span className="px-2.5 py-1 bg-tertiary-fixed text-ink-black border border-ink-black font-label-sm text-label-sm uppercase font-bold shadow-[2px_2px_0px_#121212]">
-                        ACADEMIC KNOWLEDGE
+                        DISCORD AUTOMATION
                       </span>
                       <span className="font-label-sm text-label-sm font-bold text-ink-black flex items-center gap-1">
-                        <span className="material-symbols-outlined text-[16px] text-secondary fill-1">
-                          star
+                        <span className="material-symbols-outlined text-[16px] text-accent-coral">
+                          smart_toy
                         </span>{" "}
-                        INDEXED
+                        BOT &amp; STREAKS
                       </span>
                     </div>
 
                     <h4 className="font-headline-sm text-headline-sm text-ink-black uppercase font-bold">
-                      Academic Knowledge Base
+                      Chowkidaar
                     </h4>
                     <p className="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
-                      Decentralized markdown repository with crowd-sourced notes, past year papers,
-                      lab solutions, and interactive algorithm flashcards.
+                      A Discord-based community automation and accountability tool for student activity tracking
+                      and community challenges including Days of Productivity, streak tracking, user profiles,
+                      badge rewards, Discord role allocation, and upcoming contest reminders for Codeforces, LeetCode, and CodeChef.
                     </p>
 
                     <div className="flex flex-wrap gap-1.5 mt-3">
-                      <span className="px-2 py-0.5 bg-surface-container border border-ink-black font-label-sm text-label-sm font-medium">
-                        Docs
-                      </span>
-                      <span className="px-2 py-0.5 bg-surface-container border border-ink-black font-label-sm text-label-sm font-medium">
-                        Markdown
-                      </span>
-                      <span className="px-2 py-0.5 bg-surface-container border border-ink-black font-label-sm text-label-sm font-medium">
-                        Search
-                      </span>
+                      {["Python", "discord.py", "PostgreSQL", "Docker"].map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2 py-0.5 bg-surface-container border border-ink-black font-label-sm text-label-sm font-medium"
+                        >
+                          {tech}
+                        </span>
+                      ))}
                     </div>
                   </div>
 
                   <div className="mt-6 pt-4 border-t-2 border-ink-black flex items-center justify-between">
                     <span className="font-body-sm text-body-sm text-on-surface-variant">
-                      Curated by <strong className="text-ink-black">Academic Guild</strong>
+                      Organization: <strong className="text-ink-black">P-Society</strong>
                     </span>
                     <a
-                      href={siteConfig.socials.github || "https://github.com/p-society"}
+                      href="https://github.com/p-society/chowkidaar"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3.5 py-1 bg-surface-white border-2 border-ink-black font-label-sm text-label-sm uppercase font-bold hover:bg-secondary-container active:translate-x-0.5 active:translate-y-0.5 transition-all inline-block"
+                      className="px-3.5 py-1.5 bg-surface-white border-2 border-ink-black font-label-sm text-label-sm uppercase font-bold hover:bg-secondary-container active:translate-x-0.5 active:translate-y-0.5 transition-all inline-flex items-center gap-1"
                     >
-                      BROWSE ARCHIVE
+                      <span>GITHUB REPO</span>
+                      <span className="material-symbols-outlined text-[14px]">open_in_new</span>
                     </a>
                   </div>
                 </div>

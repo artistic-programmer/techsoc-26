@@ -40,29 +40,55 @@ export const PersonAvatar: React.FC<{
 
 const MEMBER_PREVIEW = 9;
 
-const MemberList: React.FC<{ names: string[] }> = ({ names }) => {
+interface MemberListProps {
+  names?: string[];
+  members?: string[];
+  memberUrls?: Record<string, string>;
+}
+
+const MemberList: React.FC<MemberListProps> = ({ names, members, memberUrls }) => {
+  const list = members || names || [];
   const [expanded, setExpanded] = useState(false);
-  const shown = expanded ? names : names.slice(0, MEMBER_PREVIEW);
-  const hidden = names.length - shown.length;
+  const shown = expanded ? list : list.slice(0, MEMBER_PREVIEW);
+  const hidden = list.length - shown.length;
 
   return (
     <div>
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-2">
-        {shown.map((name) => (
-          <div
-            key={name}
-            className="flex items-center gap-2.5 px-2.5 py-2 bg-canvas-cream border-2 border-ink-black/80 rounded-lg"
-          >
-            <span className="w-8 h-8 flex-shrink-0 rounded-full bg-ink-black text-surface-white font-mono text-[11px] font-bold flex items-center justify-center">
-              {initialsOf(name)}
-            </span>
-            <span className="font-body-sm text-[13px] font-semibold text-ink-black leading-tight">
-              {name}
-            </span>
-          </div>
-        ))}
+        {shown.map((name) => {
+          const profileUrl =
+            memberUrls?.[name] ||
+            (name === "Anshu Kumar"
+              ? "https://www.linkedin.com/in/artistic-programmer/"
+              : undefined);
+
+          return (
+            <div
+              key={name}
+              className="flex items-center gap-2.5 px-2.5 py-2 bg-canvas-cream border-2 border-ink-black/80 rounded-lg"
+            >
+              <span className="w-8 h-8 flex-shrink-0 rounded-full bg-ink-black text-surface-white font-mono text-[11px] font-bold flex items-center justify-center">
+                {initialsOf(name)}
+              </span>
+              {profileUrl ? (
+                <a
+                  href={profileUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-body-sm text-[13px] font-semibold text-ink-black leading-tight hover:underline hover:text-primary transition-colors focus:outline-none focus-visible:outline-2 focus-visible:outline-ink-black focus-visible:outline-offset-2 focus-visible:underline rounded-xs"
+                >
+                  {name}
+                </a>
+              ) : (
+                <span className="font-body-sm text-[13px] font-semibold text-ink-black leading-tight">
+                  {name}
+                </span>
+              )}
+            </div>
+          );
+        })}
       </div>
-      {names.length > MEMBER_PREVIEW && (
+      {list.length > MEMBER_PREVIEW && (
         <button
           type="button"
           onClick={() => setExpanded((v) => !v)}
@@ -150,7 +176,10 @@ const DomainPanel: React.FC<{ team: DomainTeam }> = ({ team }) => {
             <span className="font-label-sm text-[11px] uppercase text-on-surface-variant font-bold tracking-widest block mb-3">
               Members
             </span>
-            <MemberList names={team.members!} />
+            <MemberList
+              names={team.members!}
+              memberUrls={team.memberUrls || team.memberProfileUrls}
+            />
           </div>
         )}
       </div>

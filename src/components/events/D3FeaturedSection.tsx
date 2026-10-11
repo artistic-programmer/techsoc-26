@@ -79,7 +79,7 @@ export const D3FeaturedSection: React.FC = () => {
             </span>
             <span className="px-3.5 py-1 bg-secondary-container text-ink-black font-label-md text-label-sm sm:text-label-md uppercase tracking-wider rounded-full shadow-[2px_2px_0px_#121212] border border-ink-black font-extrabold flex items-center gap-1.5">
               <span className="material-symbols-outlined text-[16px]">groups</span>
-              TECHSOC × ARS
+              TECHSOC × TARS
             </span>
           </div>
           <div className="flex items-center gap-2">
@@ -98,9 +98,20 @@ export const D3FeaturedSection: React.FC = () => {
               <span className="font-label-md text-label-sm sm:text-label-md uppercase tracking-widest text-primary font-extrabold block mb-2">
                 ANNUAL FLAGSHIP TECHNOTFEST // {d3FlagshipEvent.theme}
               </span>
-              <h2 className="font-display-xl text-[38px] sm:text-[54px] lg:text-[64px] tracking-tight uppercase leading-[0.95] text-ink-black font-black">
-                {d3FlagshipEvent.title}
-              </h2>
+              <div className="flex items-center gap-3.5 sm:gap-4 mb-2">
+                <div className="relative w-12 h-12 sm:w-16 sm:h-16 flex-shrink-0 bg-ink-black border-2 border-ink-black rounded-lg overflow-hidden shadow-[3px_3px_0px_#121212]">
+                  <Image
+                    src="/images/events/d3-fest-logo.png"
+                    alt="D³ Fest Logo"
+                    fill
+                    sizes="64px"
+                    className="object-contain p-1"
+                  />
+                </div>
+                <h2 className="font-display-xl text-[34px] sm:text-[50px] lg:text-[60px] tracking-tight uppercase leading-[0.95] text-ink-black font-black">
+                  {d3FlagshipEvent.title}
+                </h2>
+              </div>
               <p className="font-body-lg text-body-md sm:text-body-lg text-on-surface-variant mt-4 max-w-xl leading-relaxed font-medium">
                 {d3FlagshipEvent.description}
               </p>
@@ -140,7 +151,7 @@ export const D3FeaturedSection: React.FC = () => {
                   17 ARENAS
                 </span>
                 <span className="text-[11px] text-on-surface-variant block leading-tight font-medium">
-                  TechSoc &amp; ARS Tracks
+                  TechSoc &amp; TARS Tracks
                 </span>
               </div>
             </div>
@@ -178,17 +189,19 @@ export const D3FeaturedSection: React.FC = () => {
 
           {/* Right Column: Visual Poster Card & Highlights */}
           <div className="lg:col-span-5 flex flex-col gap-4">
-            <div className="relative rounded-2xl overflow-hidden shadow-[6px_6px_0px_#121212] border-2 border-ink-black aspect-[4/3] bg-surface-container">
-              <Image
-                src="/images/events/enigma-live.jpg"
-                alt="D³ Technotfest at IIIT Bhubaneswar"
-                fill
-                sizes="(max-width: 1024px) 100vw, 40vw"
-                className="object-cover"
-                priority
-              />
-              <div className="absolute top-3 right-3 bg-ink-black text-secondary-container px-3 py-1 font-label-sm text-label-sm uppercase tracking-wider rounded shadow-[2px_2px_0px_#121212] font-bold">
-                CAMPUS ARENA
+            <div className="relative rounded-2xl overflow-hidden shadow-[6px_6px_0px_#121212] border-2 border-ink-black aspect-[4/3] bg-ink-black flex items-center justify-center p-4">
+              <div className="relative w-full h-full">
+                <Image
+                  src="/images/events/d3-fest-logo.png"
+                  alt="Official D³ Fest IIIT Bhubaneswar Logo"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              <div className="absolute top-3 right-3 bg-secondary-container text-ink-black px-3 py-1 font-label-sm text-label-sm uppercase tracking-wider rounded shadow-[2px_2px_0px_#121212] border border-ink-black font-extrabold">
+                OFFICIAL D³ LOGO
               </div>
               <div className="absolute bottom-3 left-3 right-3 bg-surface-white/95 backdrop-blur-sm p-3 rounded-lg shadow-[3px_3px_0px_#121212] border border-ink-black flex items-center justify-between">
                 <div>
@@ -212,7 +225,7 @@ export const D3FeaturedSection: React.FC = () => {
                   ORGANIZED JOINTLY BY
                 </span>
                 <span className="font-label-lg text-label-md uppercase text-ink-black font-extrabold">
-                  TechSoc × Automation &amp; Robotics Society (ARS)
+                  TechSoc × The Automation and Robotics Society (TARS)
                 </span>
               </div>
               <span className="material-symbols-outlined text-[24px] text-ink-black">

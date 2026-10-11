@@ -185,16 +185,18 @@ export const EventsDirectory: React.FC = () => {
 
               {/* Right: Photo Visual & Partner Badges */}
               <div className="lg:col-span-5 flex flex-col gap-4">
-                <div className="relative rounded-xl overflow-hidden shadow-[6px_6px_0px_#121212] border-2 border-ink-black aspect-[4/3] bg-surface-container">
-                  <Image
-                    src="/images/events/enigma-live.jpg"
-                    alt="D³ Technotfest at IIIT Bhubaneswar"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 40vw"
-                    className="object-cover"
-                  />
-                  <div className="absolute top-3 right-3 bg-ink-black text-secondary-container px-3 py-1 font-label-sm text-label-sm uppercase tracking-wider rounded shadow-[2px_2px_0px_#121212] font-bold">
-                    CAMPUS ARENA
+                <div className="relative rounded-xl overflow-hidden shadow-[6px_6px_0px_#121212] border-2 border-ink-black aspect-[4/3] bg-ink-black flex items-center justify-center p-4">
+                  <div className="relative w-full h-full">
+                    <Image
+                      src="/images/events/d3-fest-logo.png"
+                      alt="Official D³ Fest IIIT Bhubaneswar Logo"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                      className="object-contain"
+                    />
+                  </div>
+                  <div className="absolute top-3 right-3 bg-secondary-container text-ink-black px-3 py-1 font-label-sm text-label-sm uppercase tracking-wider rounded shadow-[2px_2px_0px_#121212] border border-ink-black font-extrabold">
+                    D³ FEST LOGO
                   </div>
                   <div className="absolute bottom-3 left-3 right-3 bg-surface-white/95 backdrop-blur p-3 rounded-lg shadow-[3px_3px_0px_#121212] border border-ink-black flex items-center justify-between">
                     <div>
@@ -217,7 +219,7 @@ export const EventsDirectory: React.FC = () => {
                     ORGANIZED BY
                   </span>
                   <div className="flex items-center gap-2 font-label-sm text-label-sm uppercase text-ink-black font-bold">
-                    <span>TECHSOC × ARS</span>
+                    <span>TECHSOC × TARS</span>
                   </div>
                 </div>
               </div>

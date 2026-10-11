@@ -113,6 +113,8 @@ export interface DomainTeam {
   badgeBg: string;
   leads: RosterMember[];
   members?: string[];
+  memberUrls?: Record<string, string>;
+  memberProfileUrls?: Record<string, string>;
   roadmapUrl?: string;
   stack?: string[];
   wing?: "dev" | "ai" | "design";
@@ -159,7 +161,10 @@ export const domainTeams: DomainTeam[] = [
     stack: ["Flutter", "Kotlin", "Jetpack Compose", "Android SDK"],
     wing: "dev",
     leads: [{ name: "Kumar Sundaram", image: "/images/team/appdev.jpg" }],
-    members: ["Likhith Kumar S", "Pawan Sharma", "Anshu Kumar", "Aman Deep Pandit"],
+    members: ["Anshu Kumar", "Likhith Kumar S", "Pawan Sharma", "Aman Deep Pandit"],
+    memberUrls: {
+      "Anshu Kumar": "https://www.linkedin.com/in/artistic-programmer/",
+    },
   },
   {
     id: "web-dev",
@@ -176,6 +181,7 @@ export const domainTeams: DomainTeam[] = [
       { name: "Sambhu Prasad", image: "/images/team/sambhu.png" },
     ],
     members: [
+      "Anshu Kumar",
       "Ajit Kumar Panigrahi",
       "Garvit Pahuja",
       "G. Deewakar Rao",
@@ -186,6 +192,9 @@ export const domainTeams: DomainTeam[] = [
       "Satyam Subham Mohanty",
       "Pratyush Kumar Sio",
     ],
+    memberUrls: {
+      "Anshu Kumar": "https://www.linkedin.com/in/artistic-programmer/",
+    },
   },
   {
     id: "blockchain",
@@ -215,6 +224,7 @@ export const domainTeams: DomainTeam[] = [
       { name: "Alok Triphaty", image: "/images/team/ai.png", position: "75% 52%" },
     ],
     members: [
+      "Anshu Kumar",
       "Babar Mohiudin Mir",
       "Aditya Narayan",
       "Preetika Mishra",
@@ -232,6 +242,9 @@ export const domainTeams: DomainTeam[] = [
       "Ojas Raj",
       "Ayushman Dash",
     ],
+    memberUrls: {
+      "Anshu Kumar": "https://www.linkedin.com/in/artistic-programmer/",
+    },
   },
   {
     id: "cp",

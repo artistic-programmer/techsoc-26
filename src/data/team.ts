@@ -97,6 +97,8 @@ export interface RosterMember {
   name: string;
   image?: string;
   position?: string;
+  linkedin?: string;
+  email?: string;
 }
 
 export interface ExecutiveRole {
@@ -130,21 +132,21 @@ export const facultyMentors: RosterMember[] = [
 export const executiveBoard: ExecutiveRole[] = [
   {
     role: "Secretary",
-    members: [{ name: "Spandan Hota", image: "/images/team/spandan.jpg" }],
+    members: [{ name: "Spandan Hota", image: "/images/team/spandan.jpg", linkedin: "https://www.linkedin.com/in/spandan-hota" }],
   },
   {
     role: "Joint Secretary",
     members: [
-      { name: "Aman Raj", image: "/images/team/aman.jpeg" },
-      { name: "Tirtha Desai", image: "/images/team/tirtha.jpg" },
+      { name: "Aman Raj", image: "/images/team/aman.jpeg", linkedin: "https://www.linkedin.com/in/aman-raj-xd", email: "b124011@iiit-bh.ac.in" },
+      { name: "Tirtha Desai", image: "/images/team/tirtha.jpg", linkedin: "https://www.linkedin.com/in/tirtha-desai-a16347321" },
     ],
   },
 ];
 
 export const gdgLeads: LabeledMember[] = [
   { name: "Hari Kishore", label: "Final Year Lead", image: "/images/team/hari.png" },
-  { name: "Aman Raj", label: "Pre-Final Year Lead", image: "/images/team/aman.jpeg" },
-  { name: "Pavitra Singh", label: "Pre-Final Year Lead", image: "/images/team/pavitra.jpg" },
+  { name: "Aman Raj", label: "Pre-Final Year Lead", image: "/images/team/aman.jpeg", linkedin: "https://www.linkedin.com/in/aman-raj-xd", email: "b124011@iiit-bh.ac.in" },
+  { name: "Pavitra Singh", label: "Pre-Final Year Lead", image: "/images/team/pavitra.jpg", linkedin: "https://www.linkedin.com/in/pavitra04" },
 ];
 
 export const domainTeams: DomainTeam[] = [
@@ -158,7 +160,7 @@ export const domainTeams: DomainTeam[] = [
     roadmapUrl: "https://roadmap.sh/android",
     stack: ["Flutter", "Kotlin", "Jetpack Compose", "Android SDK"],
     wing: "dev",
-    leads: [{ name: "Kumar Sundaram", image: "/images/team/appdev.jpg" }],
+    leads: [{ name: "Kumar Sundaram", image: "/images/team/appdev.jpg", linkedin: "https://www.linkedin.com/in/sundram-kumar-710710329" }],
     members: ["Likhith Kumar S", "Pawan Sharma", "Anshu Kumar", "Aman Deep Pandit"],
   },
   {
@@ -172,8 +174,8 @@ export const domainTeams: DomainTeam[] = [
     stack: ["Next.js", "React 19", "TypeScript", "Tailwind", "Node.js"],
     wing: "dev",
     leads: [
-      { name: "Md Tanim Islam", image: "/images/team/tanim.png", position: "50% 20%" },
-      { name: "Sambhu Prasad", image: "/images/team/sambhu.png" },
+      { name: "Md Tanim Islam", image: "/images/team/tanim.png", position: "50% 20%", linkedin: "https://www.linkedin.com/in/tanim10" },
+      { name: "Sambhu Prasad", image: "/images/team/sambhu.png", linkedin: "https://www.linkedin.com/in/sambhu-prasad-verma" },
     ],
     members: [
       "Ajit Kumar Panigrahi",
@@ -197,7 +199,7 @@ export const domainTeams: DomainTeam[] = [
     roadmapUrl: "https://roadmap.sh/blockchain",
     stack: ["Solidity", "EVM", "Ethers.js", "Hardhat"],
     wing: "dev",
-    leads: [{ name: "Subham Saraf", image: "/images/team/blockchain.jpg" }],
+    leads: [{ name: "Subham Saraf", image: "/images/team/blockchain.jpg", linkedin: "https://www.linkedin.com/in/shubham-saraf-396a72332" }],
     members: ["Swastika Biswal"],
   },
   {
@@ -211,8 +213,8 @@ export const domainTeams: DomainTeam[] = [
     stack: ["PyTorch", "HuggingFace", "Python", "OpenCV", "LangChain"],
     wing: "ai",
     leads: [
-      { name: "Shreyas", image: "/images/team/shreyas.jpg" },
-      { name: "Alok Triphaty", image: "/images/team/ai.png", position: "75% 52%" },
+      { name: "Shreyas", image: "/images/team/shreyas.jpg", linkedin: "https://www.linkedin.com/in/shreyas-changder" },
+      { name: "Alok Triphaty", image: "/images/team/ai.png", position: "75% 52%", linkedin: "https://www.linkedin.com/in/alok-ranjan-tripathy-833678336" },
     ],
     members: [
       "Babar Mohiudin Mir",
@@ -244,8 +246,8 @@ export const domainTeams: DomainTeam[] = [
     stack: ["C++20 (STL)", "Codeforces", "AtCoder", "Algorithms"],
     wing: "design",
     leads: [
-      { name: "Yug", image: "/images/team/yug.jpg" },
-      { name: "Chandra Shekhar", image: "/images/team/sekhar.jpg" },
+      { name: "Yug", image: "/images/team/yug.jpg", linkedin: "https://www.linkedin.com/in/yugagarwal005" },
+      { name: "Chandra Shekhar", image: "/images/team/sekhar.jpg", linkedin: "https://www.linkedin.com/in/linktosekhar" },
     ],
     members: [
       "Shubranshu Kumar Mishra",
@@ -268,7 +270,7 @@ export const domainTeams: DomainTeam[] = [
     roadmapUrl: "https://roadmap.sh/cyber-security",
     stack: ["Burp Suite", "Ghidra", "Wireshark", "GDB/Pwn", "Cryptography"],
     wing: "ai",
-    leads: [{ name: "Ankush", image: "/images/team/infosec.jpg" }],
+    leads: [{ name: "Ankush", image: "/images/team/infosec.jpg", linkedin: "https://www.linkedin.com/in/ankush-kumar-mohapatra-a393b428a" }],
     members: [
       "Mohd Arhaan Siddiqui",
       "Devank Joshi",
@@ -304,8 +306,8 @@ export const domainTeams: DomainTeam[] = [
     stack: ["Logistics", "Operations", "Event Coordination"],
     wing: "design",
     leads: [
-      { name: "Samikshya", image: "/images/team/samikshya.jpg" },
-      { name: "Viraj", image: "/images/team/viraj.png" },
+      { name: "Samikshya", image: "/images/team/samikshya.jpg", linkedin: "https://www.linkedin.com/in/samikshya-purohit-911a59348" },
+      { name: "Viraj", image: "/images/team/viraj.png", linkedin: "https://www.linkedin.com/in/viraj-shukla-4286ba3ba" },
     ],
   },
   {
@@ -318,15 +320,15 @@ export const domainTeams: DomainTeam[] = [
     stack: ["Branding", "Content Strategy", "Digital Outreach"],
     wing: "design",
     leads: [
-      { name: "Binimesha", image: "/images/team/binimesha.jpg" },
-      { name: "Pavitra Singh", image: "/images/team/pavitra.jpg" },
+      { name: "Binimesha", image: "/images/team/binimesha.jpg", linkedin: "https://www.linkedin.com/in/binimesha-naisargika-26b176291" },
+      { name: "Pavitra Singh", image: "/images/team/pavitra.jpg", linkedin: "https://www.linkedin.com/in/pavitra04" },
     ],
   },
 ];
 
 export const psocLeads: RosterMember[] = [
-  { name: "Hrushikesh Kar", image: "/images/team/psoc.jpg" },
-  { name: "Md Tanim Islam", image: "/images/team/tanim.png", position: "50% 20%" },
+  { name: "Hrushikesh Kar", image: "/images/team/psoc.jpg", linkedin: "https://www.linkedin.com/in/hrusikesh-kar-850963166" },
+  { name: "Md Tanim Islam", image: "/images/team/tanim.png", position: "50% 20%", linkedin: "https://www.linkedin.com/in/tanim10" },
 ];
 
 /** Unique head-count across every group on the team page. */

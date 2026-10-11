@@ -12,6 +12,7 @@ import {
 import { gdgLeads } from "@/data/team";
 import { siteConfig } from "@/data/siteConfig";
 import { Icon } from "@/components/ui/Icon";
+import { ProfileLinks } from "@/components/team/ProfileLinks";
 
 const GDG_CHAPTER_URL =
   "https://gdg.community.dev/gdg-on-campus-international-institute-of-information-technology-bhubaneswar-india/";
@@ -332,6 +333,7 @@ export default function CommunityPage() {
                         <span className="inline-block mt-1.5 px-2 py-0.5 bg-secondary-container font-label-sm text-[10px] uppercase font-bold rounded border border-ink-black">
                           {lead.label}
                         </span>
+                        <ProfileLinks member={lead} className="mt-2" />
                       </div>
                     </div>
                   ))}

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { domainTeams, DomainTeam, RosterMember } from "@/data/team";
 import { Icon } from "@/components/ui/Icon";
+import { ProfileLinks } from "@/components/team/ProfileLinks";
 
 const initialsOf = (name: string) =>
   name
@@ -138,6 +139,7 @@ const DomainPanel: React.FC<{ team: DomainTeam }> = ({ team }) => {
                 <span className="inline-block mt-1 px-2 py-0.5 bg-secondary-container font-label-sm text-[10px] uppercase font-bold rounded border border-ink-black">
                   {team.domain} Lead
                 </span>
+                <ProfileLinks member={lead} className="mt-2" />
               </div>
             ))}
           </div>

@@ -18,10 +18,13 @@ export const ContactForm: React.FC<ContactFormProps> = ({
     category: categories[0] || "General Enquiry",
     subject: "",
     message: "",
+    website: "", // honeypot
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState("");
 
   const validate = () => {
     const errs: Record<string, string> = {};
@@ -36,10 +39,29 @@ export const ContactForm: React.FC<ContactFormProps> = ({
     return Object.keys(errs).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (validate()) {
+    if (sending || !validate()) return;
+
+    setSending(true);
+    setSendError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(data.error || "Something went wrong. Please try again.");
+      }
       setSubmitted(true);
+    } catch (err) {
+      setSendError(
+        err instanceof Error ? err.message : "Something went wrong. Please try again.",
+      );
+    } finally {
+      setSending(false);
     }
   };
 
@@ -50,8 +72,10 @@ export const ContactForm: React.FC<ContactFormProps> = ({
       category: categories[0] || "General Enquiry",
       subject: "",
       message: "",
+      website: "",
     });
     setErrors({});
+    setSendError("");
     setSubmitted(false);
   };
 
@@ -108,6 +132,18 @@ export const ContactForm: React.FC<ContactFormProps> = ({
         </div>
       ) : (
         <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
+          {/* Honeypot (hidden from humans, catches bots) */}
+          <input
+            type="text"
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            value={formData.website}
+            onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+            className="hidden"
+          />
+
           {/* Full Name & Email Row */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="flex flex-col gap-1.5">
@@ -235,17 +271,28 @@ export const ContactForm: React.FC<ContactFormProps> = ({
             )}
           </div>
 
+          {sendError && (
+            <div
+              role="alert"
+              className="p-3 bg-accent-coral/15 border-2 border-ink-black rounded font-label-sm text-label-sm text-ink-black font-bold flex items-center gap-2"
+            >
+              <span className="material-symbols-outlined text-[18px] text-accent-coral">error</span>
+              {sendError}
+            </div>
+          )}
+
           {/* Submit Button & Encryption Notice */}
           <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <button
               type="submit"
-              className="w-full sm:w-auto px-8 py-4 bg-secondary-container text-ink-black font-label-lg text-label-lg uppercase tracking-wider font-extrabold border-[3px] border-ink-black shadow-[4px_4px_0px_#121212] hover:shadow-[6px_6px_0px_#121212] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all rounded cursor-pointer"
+              disabled={sending}
+              className="disabled:opacity-60 disabled:cursor-wait disabled:pointer-events-none w-full sm:w-auto px-8 py-4 bg-secondary-container text-ink-black font-label-lg text-label-lg uppercase tracking-wider font-extrabold border-[3px] border-ink-black shadow-[4px_4px_0px_#121212] hover:shadow-[6px_6px_0px_#121212] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all rounded cursor-pointer"
             >
-              [ SEND MESSAGE → ]
+              {sending ? "[ SENDING… ]" : "[ SEND MESSAGE → ]"}
             </button>
             <div className="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-[12px] font-bold">
               <span className="material-symbols-outlined text-[16px] text-ink-black">lock</span>
-              <span>Encrypted directly to TechSoc inbox</span>
+              <span>Delivered directly to TechSoc inbox</span>
             </div>
           </div>
         </form>

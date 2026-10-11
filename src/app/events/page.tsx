@@ -5,10 +5,10 @@ import {
   Navbar,
   Footer,
   MarqueeTicker,
-  EventsDirectory,
   KnowledgeVault,
   D3FeaturedSection,
 } from "@/components";
+import { communityRepositories } from "@/data/projects";
 
 export const metadata: Metadata = {
   title: "Events & Hackathons | Tech Society IIIT Bhubaneswar",
@@ -87,17 +87,12 @@ export default function EventsPage() {
           </div>
         </section>
 
-        {/* SECTION 1: Flagship Featured Event: D³ TECHNOTFEST 2026 */}
+        {/* SECTION 1: Flagship Featured Event: D³ TECHNO FEST 2026 */}
         <section className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 pb-16">
           <D3FeaturedSection />
         </section>
 
-        {/* SECTION 2: Upcoming Sessions & Competitions (Interactive Directory) */}
-        <section className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-          <EventsDirectory />
-        </section>
-
-        {/* SECTION 3: Hackathon Arena */}
+        {/* SECTION 2: Hackathon Arena */}
         <section className="w-full bg-secondary-container border-y-[3px] border-ink-black py-16">
           <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
             {/* Section Header */}
@@ -121,168 +116,133 @@ export default function EventsPage() {
 
             {/* Stat Blocks */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-12">
-              <div className="p-6 bg-surface-white rounded-xl shadow-[6px_6px_0px_#121212] border-2 border-ink-black">
-                <span className="font-display-xl text-display-xl text-ink-black block leading-none font-bold">
-                  CAMPUS
-                </span>
-                <span className="font-label-lg text-label-lg text-on-surface-variant uppercase mt-2 block font-bold">
-                  HACKATHON PARTICIPANTS
-                </span>
-                <p className="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+              <div className="p-6 bg-surface-white rounded-xl shadow-[6px_6px_0px_#121212] border-2 border-ink-black min-w-0 flex flex-col justify-between">
+                <div>
+                  <span className="font-display-xl text-[28px] sm:text-[32px] lg:text-[26px] xl:text-[30px] text-ink-black block leading-none font-black tracking-tight break-words min-w-0">
+                    CAMPUS
+                  </span>
+                  <span className="font-label-lg text-label-sm sm:text-label-md xl:text-label-lg text-on-surface-variant uppercase mt-2.5 block font-bold leading-tight min-w-0">
+                    HACKATHON PARTICIPANTS
+                  </span>
+                </div>
+                <p className="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed min-w-0">
                   Students and builders across campus cohorts.
                 </p>
               </div>
 
-              <div className="p-6 bg-surface-white rounded-xl shadow-[6px_6px_0px_#121212] border-2 border-ink-black">
-                <span className="font-display-xl text-display-xl text-accent-coral block leading-none font-bold">
-                  COMMUNITY
-                </span>
-                <span className="font-label-lg text-label-lg text-on-surface-variant uppercase mt-2 block font-bold">
-                  PRIZES &amp; RECOGNITION
-                </span>
-                <p className="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+              <div className="p-6 bg-surface-white rounded-xl shadow-[6px_6px_0px_#121212] border-2 border-ink-black min-w-0 flex flex-col justify-between">
+                <div>
+                  <span className="font-display-xl text-[28px] sm:text-[32px] lg:text-[26px] xl:text-[30px] text-accent-coral block leading-none font-black tracking-tight break-words min-w-0">
+                    COMMUNITY
+                  </span>
+                  <span className="font-label-lg text-label-sm sm:text-label-md xl:text-label-lg text-on-surface-variant uppercase mt-2.5 block font-bold leading-tight min-w-0">
+                    PRIZES &amp; RECOGNITION
+                  </span>
+                </div>
+                <p className="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed min-w-0">
                   Certificates, project support, and winner awards.
                 </p>
               </div>
 
-              <div className="p-6 bg-surface-white rounded-xl shadow-[6px_6px_0px_#121212] border-2 border-ink-black">
-                <span className="font-display-xl text-display-xl text-primary block leading-none font-bold">
-                  OPEN
-                </span>
-                <span className="font-label-lg text-label-lg text-on-surface-variant uppercase mt-2 block font-bold">
-                  SOURCE REPOSITORIES
-                </span>
-                <p className="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+              <div className="p-6 bg-surface-white rounded-xl shadow-[6px_6px_0px_#121212] border-2 border-ink-black min-w-0 flex flex-col justify-between">
+                <div>
+                  <span className="font-display-xl text-[28px] sm:text-[32px] lg:text-[26px] xl:text-[30px] text-primary block leading-none font-black tracking-tight break-words min-w-0">
+                    OPEN
+                  </span>
+                  <span className="font-label-lg text-label-lg text-on-surface-variant uppercase mt-2.5 block font-bold leading-tight min-w-0">
+                    SOURCE REPOSITORIES
+                  </span>
+                </div>
+                <p className="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed min-w-0">
                   Projects published under open-source licenses.
                 </p>
               </div>
 
-              <div className="p-6 bg-surface-white rounded-xl shadow-[6px_6px_0px_#121212] border-2 border-ink-black">
-                <span className="font-display-xl text-display-xl text-accent-mint block leading-none font-bold">
-                  ACTIVE
-                </span>
-                <span className="font-label-lg text-label-lg text-on-surface-variant uppercase mt-2 block font-bold">
-                  MENTORS &amp; REVIEWERS
-                </span>
-                <p className="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+              <div className="p-6 bg-surface-white rounded-xl shadow-[6px_6px_0px_#121212] border-2 border-ink-black min-w-0 flex flex-col justify-between">
+                <div>
+                  <span className="font-display-xl text-[28px] sm:text-[32px] lg:text-[26px] xl:text-[30px] text-accent-mint block leading-none font-black tracking-tight break-words min-w-0">
+                    ACTIVE
+                  </span>
+                  <span className="font-label-lg text-label-lg text-on-surface-variant uppercase mt-2.5 block font-bold leading-tight min-w-0">
+                    MENTORS &amp; REVIEWERS
+                  </span>
+                </div>
+                <p className="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed min-w-0">
                   Experienced peers and mentors guiding builds.
                 </p>
               </div>
             </div>
 
-            {/* Winning Past Projects Showcase */}
-            <div className="flex items-center gap-3 pb-6">
-              <span className="material-symbols-outlined text-[24px] text-ink-black">trophy</span>
-              <h3 className="font-headline-md text-headline-md text-ink-black uppercase font-bold">
-                CAMPUS HACKATHON REPOSITORY ARCHIVE
-              </h3>
+            {/* TechSoc Open Source Repositories Showcase */}
+            <div className="pb-6">
+              <div className="flex items-center gap-3">
+                <span className="material-symbols-outlined text-[24px] text-ink-black">terminal</span>
+                <h3 className="font-headline-md text-headline-md text-ink-black uppercase font-bold">
+                  TECHSOC OPEN SOURCE REPOSITORIES
+                </h3>
+              </div>
+              <p className="font-body-md text-body-md text-ink-black max-w-2xl mt-1.5 font-medium leading-relaxed">
+                Projects built by the TechSoc community — explore the code, discover ideas, and contribute to tools created for students and developers.
+              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Project 1 */}
-              <div className="bg-surface-white p-5 rounded-xl shadow-[6px_6px_0px_#121212] border-2 border-ink-black flex flex-col justify-between">
-                <div className="flex flex-col gap-3">
-                  <div className="flex items-center justify-between">
-                    <span className="px-2.5 py-0.5 bg-secondary-container rounded font-label-sm text-label-sm uppercase font-bold border border-ink-black">
-                      1ST PRIZE
-                    </span>
-                    <span className="font-label-sm text-label-sm text-on-surface-variant font-bold">
-                      STUDENT TEAM
-                    </span>
-                  </div>
-                  <h4 className="font-headline-sm text-headline-sm text-ink-black uppercase font-bold">
-                    Mesh Network Utility
-                  </h4>
-                  <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-                    Off-grid peer-to-peer communication network using low-power radios and
-                    packet relays for emergency response.
-                  </p>
-                </div>
-                <div className="flex items-center justify-between pt-4 mt-2 border-t border-ink-black/15">
-                  <span className="font-label-sm text-label-sm uppercase text-on-surface-variant font-bold">
-                    TRACK: HARDWARE / IOT
-                  </span>
-                  <a
-                    href="https://github.com/p-society"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-label-md text-label-md uppercase text-primary font-bold hover:underline flex items-center gap-0.5"
-                  >
-                    [ DEMO REPO ]{" "}
-                    <span className="material-symbols-outlined text-[16px]">arrow_outward</span>
-                  </a>
-                </div>
-              </div>
+              {communityRepositories.map((repo) => (
+                <div
+                  key={repo.id}
+                  className="bg-surface-white p-5 rounded-xl shadow-[6px_6px_0px_#121212] border-2 border-ink-black flex flex-col justify-between hover:-translate-y-0.5 hover:shadow-[8px_8px_0px_#121212] transition-all"
+                >
+                  <div className="flex flex-col gap-3">
+                    <div className="flex items-center justify-between">
+                      <span className="px-2.5 py-0.5 bg-secondary-container text-ink-black rounded font-label-sm text-label-sm uppercase font-bold border border-ink-black">
+                        {repo.category}
+                      </span>
+                      <span className="font-mono text-label-sm text-on-surface-variant font-bold flex items-center gap-1">
+                        <span className="material-symbols-outlined text-[15px]">folder</span>
+                        p-society
+                      </span>
+                    </div>
 
-              {/* Project 2 */}
-              <div className="bg-surface-white p-5 rounded-xl shadow-[6px_6px_0px_#121212] border-2 border-ink-black flex flex-col justify-between">
-                <div className="flex flex-col gap-3">
-                  <div className="flex items-center justify-between">
-                    <span className="px-2.5 py-0.5 bg-accent-mint text-ink-black rounded font-label-sm text-label-sm uppercase font-bold border border-ink-black">
-                      RUNNER UP
-                    </span>
-                    <span className="font-label-sm text-label-sm text-on-surface-variant font-bold">
-                      STUDENT TEAM
-                    </span>
-                  </div>
-                  <h4 className="font-headline-sm text-headline-sm text-ink-black uppercase font-bold">
-                    Edge Vision Diagnostic Tool
-                  </h4>
-                  <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-                    Screening mobile application utilizing lightweight edge
-                    vision models for diagnostic assistance.
-                  </p>
-                </div>
-                <div className="flex items-center justify-between pt-4 mt-2 border-t border-ink-black/15">
-                  <span className="font-label-sm text-label-sm uppercase text-on-surface-variant font-bold">
-                    TRACK: HEALTHTECH
-                  </span>
-                  <a
-                    href="https://github.com/p-society"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-label-md text-label-md uppercase text-primary font-bold hover:underline flex items-center gap-0.5"
-                  >
-                    [ PROJECT OVERVIEW ]{" "}
-                    <span className="material-symbols-outlined text-[16px]">arrow_outward</span>
-                  </a>
-                </div>
-              </div>
+                    <h4 className="font-headline-sm text-headline-sm text-ink-black uppercase font-bold">
+                      {repo.name}
+                    </h4>
 
-              {/* Project 3 */}
-              <div className="bg-surface-white p-5 rounded-xl shadow-[6px_6px_0px_#121212] border-2 border-ink-black flex flex-col justify-between">
-                <div className="flex flex-col gap-3">
-                  <div className="flex items-center justify-between">
-                    <span className="px-2.5 py-0.5 bg-primary text-surface-white rounded font-label-sm text-label-sm uppercase font-bold border border-ink-black">
-                      CATEGORY WINNER
-                    </span>
-                    <span className="font-label-sm text-label-sm text-on-surface-variant font-bold">
-                      STUDENT TEAM
-                    </span>
+                    <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                      {repo.description}
+                    </p>
+
+                    {/* Compact Technology Stack */}
+                    {repo.technologies && repo.technologies.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5 pt-1">
+                        {repo.technologies.map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-2 py-0.5 bg-surface-container font-mono text-[11px] text-ink-black border border-ink-black/40 rounded font-medium"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                  <h4 className="font-headline-sm text-headline-sm text-ink-black uppercase font-bold">
-                    Credential Verification Prototype
-                  </h4>
-                  <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-                    Cryptographic credential verification framework for academic records
-                    preserving student privacy and identity metadata.
-                  </p>
+
+                  <div className="flex items-center justify-between pt-4 mt-4 border-t border-ink-black/15">
+                    <span className="font-label-sm text-label-sm uppercase text-on-surface-variant font-bold flex items-center gap-1">
+                      <span className="material-symbols-outlined text-[16px] text-ink-black">code</span>
+                      OPEN SOURCE
+                    </span>
+                    <a
+                      href={repo.repository}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-label-md text-label-md uppercase text-primary font-bold hover:underline flex items-center gap-0.5"
+                    >
+                      [ GITHUB REPO ]{" "}
+                      <span className="material-symbols-outlined text-[16px]">arrow_outward</span>
+                    </a>
+                  </div>
                 </div>
-                <div className="flex items-center justify-between pt-4 mt-2 border-t border-ink-black/15">
-                  <span className="font-label-sm text-label-sm uppercase text-on-surface-variant font-bold">
-                    TRACK: CRYPTOGRAPHY
-                  </span>
-                  <a
-                    href="https://github.com/p-society"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-label-md text-label-md uppercase text-primary font-bold hover:underline flex items-center gap-0.5"
-                  >
-                    [ REPOSITORY ]{" "}
-                    <span className="material-symbols-outlined text-[16px]">arrow_outward</span>
-                  </a>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>

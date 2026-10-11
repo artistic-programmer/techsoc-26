@@ -1,6 +1,13 @@
 # TechSoc — IIIT Bhubaneswar
 
 Official website of TechSoc, the Technical Society of IIIT Bhubaneswar.
+<p align="center">
+  <img
+    src="public/images/TechSoc_Home.gif"
+    alt="TechSoc website preview"
+    width="100%"
+  />
+</p>
 
 ---
 

@@ -467,7 +467,7 @@ export default function HomePage() {
                           &quot;{event.theme}&quot;
                         </p>
                       )}
-                      <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-6">
+                      <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-6 whitespace-pre-line">
                         {event.shortDescription || event.description}
                       </p>
 

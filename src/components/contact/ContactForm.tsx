@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { siteConfig } from "@/data/siteConfig";
+import { Icon } from "@/components/ui/Icon";
 
 export interface ContactFormProps {
   categories?: string[];
@@ -107,9 +108,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
       {submitted ? (
         <div className="p-6 bg-accent-mint/20 border-2 border-ink-black shadow-[4px_4px_0px_#121212] rounded flex flex-col gap-4 text-ink-black animate-in fade-in duration-200">
           <div className="flex items-center gap-3">
-            <span className="material-symbols-outlined text-[32px] text-accent-mint">
-              check_circle
-            </span>
+            <Icon name="check_circle" className="text-[32px] text-accent-mint" />
             <div className="flex flex-col">
               <h3 className="font-headline-sm text-title-lg uppercase font-bold text-ink-black">
                 TRANSMISSION RECEIVED!
@@ -276,7 +275,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
               role="alert"
               className="p-3 bg-accent-coral/15 border-2 border-ink-black rounded font-label-sm text-label-sm text-ink-black font-bold flex items-center gap-2"
             >
-              <span className="material-symbols-outlined text-[18px] text-accent-coral">error</span>
+              <Icon name="error" className="text-[18px] text-accent-coral" />
               {sendError}
             </div>
           )}
@@ -291,7 +290,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
               {sending ? "[ SENDING… ]" : "[ SEND MESSAGE → ]"}
             </button>
             <div className="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-[12px] font-bold">
-              <span className="material-symbols-outlined text-[16px] text-ink-black">lock</span>
+              <Icon name="lock" className="text-[16px] text-ink-black" />
               <span>Delivered directly to TechSoc inbox</span>
             </div>
           </div>

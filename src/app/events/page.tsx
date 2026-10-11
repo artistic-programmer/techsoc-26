@@ -9,6 +9,7 @@ import {
   KnowledgeVault,
   D3FeaturedSection,
 } from "@/components";
+import { Icon } from "@/components/ui/Icon";
 
 export const metadata: Metadata = {
   title: "Events & Hackathons | Tech Society IIIT Bhubaneswar",
@@ -70,9 +71,7 @@ export default function EventsPage() {
               {/* Metric Sticker */}
               <div className="p-4 bg-surface-white rounded-xl shadow-[6px_6px_0px_#121212] border-2 border-ink-black flex items-center gap-4 min-w-[240px] self-start md:self-auto">
                 <div className="w-12 h-12 rounded-lg bg-accent-coral flex items-center justify-center text-surface-white shadow-[2px_2px_0px_#121212] border border-ink-black">
-                  <span className="material-symbols-outlined text-[28px]">
-                    local_fire_department
-                  </span>
+                  <Icon name="local_fire_department" className="text-[28px]" />
                 </div>
                 <div className="flex flex-col">
                   <span className="font-headline-sm text-headline-sm text-ink-black leading-none font-bold">
@@ -172,7 +171,7 @@ export default function EventsPage() {
 
             {/* Winning Past Projects Showcase */}
             <div className="flex items-center gap-3 pb-6">
-              <span className="material-symbols-outlined text-[24px] text-ink-black">trophy</span>
+              <Icon name="trophy" className="text-[24px] text-ink-black" />
               <h3 className="font-headline-md text-headline-md text-ink-black uppercase font-bold">
                 CAMPUS HACKATHON REPOSITORY ARCHIVE
               </h3>
@@ -209,7 +208,7 @@ export default function EventsPage() {
                     className="font-label-md text-label-md uppercase text-primary font-bold hover:underline flex items-center gap-0.5"
                   >
                     [ DEMO REPO ]{" "}
-                    <span className="material-symbols-outlined text-[16px]">arrow_outward</span>
+                    <Icon name="arrow_outward" className="text-[16px]" />
                   </a>
                 </div>
               </div>
@@ -244,7 +243,7 @@ export default function EventsPage() {
                     className="font-label-md text-label-md uppercase text-primary font-bold hover:underline flex items-center gap-0.5"
                   >
                     [ PROJECT OVERVIEW ]{" "}
-                    <span className="material-symbols-outlined text-[16px]">arrow_outward</span>
+                    <Icon name="arrow_outward" className="text-[16px]" />
                   </a>
                 </div>
               </div>
@@ -279,7 +278,7 @@ export default function EventsPage() {
                     className="font-label-md text-label-md uppercase text-primary font-bold hover:underline flex items-center gap-0.5"
                   >
                     [ REPOSITORY ]{" "}
-                    <span className="material-symbols-outlined text-[16px]">arrow_outward</span>
+                    <Icon name="arrow_outward" className="text-[16px]" />
                   </a>
                 </div>
               </div>
@@ -320,7 +319,7 @@ export default function EventsPage() {
                 href="/connect"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-secondary-container text-ink-black font-label-lg text-label-lg uppercase tracking-wider rounded-lg shadow-[5px_5px_0px_#121212] hover:shadow-[7px_7px_0px_#121212] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all text-center font-bold border-2 border-ink-black"
               >
-                <span className="material-symbols-outlined text-[20px]">mic</span>
+                <Icon name="mic" className="text-[20px]" />
                 [ SUBMIT AN EVENT PROPOSAL → ]
               </Link>
             </div>

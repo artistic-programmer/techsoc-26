@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { Icon } from "@/components/ui/Icon";
 
 type EventCategory = "all" | "hackathons" | "workshops" | "technical" | "competitions";
 
@@ -79,7 +80,7 @@ export const EventsDirectory: React.FC = () => {
                   FLAGSHIP HACKATHON ARENA
                 </span>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-secondary-container text-ink-black font-label-md text-label-sm sm:text-label-md uppercase tracking-wider rounded-full shadow-[2px_2px_0px_#121212] font-bold">
-                  <span className="material-symbols-outlined text-[16px]">terminal</span>
+                  <Icon name="terminal" className="text-[16px]" />
                   D³ ARENA 01 // TECHSOC
                 </span>
               </div>
@@ -170,14 +171,14 @@ export const EventsDirectory: React.FC = () => {
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-secondary-container text-ink-black font-label-lg text-label-lg uppercase tracking-wider rounded-lg shadow-[4px_4px_0px_#121212] hover:shadow-[6px_6px_0px_#121212] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all font-bold border-2 border-ink-black"
                   >
-                    <span className="material-symbols-outlined text-[20px]">rocket_launch</span>
+                    <Icon name="rocket_launch" className="text-[20px]" />
                     [ REGISTER ON D³ PORTAL → ]
                   </a>
                   <a
                     href="#d3-technotfest"
                     className="inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-surface-white text-ink-black font-label-lg text-label-lg uppercase tracking-wider rounded-lg shadow-[4px_4px_0px_#121212] hover:bg-surface-container hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all font-bold border-2 border-ink-black"
                   >
-                    <span className="material-symbols-outlined text-[20px]">north</span>
+                    <Icon name="north" className="text-[20px]" />
                     VIEW ALL 17 D³ ARENAS
                   </a>
                 </div>
@@ -267,11 +268,11 @@ export const EventsDirectory: React.FC = () => {
 
                 <div className="flex flex-wrap gap-2 text-on-surface-variant font-body-sm text-body-sm font-medium">
                   <span className="flex items-center gap-1">
-                    <span className="material-symbols-outlined text-[16px]">schedule</span> TIME TBA
+                    <Icon name="schedule" className="text-[16px]" /> TIME TBA
                   </span>
                   <span>•</span>
                   <span className="flex items-center gap-1">
-                    <span className="material-symbols-outlined text-[16px]">location_on</span> Campus Lab
+                    <Icon name="location_on" className="text-[16px]" /> Campus Lab
                     &amp; Discord Stream
                   </span>
                 </div>
@@ -333,11 +334,11 @@ export const EventsDirectory: React.FC = () => {
 
                 <div className="flex flex-wrap gap-2 text-on-surface-variant font-body-sm text-body-sm font-medium">
                   <span className="flex items-center gap-1">
-                    <span className="material-symbols-outlined text-[16px]">schedule</span> TIME TBA
+                    <Icon name="schedule" className="text-[16px]" /> TIME TBA
                   </span>
                   <span>•</span>
                   <span className="flex items-center gap-1">
-                    <span className="material-symbols-outlined text-[16px]">terminal</span> Campus Network Arena
+                    <Icon name="terminal" className="text-[16px]" /> Campus Network Arena
                   </span>
                 </div>
               </div>

@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { TeamMember } from "@/types";
 import { Badge } from "@/components/ui/Badge";
+import { Icon } from "@/components/ui/Icon";
 
 export interface TeamMemberCardProps {
   member: TeamMember;
@@ -44,9 +45,7 @@ export const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
             />
           ) : (
             <div className="w-full h-full flex flex-col items-center justify-center bg-canvas-cream text-on-surface-variant">
-              <span className="material-symbols-outlined text-[48px] text-ink-black/40">
-                person
-              </span>
+              <Icon name="person" className="text-[48px] text-ink-black/40" />
               <span className="font-label-sm text-[11px] uppercase tracking-wider text-ink-black/50 mt-1">
                 TechSoc Core
               </span>
@@ -114,9 +113,7 @@ export const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
               aria-label="GitHub Profile"
               className="p-1.5 bg-canvas-cream border border-ink-black rounded shadow-[1px_1px_0px_#121212] hover:bg-secondary-container transition-all"
             >
-              <span className="material-symbols-outlined text-[16px] text-ink-black">
-                terminal
-              </span>
+              <Icon name="terminal" className="text-[16px] text-ink-black" />
             </a>
           )}
           {linkedin && (
@@ -127,9 +124,7 @@ export const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
               aria-label="LinkedIn Profile"
               className="p-1.5 bg-canvas-cream border border-ink-black rounded shadow-[1px_1px_0px_#121212] hover:bg-secondary-container transition-all"
             >
-              <span className="material-symbols-outlined text-[16px] text-ink-black">
-                groups
-              </span>
+              <Icon name="groups" className="text-[16px] text-ink-black" />
             </a>
           )}
           {email && (
@@ -138,9 +133,7 @@ export const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
               aria-label="Email Address"
               className="p-1.5 bg-canvas-cream border border-ink-black rounded shadow-[1px_1px_0px_#121212] hover:bg-secondary-container transition-all"
             >
-              <span className="material-symbols-outlined text-[16px] text-ink-black">
-                mail
-              </span>
+              <Icon name="mail" className="text-[16px] text-ink-black" />
             </a>
           )}
         </div>

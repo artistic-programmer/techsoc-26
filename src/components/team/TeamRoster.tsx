@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { domainTeams, DomainTeam, RosterMember } from "@/data/team";
+import { Icon } from "@/components/ui/Icon";
 
 const initialsOf = (name: string) =>
   name
@@ -87,9 +88,7 @@ const DomainPanel: React.FC<{ team: DomainTeam }> = ({ team }) => {
       >
         <div className="flex items-center gap-3">
           <span className="w-10 h-10 bg-surface-white border-2 border-ink-black rounded-lg shadow-[2px_2px_0px_#121212] flex items-center justify-center">
-            <span className="material-symbols-outlined text-[22px] text-ink-black">
-              {team.icon}
-            </span>
+            <Icon name={team.icon} className="text-[22px] text-ink-black" />
           </span>
           <h3 className="font-display-xl text-[22px] sm:text-[26px] uppercase font-extrabold text-ink-black leading-none">
             {team.domain}

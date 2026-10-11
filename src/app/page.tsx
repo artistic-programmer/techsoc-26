@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Navbar, Footer, MarqueeTicker } from "@/components";
 import { homeShowcaseEvents } from "@/data/events";
+import { Icon } from "@/components/ui/Icon";
 
 export default function HomePage() {
   const marqueeItems = [
@@ -35,7 +36,7 @@ export default function HomePage() {
               {/* Badges Array */}
               <div className="flex flex-wrap items-center gap-2">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-accent-coral text-surface-white font-label-sm text-label-sm uppercase rounded-full border-2 border-ink-black shadow-[2px_2px_0px_#121212] font-bold">
-                  <span className="material-symbols-outlined text-[14px]">bolt</span>
+                  <Icon name="bolt" className="text-[14px]" />
                   CAMPUS TECHNICAL COLLECTIVE
                 </span>
                 <span className="inline-flex items-center px-3 py-1 bg-surface-white text-ink-black font-label-sm text-label-sm uppercase rounded-full border-2 border-ink-black shadow-[2px_2px_0px_#121212] font-bold">
@@ -84,7 +85,7 @@ export default function HomePage() {
                   href="/connect"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-surface-white text-ink-black font-label-lg text-label-lg uppercase tracking-wider border-[3px] border-ink-black shadow-[4px_4px_0px_#121212] hover:bg-surface-container hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none rounded transition-all font-bold"
                 >
-                  <span className="material-symbols-outlined text-[18px]">terminal</span>
+                  <Icon name="terminal" className="text-[18px]" />
                   JOIN COMMUNITY
                 </Link>
               </div>
@@ -191,9 +192,7 @@ export default function HomePage() {
                   {/* Mini badges array below video */}
                   <div className="grid grid-cols-2 gap-2 mt-3">
                     <div className="p-2.5 bg-surface-container border-2 border-ink-black rounded flex items-center gap-2">
-                      <span className="material-symbols-outlined text-primary text-[20px]">
-                        terminal
-                      </span>
+                      <Icon name="terminal" className="text-primary text-[20px]" />
                       <div className="flex flex-col">
                         <span className="font-label-sm text-label-sm uppercase text-ink-black font-bold">
                           OPEN SOURCE
@@ -205,9 +204,7 @@ export default function HomePage() {
                     </div>
 
                     <div className="p-2.5 bg-secondary-container/30 border-2 border-ink-black rounded flex items-center gap-2">
-                      <span className="material-symbols-outlined text-accent-coral text-[20px]">
-                        smart_toy
-                      </span>
+                      <Icon name="smart_toy" className="text-accent-coral text-[20px]" />
                       <div className="flex flex-col">
                         <span className="font-label-sm text-label-sm uppercase text-ink-black font-bold">
                           AI LAB
@@ -253,7 +250,7 @@ export default function HomePage() {
               <div>
                 <div className="flex items-center justify-between pb-4 mb-4 border-b-2 border-ink-black">
                   <span className="w-10 h-10 rounded bg-primary-container text-surface-white flex items-center justify-center border-2 border-ink-black font-bold">
-                    <span className="material-symbols-outlined text-[20px]">terminal</span>
+                    <Icon name="terminal" className="text-[20px]" />
                   </span>
                   <span className="font-headline-md text-headline-md font-extrabold text-ink-black/20 group-hover:text-primary-container transition-colors">
                     01
@@ -286,7 +283,7 @@ export default function HomePage() {
               <div>
                 <div className="flex items-center justify-between pb-4 mb-4 border-b-2 border-ink-black">
                   <span className="w-10 h-10 rounded bg-secondary-container text-ink-black flex items-center justify-center border-2 border-ink-black font-bold">
-                    <span className="material-symbols-outlined text-[20px]">menu_book</span>
+                    <Icon name="menu_book" className="text-[20px]" />
                   </span>
                   <span className="font-headline-md text-headline-md font-extrabold text-ink-black/20 group-hover:text-secondary-container transition-colors">
                     02
@@ -319,7 +316,7 @@ export default function HomePage() {
               <div>
                 <div className="flex items-center justify-between pb-4 mb-4 border-b-2 border-ink-black">
                   <span className="w-10 h-10 rounded bg-accent-coral text-surface-white flex items-center justify-center border-2 border-ink-black font-bold">
-                    <span className="material-symbols-outlined text-[20px]">emoji_events</span>
+                    <Icon name="emoji_events" className="text-[20px]" />
                   </span>
                   <span className="font-headline-md text-headline-md font-extrabold text-ink-black/20 group-hover:text-accent-coral transition-colors">
                     03
@@ -352,7 +349,7 @@ export default function HomePage() {
               <div>
                 <div className="flex items-center justify-between pb-4 mb-4 border-b-2 border-ink-black">
                   <span className="w-10 h-10 rounded bg-accent-mint text-ink-black flex items-center justify-center border-2 border-ink-black font-bold">
-                    <span className="material-symbols-outlined text-[20px]">groups</span>
+                    <Icon name="groups" className="text-[20px]" />
                   </span>
                   <span className="font-headline-md text-headline-md font-extrabold text-ink-black/20 group-hover:text-accent-mint transition-colors">
                     04
@@ -459,22 +456,16 @@ export default function HomePage() {
 
                       <div className="space-y-2 border-t-2 border-ink-black pt-4 font-label-sm text-label-sm uppercase text-ink-black">
                         <div className="flex items-center gap-2">
-                          <span className="material-symbols-outlined text-[18px] text-primary">
-                            calendar_month
-                          </span>
+                          <Icon name="calendar_month" className="text-[18px] text-primary" />
                           <span className="font-bold">DATE: {event.date || "TO BE ANNOUNCED"}</span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <span className="material-symbols-outlined text-[18px] text-primary">
-                            location_on
-                          </span>
+                          <Icon name="location_on" className="text-[18px] text-primary" />
                           <span>VENUE: {event.venue || "IIIT BHUBANESWAR"}</span>
                         </div>
                         {event.organizer && (
                           <div className="flex items-center gap-2">
-                            <span className="material-symbols-outlined text-[18px] text-primary">
-                              group
-                            </span>
+                            <Icon name="group" className="text-[18px] text-primary" />
                             <span>ORGANIZER: {event.organizer}</span>
                           </div>
                         )}
@@ -527,7 +518,7 @@ export default function HomePage() {
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-secondary-container text-ink-black font-label-lg text-label-lg uppercase font-bold border-[2.5px] border-ink-black shadow-[4px_4px_0px_#121212] hover:shadow-[6px_6px_0px_#121212] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all self-start md:self-auto rounded"
             >
               <span>[ VIEW ALL REPOSITORIES → ]</span>
-              <span className="material-symbols-outlined text-[18px]">open_in_new</span>
+              <Icon name="open_in_new" className="text-[18px]" />
             </a>
           </div>
 
@@ -541,7 +532,7 @@ export default function HomePage() {
                     OPEN SOURCE REPO
                   </span>
                   <span className="font-mono text-label-sm text-ink-black font-bold flex items-center gap-1">
-                    <span className="material-symbols-outlined text-[16px] text-accent-coral">favorite</span>
+                    <Icon name="favorite" className="text-[16px] text-accent-coral" />
                     COMMUNITY UTILITY
                   </span>
                 </div>
@@ -572,7 +563,7 @@ export default function HomePage() {
                   rel="noopener noreferrer"
                   className="font-label-sm text-label-sm uppercase font-bold text-ink-black hover:text-primary flex items-center gap-1.5"
                 >
-                  <span className="material-symbols-outlined text-[16px]">terminal</span>
+                  <Icon name="terminal" className="text-[16px]" />
                   <span>p-society</span>
                 </a>
                 <a
@@ -582,7 +573,7 @@ export default function HomePage() {
                   className="px-3.5 py-1.5 bg-secondary-container text-ink-black font-label-sm text-label-sm uppercase font-bold border-2 border-ink-black shadow-[2px_2px_0px_#121212] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 transition-all rounded flex items-center gap-1"
                 >
                   <span>GITHUB REPO</span>
-                  <span className="material-symbols-outlined text-[14px]">open_in_new</span>
+                  <Icon name="open_in_new" className="text-[14px]" />
                 </a>
               </div>
             </div>
@@ -595,7 +586,7 @@ export default function HomePage() {
                     OPEN SOURCE REPO
                   </span>
                   <span className="font-mono text-label-sm text-ink-black font-bold flex items-center gap-1">
-                    <span className="material-symbols-outlined text-[16px] text-primary">terminal</span>
+                    <Icon name="terminal" className="text-[16px] text-primary" />
                     DEV TOOLING
                   </span>
                 </div>
@@ -626,7 +617,7 @@ export default function HomePage() {
                   rel="noopener noreferrer"
                   className="font-label-sm text-label-sm uppercase font-bold text-ink-black hover:text-primary flex items-center gap-1.5"
                 >
-                  <span className="material-symbols-outlined text-[16px]">terminal</span>
+                  <Icon name="terminal" className="text-[16px]" />
                   <span>p-society</span>
                 </a>
                 <a
@@ -636,7 +627,7 @@ export default function HomePage() {
                   className="px-3.5 py-1.5 bg-secondary-container text-ink-black font-label-sm text-label-sm uppercase font-bold border-2 border-ink-black shadow-[2px_2px_0px_#121212] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 transition-all rounded flex items-center gap-1"
                 >
                   <span>GITHUB REPO</span>
-                  <span className="material-symbols-outlined text-[14px]">open_in_new</span>
+                  <Icon name="open_in_new" className="text-[14px]" />
                 </a>
               </div>
             </div>
@@ -649,7 +640,7 @@ export default function HomePage() {
                     OPEN SOURCE REPO
                   </span>
                   <span className="font-mono text-label-sm text-ink-black font-bold flex items-center gap-1">
-                    <span className="material-symbols-outlined text-[16px] text-accent-mint">stars</span>
+                    <Icon name="stars" className="text-[16px] text-accent-mint" />
                     CAMPUS SERVICE
                   </span>
                 </div>
@@ -680,7 +671,7 @@ export default function HomePage() {
                   rel="noopener noreferrer"
                   className="font-label-sm text-label-sm uppercase font-bold text-ink-black hover:text-primary flex items-center gap-1.5"
                 >
-                  <span className="material-symbols-outlined text-[16px]">terminal</span>
+                  <Icon name="terminal" className="text-[16px]" />
                   <span>p-society</span>
                 </a>
                 <a
@@ -690,7 +681,7 @@ export default function HomePage() {
                   className="px-3.5 py-1.5 bg-secondary-container text-ink-black font-label-sm text-label-sm uppercase font-bold border-2 border-ink-black shadow-[2px_2px_0px_#121212] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 transition-all rounded flex items-center gap-1"
                 >
                   <span>GITHUB REPO</span>
-                  <span className="material-symbols-outlined text-[14px]">open_in_new</span>
+                  <Icon name="open_in_new" className="text-[14px]" />
                 </a>
               </div>
             </div>
@@ -740,9 +731,7 @@ export default function HomePage() {
               <div className="md:col-span-4 flex flex-col gap-4">
                 {/* Terminal Quote Card */}
                 <div className="bg-surface-white border-[3px] border-ink-black rounded p-5 shadow-[5px_5px_0px_#121212] relative">
-                  <span className="material-symbols-outlined text-secondary-container text-[36px] absolute -top-4 -right-2 rotate-12">
-                    format_quote
-                  </span>
+                  <Icon name="format_quote" className="text-secondary-container text-[36px] absolute -top-4 -right-2 rotate-12" />
                   <p className="font-headline-sm text-[17px] leading-[26px] font-bold text-ink-black mb-3">
                     &quot;We don&apos;t wait for permission or formal curriculum changes. If something on campus is broken, we gather five students, order midnight coffee, and code a fix.&quot;
                   </p>
@@ -776,9 +765,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                  <span className="material-symbols-outlined text-ink-black text-[24px]">
-                    terminal
-                  </span>
+                  <Icon name="terminal" className="text-ink-black text-[24px]" />
                 </div>
               </div>
 
@@ -836,7 +823,7 @@ export default function HomePage() {
                   className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-ink-black text-surface-white font-label-lg text-label-lg uppercase tracking-wider border-[3px] border-ink-black shadow-[4px_4px_0px_#FAF8F5] hover:bg-primary hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 rounded transition-all font-bold"
                 >
                   <span>[ JOIN TECHSOC TODAY ]</span>
-                  <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                  <Icon name="arrow_forward" className="text-[18px]" />
                 </Link>
                 <Link
                   href="/community"
@@ -847,7 +834,7 @@ export default function HomePage() {
               </div>
 
               <p className="font-label-sm text-label-sm uppercase font-bold text-ink-black/80 flex items-center gap-2">
-                <span className="material-symbols-outlined text-[16px]">info</span>
+                <Icon name="info" className="text-[16px]" />
                 Open to all undergraduate &amp; postgraduate students of IIIT Bhubaneswar.
               </p>
             </div>

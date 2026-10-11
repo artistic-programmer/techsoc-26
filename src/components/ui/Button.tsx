@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { Icon } from "@/components/ui/Icon";
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "tertiary" | "ghost" | "dark" | "mint";
@@ -46,9 +47,7 @@ export const Button: React.FC<ButtonProps> = ({
   const combinedClasses = `${baseStyles} ${sizeStyles} ${variantStyles} ${shapeStyles} ${className}`.trim();
 
   const iconElement = icon ? (
-    <span className="material-symbols-outlined text-[18px] leading-none">
-      {icon}
-    </span>
+    <Icon name={icon} className="text-[18px] leading-none" />
   ) : null;
 
   const content = (

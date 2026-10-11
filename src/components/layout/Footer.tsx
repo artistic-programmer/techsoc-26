@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { siteConfig } from "@/data/siteConfig";
+import { Icon } from "@/components/ui/Icon";
 
 export const Footer: React.FC = () => {
   return (
@@ -55,9 +56,7 @@ export const Footer: React.FC = () => {
                 aria-label="GitHub"
                 className="p-2 bg-surface-white border-2 border-ink-black shadow-[2px_2px_0px_#121212] hover:bg-secondary-container transition-all flex items-center justify-center active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
               >
-                <span className="material-symbols-outlined text-[20px] text-ink-black">
-                  terminal
-                </span>
+                <Icon name="terminal" className="text-[20px] text-ink-black" />
               </a>
               <a
                 href={siteConfig.socials.discord || "#"}
@@ -66,9 +65,7 @@ export const Footer: React.FC = () => {
                 aria-label="Discord"
                 className="p-2 bg-surface-white border-2 border-ink-black shadow-[2px_2px_0px_#121212] hover:bg-secondary-container transition-all flex items-center justify-center active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
               >
-                <span className="material-symbols-outlined text-[20px] text-ink-black">
-                  forum
-                </span>
+                <Icon name="forum" className="text-[20px] text-ink-black" />
               </a>
               <a
                 href={siteConfig.socials.linkedin || "#"}
@@ -77,18 +74,14 @@ export const Footer: React.FC = () => {
                 aria-label="LinkedIn"
                 className="p-2 bg-surface-white border-2 border-ink-black shadow-[2px_2px_0px_#121212] hover:bg-secondary-container transition-all flex items-center justify-center active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
               >
-                <span className="material-symbols-outlined text-[20px] text-ink-black">
-                  groups
-                </span>
+                <Icon name="groups" className="text-[20px] text-ink-black" />
               </a>
               <Link
                 href="/connect"
                 aria-label="Connect"
                 className="p-2 bg-surface-white border-2 border-ink-black shadow-[2px_2px_0px_#121212] hover:bg-secondary-container transition-all flex items-center justify-center active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
               >
-                <span className="material-symbols-outlined text-[20px] text-ink-black">
-                  link
-                </span>
+                <Icon name="link" className="text-[20px] text-ink-black" />
               </Link>
             </div>
           </div>
@@ -111,9 +104,7 @@ export const Footer: React.FC = () => {
                     href={link.href}
                     className="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5"
                   >
-                    <span className="material-symbols-outlined text-[16px]">
-                      chevron_right
-                    </span>
+                    <Icon name="chevron_right" className="text-[16px]" />
                     {link.name}
                   </Link>
                 </li>
@@ -169,13 +160,9 @@ export const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   className="font-label-sm text-[12px] font-bold text-ink-black hover:text-primary transition-colors inline-flex items-center gap-1 underline underline-offset-2"
                 >
-                  <span className="material-symbols-outlined text-[16px]">
-                    location_on
-                  </span>
+                  <Icon name="location_on" className="text-[16px]" />
                   View on Maps
-                  <span className="material-symbols-outlined text-[13px]">
-                    open_in_new
-                  </span>
+                  <Icon name="open_in_new" className="text-[13px]" />
                 </a>
               </div>
               <div className="mt-3 pt-3 border-t-2 border-ink-black flex items-center justify-between text-ink-black font-label-sm text-label-sm">

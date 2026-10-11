@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { FaqItem } from "@/types";
 import { Badge } from "@/components/ui/Badge";
+import { Icon } from "@/components/ui/Icon";
 
 export interface FaqAccordionProps {
   items: FaqItem[];
@@ -69,9 +70,7 @@ export const FaqAccordion: React.FC<FaqAccordionProps> = ({
                   isOpen ? "bg-secondary-container rotate-180" : "bg-canvas-cream"
                 }`}
               >
-                <span className="material-symbols-outlined text-[20px] text-ink-black">
-                  expand_more
-                </span>
+                <Icon name="expand_more" className="text-[20px] text-ink-black" />
               </div>
             </button>
 

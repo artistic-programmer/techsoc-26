@@ -17,6 +17,8 @@ export interface EventItem {
   venue?: string;
   category?: EventCategory;
   shortDescription?: string;
+  shortLabel?: string;
+  filterGroup?: string;
   description?: string;
   organizer?: string;
   registrationLink?: string;

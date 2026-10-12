@@ -148,9 +148,20 @@ export default function TeamPage() {
                       sizes="(max-width: 640px) 100vw, 33vw"
                       className="w-full aspect-square rounded-lg shadow mb-4"
                     />
-                    <h3 className="font-headline-sm text-headline-sm uppercase text-ink-black font-bold">
-                      {member.name}
-                    </h3>
+                    {member.linkedin ? (
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-headline-sm text-headline-sm uppercase text-ink-black font-bold block hover:underline hover:text-primary transition-colors focus:outline-none focus-visible:outline-2 focus-visible:outline-ink-black focus-visible:outline-offset-2 focus-visible:underline rounded-xs"
+                      >
+                        {member.name}
+                      </a>
+                    ) : (
+                      <h3 className="font-headline-sm text-headline-sm uppercase text-ink-black font-bold">
+                        {member.name}
+                      </h3>
+                    )}
                     <span className="font-label-sm text-label-sm uppercase font-bold text-primary block mt-0.5">
                       {exec.role}
                     </span>
@@ -191,9 +202,20 @@ export default function TeamPage() {
                     sizes="(max-width: 640px) 100vw, 25vw"
                     className="w-full aspect-square rounded-lg shadow-[2px_2px_0px_#121212] mb-3"
                   />
-                  <h3 className="font-headline-sm text-headline-sm uppercase text-ink-black font-bold">
-                    {member.name}
-                  </h3>
+                  {member.linkedin ? (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-headline-sm text-headline-sm uppercase text-ink-black font-bold block hover:underline hover:text-primary transition-colors focus:outline-none focus-visible:outline-2 focus-visible:outline-ink-black focus-visible:outline-offset-2 focus-visible:underline rounded-xs"
+                    >
+                      {member.name}
+                    </a>
+                  ) : (
+                    <h3 className="font-headline-sm text-headline-sm uppercase text-ink-black font-bold">
+                      {member.name}
+                    </h3>
+                  )}
                 </div>
               ))}
             </div>

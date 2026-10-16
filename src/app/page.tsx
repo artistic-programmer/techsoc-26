@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Navbar, Footer, MarqueeTicker } from "@/components";
 import { homeShowcaseEvents } from "@/data/events";
 import { Icon } from "@/components/ui/Icon";
+import { communityRepositories } from "@/data/projects";
 
 export default function HomePage() {
   const marqueeItems = [
@@ -416,6 +417,19 @@ export default function HomePage() {
                       <div className="absolute top-0 right-0 w-28 h-28 bg-secondary-container/30 -rotate-45 translate-x-12 -translate-y-12 pointer-events-none" />
                     )}
                     <div>
+                      {isFlagship && (
+                        <div className="relative w-full h-36 mb-4 rounded border-2 border-ink-black bg-ink-black overflow-hidden shadow-[3px_3px_0px_#121212] flex items-center justify-center p-3">
+                          <div className="relative w-full h-full">
+                            <Image
+                              src="/images/events/d3-fest-logo.png"
+                              alt="Official D³ Fest IIIT Bhubaneswar Logo"
+                              fill
+                              sizes="(max-width: 1024px) 100vw, 33vw"
+                              className="object-contain"
+                            />
+                          </div>
+                        </div>
+                      )}
                       <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                         <div className="flex flex-wrap items-center gap-2">
                           <span
@@ -450,7 +464,7 @@ export default function HomePage() {
                           &quot;{event.theme}&quot;
                         </p>
                       )}
-                      <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-6">
+                      <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-6 whitespace-pre-line">
                         {event.shortDescription || event.description}
                       </p>
 
@@ -524,167 +538,71 @@ export default function HomePage() {
 
           {/* Product Grid: 3 Repository-Focused Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Repo Card 1 */}
-            <div className="bg-surface-white border-[3px] border-ink-black rounded-lg p-6 shadow-[5px_5px_0px_#121212] flex flex-col justify-between hover:-translate-y-1 hover:shadow-[7px_7px_0px_#121212] transition-all">
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="px-2.5 py-0.5 bg-accent-mint text-ink-black font-label-sm text-label-sm uppercase font-bold border-2 border-ink-black rounded shadow-[2px_2px_0px_#121212]">
-                    OPEN SOURCE REPO
-                  </span>
-                  <span className="font-mono text-label-sm text-ink-black font-bold flex items-center gap-1">
-                    <Icon name="favorite" className="text-[16px] text-accent-coral" />
-                    COMMUNITY UTILITY
-                  </span>
-                </div>
-
-                <h3 className="font-headline-sm text-headline-sm uppercase text-ink-black font-bold mb-2">
-                  Campus Utility Platform
-                </h3>
-                <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-4">
-                  Student hub project for timetable tracking, campus notifications, and academic resources developed by student maintainers.
-                </p>
-
-                <div className="flex flex-wrap gap-1.5 pt-2 mb-6">
-                  {["Next.js", "Tailwind", "PostgreSQL", "TypeScript"].map((tech) => (
+            {communityRepositories.map((repo, idx) => (
+              <div
+                key={repo.id}
+                className="bg-surface-white border-[3px] border-ink-black rounded-lg p-6 shadow-[5px_5px_0px_#121212] flex flex-col justify-between hover:-translate-y-1 hover:shadow-[7px_7px_0px_#121212] transition-all"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4">
                     <span
-                      key={tech}
-                      className="px-2 py-0.5 bg-surface-container font-mono text-[11px] text-ink-black border border-ink-black/40 rounded"
+                      className={`px-2.5 py-0.5 font-label-sm text-label-sm uppercase font-bold border-2 border-ink-black rounded shadow-[2px_2px_0px_#121212] ${
+                        idx === 0
+                          ? "bg-accent-mint text-ink-black"
+                          : idx === 1
+                          ? "bg-secondary-container text-ink-black"
+                          : "bg-accent-coral text-surface-white"
+                      }`}
                     >
-                      {tech}
+                      OPEN SOURCE REPO
                     </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="pt-4 border-t-2 border-ink-black flex items-center justify-between">
-                <a
-                  href="https://github.com/p-society"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-label-sm text-label-sm uppercase font-bold text-ink-black hover:text-primary flex items-center gap-1.5"
-                >
-                  <Icon name="terminal" className="text-[16px]" />
-                  <span>p-society</span>
-                </a>
-                <a
-                  href="https://github.com/p-society"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3.5 py-1.5 bg-secondary-container text-ink-black font-label-sm text-label-sm uppercase font-bold border-2 border-ink-black shadow-[2px_2px_0px_#121212] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 transition-all rounded flex items-center gap-1"
-                >
-                  <span>GITHUB REPO</span>
-                  <Icon name="open_in_new" className="text-[14px]" />
-                </a>
-              </div>
-            </div>
-
-            {/* Repo Card 2 */}
-            <div className="bg-surface-white border-[3px] border-ink-black rounded-lg p-6 shadow-[5px_5px_0px_#121212] flex flex-col justify-between hover:-translate-y-1 hover:shadow-[7px_7px_0px_#121212] transition-all">
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="px-2.5 py-0.5 bg-secondary-container text-ink-black font-label-sm text-label-sm uppercase font-bold border-2 border-ink-black rounded shadow-[2px_2px_0px_#121212]">
-                    OPEN SOURCE REPO
-                  </span>
-                  <span className="font-mono text-label-sm text-ink-black font-bold flex items-center gap-1">
-                    <Icon name="terminal" className="text-[16px] text-primary" />
-                    DEV TOOLING
-                  </span>
-                </div>
-
-                <h3 className="font-headline-sm text-headline-sm uppercase text-ink-black font-bold mb-2">
-                  Competitive Coding Platform
-                </h3>
-                <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-4">
-                  Coding practice arena with sandboxed execution for internal hackathons, algorithms practice, and leaderboard sprints.
-                </p>
-
-                <div className="flex flex-wrap gap-1.5 pt-2 mb-6">
-                  {["Go", "Docker API", "React", "Redis"].map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2 py-0.5 bg-surface-container font-mono text-[11px] text-ink-black border border-ink-black/40 rounded"
-                    >
-                      {tech}
+                    <span className="font-mono text-label-sm text-ink-black font-bold flex items-center gap-1">
+                      <span className="material-symbols-outlined text-[16px] text-accent-coral">terminal</span>
+                      {repo.category}
                     </span>
-                  ))}
-                </div>
-              </div>
+                  </div>
 
-              <div className="pt-4 border-t-2 border-ink-black flex items-center justify-between">
-                <a
-                  href="https://github.com/p-society"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-label-sm text-label-sm uppercase font-bold text-ink-black hover:text-primary flex items-center gap-1.5"
-                >
-                  <Icon name="terminal" className="text-[16px]" />
-                  <span>p-society</span>
-                </a>
-                <a
-                  href="https://github.com/p-society"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3.5 py-1.5 bg-secondary-container text-ink-black font-label-sm text-label-sm uppercase font-bold border-2 border-ink-black shadow-[2px_2px_0px_#121212] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 transition-all rounded flex items-center gap-1"
-                >
-                  <span>GITHUB REPO</span>
-                  <Icon name="open_in_new" className="text-[14px]" />
-                </a>
-              </div>
-            </div>
+                  <h3 className="font-headline-sm text-headline-sm uppercase text-ink-black font-bold mb-2">
+                    {repo.name}
+                  </h3>
+                  <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-4">
+                    {repo.shortDescription || repo.description}
+                  </p>
 
-            {/* Repo Card 3 */}
-            <div className="bg-surface-white border-[3px] border-ink-black rounded-lg p-6 shadow-[5px_5px_0px_#121212] flex flex-col justify-between hover:-translate-y-1 hover:shadow-[7px_7px_0px_#121212] transition-all">
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="px-2.5 py-0.5 bg-accent-coral text-surface-white font-label-sm text-label-sm uppercase font-bold border-2 border-ink-black rounded shadow-[2px_2px_0px_#121212]">
-                    OPEN SOURCE REPO
-                  </span>
-                  <span className="font-mono text-label-sm text-ink-black font-bold flex items-center gap-1">
-                    <Icon name="stars" className="text-[16px] text-accent-mint" />
-                    CAMPUS SERVICE
-                  </span>
+                  <div className="flex flex-wrap gap-1.5 pt-2 mb-6">
+                    {repo.technologies?.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2 py-0.5 bg-surface-container font-mono text-[11px] text-ink-black border border-ink-black/40 rounded"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
-                <h3 className="font-headline-sm text-headline-sm uppercase text-ink-black font-bold mb-2">
-                  Campus Feedback Service
-                </h3>
-                <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-4">
-                  Feedback portal and notification service built for campus committees and student feedback collection.
-                </p>
-
-                <div className="flex flex-wrap gap-1.5 pt-2 mb-6">
-                  {["Flutter", "Firebase", "FastAPI"].map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2 py-0.5 bg-surface-container font-mono text-[11px] text-ink-black border border-ink-black/40 rounded"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                <div className="pt-4 border-t-2 border-ink-black flex items-center justify-between">
+                  <a
+                    href="https://github.com/p-society"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-label-sm text-label-sm uppercase font-bold text-ink-black hover:text-primary flex items-center gap-1.5"
+                  >
+                    <span className="material-symbols-outlined text-[16px]">terminal</span>
+                    <span>p-society</span>
+                  </a>
+                  <a
+                    href={repo.repository}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3.5 py-1.5 bg-secondary-container text-ink-black font-label-sm text-label-sm uppercase font-bold border-2 border-ink-black shadow-[2px_2px_0px_#121212] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 transition-all rounded flex items-center gap-1"
+                  >
+                    <span>GITHUB REPO</span>
+                    <span className="material-symbols-outlined text-[14px]">open_in_new</span>
+                  </a>
                 </div>
               </div>
-
-              <div className="pt-4 border-t-2 border-ink-black flex items-center justify-between">
-                <a
-                  href="https://github.com/p-society"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-label-sm text-label-sm uppercase font-bold text-ink-black hover:text-primary flex items-center gap-1.5"
-                >
-                  <Icon name="terminal" className="text-[16px]" />
-                  <span>p-society</span>
-                </a>
-                <a
-                  href="https://github.com/p-society"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3.5 py-1.5 bg-secondary-container text-ink-black font-label-sm text-label-sm uppercase font-bold border-2 border-ink-black shadow-[2px_2px_0px_#121212] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 transition-all rounded flex items-center gap-1"
-                >
-                  <span>GITHUB REPO</span>
-                  <Icon name="open_in_new" className="text-[14px]" />
-                </a>
-              </div>
-            </div>
+            ))}
           </div>
         </section>
 
@@ -711,17 +629,17 @@ export default function HomePage() {
                 <div className="bg-surface-white border-[3px] border-ink-black p-3 pb-6 rounded shadow-[6px_6px_0px_#121212]">
                   <div className="h-64 border-2 border-ink-black rounded overflow-hidden mb-3 relative bg-surface-container">
                     <Image
-                      src="/images/gallery/hackathon-lab.jpg"
-                      alt="Students collaborating during hackathon sprint"
+                      src="/images/gallery/tech-battle.jpg"
+                      alt="Tech battle session with students collaborating on laptops"
                       fill
                       className="object-cover"
                     />
                     <span className="absolute top-2 left-2 px-2 py-0.5 bg-accent-coral text-surface-white font-label-sm text-label-sm uppercase border border-ink-black rounded font-bold">
-                      HACKATHON SPRINT
+                      TECH BATTLE
                     </span>
                   </div>
                   <div className="flex items-center justify-between font-label-sm text-label-sm uppercase text-ink-black font-bold">
-                    <span>HACKATHON SESSIONS</span>
+                    <span>TECH BATTLE</span>
                     <span>CAMPUS ARCHIVE</span>
                   </div>
                 </div>
@@ -774,17 +692,17 @@ export default function HomePage() {
                 <div className="bg-surface-white border-[3px] border-ink-black p-3 pb-6 rounded shadow-[6px_6px_0px_#121212]">
                   <div className="h-64 border-2 border-ink-black rounded overflow-hidden mb-3 relative bg-surface-container">
                     <Image
-                      src="/images/gallery/hardware-lab.jpg"
-                      alt="Hardware sprint in embedded systems lab"
+                      src="/images/gallery/tech-session.jpg"
+                      alt="Tech session with students attending lecture in campus hall"
                       fill
                       className="object-cover"
                     />
                     <span className="absolute top-2 right-2 px-2 py-0.5 bg-accent-mint text-ink-black font-label-sm text-label-sm uppercase border border-ink-black rounded font-bold">
-                      HARDWARE SPRINT
+                      TECH SESSION
                     </span>
                   </div>
                   <div className="flex items-center justify-between font-label-sm text-label-sm uppercase text-ink-black font-bold">
-                    <span>EMBEDDED SYSTEMS SESSIONS</span>
+                    <span>TECH SESSION</span>
                     <span>CAMPUS ARCHIVE</span>
                   </div>
                 </div>

@@ -98,15 +98,15 @@ export const EventsDirectory: React.FC = () => {
               <div className="lg:col-span-7 flex flex-col gap-6">
                 <div>
                   <span className="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold block mb-1">
-                    24-HOUR NATIONAL COLLEGIATE HACKATHON // D³ 2026
+                    24-HOUR NATIONAL HACKATHON // D³ 2026
                   </span>
                   <h3 className="font-display-xl text-[36px] sm:text-[48px] lg:text-[56px] tracking-tight uppercase leading-none text-ink-black font-extrabold">
-                    CRAFT N CODE &apos;26
+                    CraftNCode ’26
                   </h3>
                   <p className="font-body-md text-body-md text-on-surface-variant mt-3 max-w-xl leading-relaxed">
-                    The 24-hour national hackathon sprint of D³ Technotfest 2026 at IIIT Bhubaneswar.
-                    Student developers and builders across campus cohorts collaborate to design,
-                    architect, and ship software prototypes under real-world pressure.
+                    A national-level, 24-hour hackathon inviting students to innovate, collaborate
+                    and develop creative solutions to real-world challenges. Participants work under
+                    time pressure to build and showcase their ideas.
                   </p>
                 </div>
 
@@ -175,7 +175,7 @@ export const EventsDirectory: React.FC = () => {
                     [ REGISTER ON D³ PORTAL → ]
                   </a>
                   <a
-                    href="#d3-technotfest"
+                    href="#d3-techno-fest"
                     className="inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-surface-white text-ink-black font-label-lg text-label-lg uppercase tracking-wider rounded-lg shadow-[4px_4px_0px_#121212] hover:bg-surface-container hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all font-bold border-2 border-ink-black"
                   >
                     <Icon name="north" className="text-[20px]" />
@@ -186,16 +186,18 @@ export const EventsDirectory: React.FC = () => {
 
               {/* Right: Photo Visual & Partner Badges */}
               <div className="lg:col-span-5 flex flex-col gap-4">
-                <div className="relative rounded-xl overflow-hidden shadow-[6px_6px_0px_#121212] border-2 border-ink-black aspect-[4/3] bg-surface-container">
-                  <Image
-                    src="/images/events/enigma-live.jpg"
-                    alt="D³ Technotfest at IIIT Bhubaneswar"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 40vw"
-                    className="object-cover"
-                  />
-                  <div className="absolute top-3 right-3 bg-ink-black text-secondary-container px-3 py-1 font-label-sm text-label-sm uppercase tracking-wider rounded shadow-[2px_2px_0px_#121212] font-bold">
-                    CAMPUS ARENA
+                <div className="relative rounded-xl overflow-hidden shadow-[6px_6px_0px_#121212] border-2 border-ink-black aspect-[4/3] bg-ink-black flex items-center justify-center p-4">
+                  <div className="relative w-full h-full">
+                    <Image
+                      src="/images/events/d3-fest-logo.png"
+                      alt="Official D³ Fest IIIT Bhubaneswar Logo"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                      className="object-contain"
+                    />
+                  </div>
+                  <div className="absolute top-3 right-3 bg-secondary-container text-ink-black px-3 py-1 font-label-sm text-label-sm uppercase tracking-wider rounded shadow-[2px_2px_0px_#121212] border border-ink-black font-extrabold">
+                    D³ FEST LOGO
                   </div>
                   <div className="absolute bottom-3 left-3 right-3 bg-surface-white/95 backdrop-blur p-3 rounded-lg shadow-[3px_3px_0px_#121212] border border-ink-black flex items-center justify-between">
                     <div>
@@ -218,7 +220,7 @@ export const EventsDirectory: React.FC = () => {
                     ORGANIZED BY
                   </span>
                   <div className="flex items-center gap-2 font-label-sm text-label-sm uppercase text-ink-black font-bold">
-                    <span>TECHSOC × ARS</span>
+                    <span>TECHSOC × TARS</span>
                   </div>
                 </div>
               </div>

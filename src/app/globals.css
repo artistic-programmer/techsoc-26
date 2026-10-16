@@ -271,3 +271,28 @@
 .animate-marquee {
   animation: marquee var(--marquee-speed, 25s) linear infinite;
 }
+
+/* Custom Modal Scrollbar matching mockup Screenshot 3 */
+.custom-modal-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #ffffff #1a1a1a;
+}
+
+.custom-modal-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-modal-scrollbar::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 9999px;
+}
+
+.custom-modal-scrollbar::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 9999px;
+}
+
+.custom-modal-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #e5e5e5;
+}
+

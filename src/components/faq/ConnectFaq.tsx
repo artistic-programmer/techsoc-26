@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { FaqItem } from "@/types";
+import { Icon } from "@/components/ui/Icon";
 
 interface ConnectFaqProps {
   items?: FaqItem[];
@@ -112,9 +113,7 @@ export const ConnectFaq: React.FC<ConnectFaqProps> = ({ items, className = "" })
                     isOpen ? "bg-secondary-container rotate-180" : "bg-canvas-cream"
                   }`}
                 >
-                  <span className="material-symbols-outlined text-[18px] text-ink-black">
-                    expand_more
-                  </span>
+                  <Icon name="expand_more" className="text-[18px] text-ink-black" />
                 </div>
               </button>
 

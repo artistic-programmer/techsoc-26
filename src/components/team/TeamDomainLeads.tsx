@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { Icon } from "@/components/ui/Icon";
 
 type TeamWingFilter = "all" | "dev" | "ai" | "design";
 
@@ -211,9 +212,7 @@ export const TeamDomainLeads: React.FC = () => {
                 >
                   {lead.badge}
                 </span>
-                <span className="material-symbols-outlined text-ink-black text-[20px]">
-                  {lead.icon}
-                </span>
+                <Icon name={lead.icon} className="text-ink-black text-[20px]" />
               </div>
 
               <div className="w-20 h-20 rounded-lg overflow-hidden bg-surface-container mb-3 shadow-[2px_2px_0px_#121212] border border-ink-black relative">

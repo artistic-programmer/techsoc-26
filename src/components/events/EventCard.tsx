@@ -3,6 +3,7 @@ import Image from "next/image";
 import { EventItem } from "@/types";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
+import { Icon } from "@/components/ui/Icon";
 
 export interface EventCardProps {
   event: EventItem;
@@ -82,25 +83,19 @@ export const EventCard: React.FC<EventCardProps> = ({
           <div className="flex flex-wrap items-center gap-3 text-on-surface-variant font-label-sm text-label-sm font-semibold mb-3 pb-3 border-b-2 border-ink-black/10">
             {date && (
               <span className="inline-flex items-center gap-1 text-ink-black">
-                <span className="material-symbols-outlined text-[16px] text-primary-container">
-                  calendar_today
-                </span>
+                <Icon name="calendar_today" className="text-[16px] text-primary-container" />
                 {date}
               </span>
             )}
             {time && (
               <span className="inline-flex items-center gap-1">
-                <span className="material-symbols-outlined text-[16px]">
-                  schedule
-                </span>
+                <Icon name="schedule" className="text-[16px]" />
                 {time}
               </span>
             )}
             {venue && (
               <span className="inline-flex items-center gap-1">
-                <span className="material-symbols-outlined text-[16px]">
-                  location_on
-                </span>
+                <Icon name="location_on" className="text-[16px]" />
                 {venue}
               </span>
             )}

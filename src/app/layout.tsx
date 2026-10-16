@@ -35,15 +35,6 @@ export default function RootLayout({
       lang="en"
       className={`${spaceGrotesk.variable} ${workSans.variable} scroll-smooth`}
     >
-      <head>
-        <link
-          rel="preload"
-          href="/fonts/material-symbols-outlined.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-      </head>
       <body className="min-h-screen bg-canvas-cream text-ink-black flex flex-col font-sans antialiased selection:bg-secondary-container selection:text-ink-black">
         {children}
       </body>

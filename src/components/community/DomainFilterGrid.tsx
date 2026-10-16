@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { domainTeams, gdgLeads } from "@/data/team";
+import { Icon } from "@/components/ui/Icon";
 
 interface DomainCardItem {
   id: string;
@@ -174,9 +175,7 @@ export const DomainFilterGrid: React.FC = () => {
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
         <div className="flex flex-col gap-2">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent-cyan/20 border-2 border-ink-black w-max">
-            <span className="material-symbols-outlined text-[16px] text-ink-black">
-              hub
-            </span>
+            <Icon name="hub" className="text-[16px] text-ink-black" />
             <span className="font-label-sm text-label-sm uppercase font-bold text-ink-black">
               CORE GUILDS
             </span>
@@ -218,9 +217,7 @@ export const DomainFilterGrid: React.FC = () => {
       {/* Mobile Swipe Hint */}
       <div className="flex sm:hidden items-center justify-between text-on-surface-variant font-label-sm text-[11px] uppercase font-bold mb-3 px-1">
         <span className="flex items-center gap-1.5 text-ink-black">
-          <span className="material-symbols-outlined text-[16px] text-primary animate-pulse">
-            swipe
-          </span>
+          <Icon name="swipe" className="text-[16px] text-primary animate-pulse" />
           SWIPE TO EXPLORE DOMAINS →
         </span>
         <span>{filteredDomains.length} DOMAINS</span>
@@ -243,9 +240,7 @@ export const DomainFilterGrid: React.FC = () => {
                   {domain.badge}
                 </span>
                 <div className="w-10 h-10 bg-surface-container border-2 border-ink-black flex items-center justify-center">
-                  <span className="material-symbols-outlined text-[24px] text-ink-black">
-                    {domain.icon}
-                  </span>
+                  <Icon name={domain.icon} className="text-[24px] text-ink-black" />
                 </div>
               </div>
 
@@ -290,7 +285,7 @@ export const DomainFilterGrid: React.FC = () => {
                 className="inline-flex items-center gap-1 font-label-sm text-label-sm text-ink-black uppercase font-bold hover:text-primary group-hover:underline"
               >
                 <span>ROADMAP</span>
-                <span className="material-symbols-outlined text-[14px]">open_in_new</span>
+                <Icon name="open_in_new" className="text-[14px]" />
               </a>
             </div>
           </div>

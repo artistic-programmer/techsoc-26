@@ -2,6 +2,7 @@ import React from "react";
 import { DomainItem } from "@/types";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
+import { Icon } from "@/components/ui/Icon";
 
 export interface DomainCardProps {
   domain: DomainItem;
@@ -26,9 +27,7 @@ export const DomainCard: React.FC<DomainCardProps> = ({
         <div className="flex items-center justify-between border-b-2 border-ink-black pb-3 mb-4">
           <div className="flex items-center gap-2">
             <span className="w-8 h-8 rounded border-2 border-ink-black bg-secondary-container flex items-center justify-center">
-              <span className="material-symbols-outlined text-[18px] text-ink-black">
-                {icon}
-              </span>
+              <Icon name={icon} className="text-[18px] text-ink-black" />
             </span>
             <span className="font-label-sm text-label-sm uppercase font-bold text-ink-black">
               {shortName || name || "DOMAIN"}

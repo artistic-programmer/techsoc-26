@@ -1,4 +1,5 @@
 import React from "react";
+import { Icon } from "@/components/ui/Icon";
 
 export interface SectionHeaderProps {
   eyebrow?: string;
@@ -45,9 +46,7 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
               className={`inline-flex items-center gap-1.5 px-3 py-0.5 border-2 border-ink-black shadow-[2px_2px_0px_#121212] font-label-sm text-label-sm uppercase font-bold tracking-wider rounded ${badgeBg}`}
             >
               {eyebrowIcon && (
-                <span className="material-symbols-outlined text-[14px]">
-                  {eyebrowIcon}
-                </span>
+                <Icon name={eyebrowIcon} className="text-[14px]" />
               )}
               {eyebrow}
             </span>

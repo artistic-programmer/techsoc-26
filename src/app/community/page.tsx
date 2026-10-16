@@ -10,6 +10,8 @@ import {
 } from "@/components";
 import { gdgLeads } from "@/data/team";
 import { siteConfig } from "@/data/siteConfig";
+import { Icon } from "@/components/ui/Icon";
+import { ProfileLinks } from "@/components/team/ProfileLinks";
 
 const GDG_CHAPTER_URL =
   "https://gdg.community.dev/gdg-on-campus-international-institute-of-information-technology-bhubaneswar-india/";
@@ -86,7 +88,7 @@ export default function CommunityPage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-primary text-on-primary font-headline-sm text-[16px] uppercase tracking-wider border-[3px] border-ink-black shadow-[5px_5px_0px_#121212] hover:shadow-[7px_7px_0px_#121212] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all text-center font-bold"
                 >
-                  <span className="material-symbols-outlined text-[20px]">group_add</span>
+                  <Icon name="group_add" className="text-[20px]" />
                   JOIN COMMUNITY CHANNELS
                 </a>
                 <a
@@ -211,9 +213,7 @@ export default function CommunityPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                     <div className="flex items-start gap-3 p-3 bg-surface-white border-2 border-ink-black">
-                      <span className="material-symbols-outlined text-[24px] text-primary">
-                        cloud_done
-                      </span>
+                      <Icon name="cloud_done" className="text-[24px] text-primary" />
                       <div>
                         <h4 className="font-title-lg text-[15px] font-bold text-ink-black">
                           Cloud Skill Boosts
@@ -225,9 +225,7 @@ export default function CommunityPage() {
                     </div>
 
                     <div className="flex items-start gap-3 p-3 bg-surface-white border-2 border-ink-black">
-                      <span className="material-symbols-outlined text-[24px] text-accent-coral">
-                        terminal
-                      </span>
+                      <Icon name="terminal" className="text-[24px] text-accent-coral" />
                       <div>
                         <h4 className="font-title-lg text-[15px] font-bold text-ink-black">
                           Solution Challenge
@@ -247,7 +245,7 @@ export default function CommunityPage() {
                       className="inline-flex items-center gap-2 px-5 py-3 bg-secondary-container text-ink-black font-label-md text-label-md uppercase tracking-wider border-[2.5px] border-ink-black shadow-[4px_4px_0px_#121212] hover:shadow-[6px_6px_0px_#121212] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all font-bold"
                     >
                       <span>[ VISIT GDG CHAPTER PORTAL ]</span>
-                      <span className="material-symbols-outlined text-[18px]">open_in_new</span>
+                      <Icon name="open_in_new" className="text-[18px]" />
                     </a>
                     <span className="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold tracking-wider">
                       • HYBRID WORKSHOPS &amp; MEETS
@@ -260,9 +258,7 @@ export default function CommunityPage() {
                   <div className="bg-surface-white border-[3px] border-ink-black shadow-[6px_6px_0px_#121212] p-5">
                     <div className="flex items-center justify-between border-b-2 border-ink-black pb-3 mb-4">
                       <span className="font-label-sm text-label-sm uppercase font-bold text-ink-black flex items-center gap-1.5">
-                        <span className="material-symbols-outlined text-[16px] text-accent-mint">
-                          code
-                        </span>
+                        <Icon name="code" className="text-[16px] text-accent-mint" />
                         gdg-event-log.sh
                       </span>
                       <div className="flex items-center gap-1.5">
@@ -336,6 +332,7 @@ export default function CommunityPage() {
                         <span className="inline-block mt-1.5 px-2 py-0.5 bg-secondary-container font-label-sm text-[10px] uppercase font-bold rounded border border-ink-black">
                           {lead.label}
                         </span>
+                        <ProfileLinks member={lead} className="mt-2" />
                       </div>
                     </div>
                   ))}
@@ -360,7 +357,7 @@ export default function CommunityPage() {
           <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center gap-3 mb-8">
               <span className="p-2 bg-secondary-container border-2 border-ink-black shadow-[2px_2px_0px_#121212]">
-                <span className="material-symbols-outlined text-[24px] text-ink-black">bolt</span>
+                <Icon name="bolt" className="text-[24px] text-ink-black" />
               </span>
               <div>
                 <h2 className="font-headline-md text-headline-sm sm:text-headline-md text-ink-black uppercase font-bold">
@@ -436,9 +433,7 @@ export default function CommunityPage() {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1 bg-secondary-container border-2 border-ink-black mb-2 shadow-[2px_2px_0px_#121212]">
-                  <span className="material-symbols-outlined text-[16px] text-ink-black">
-                    terminal
-                  </span>
+                  <Icon name="terminal" className="text-[16px] text-ink-black" />
                   <span className="font-label-sm text-label-sm uppercase font-bold text-ink-black">
                     PROD RELEASES
                   </span>
@@ -458,7 +453,7 @@ export default function CommunityPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 bg-surface-white border-[2.5px] border-ink-black font-label-sm text-label-sm uppercase font-bold shadow-[3px_3px_0px_#121212] hover:bg-secondary-fixed transition-all self-start md:self-auto"
               >
-                <span className="material-symbols-outlined text-[18px]">terminal</span>
+                <Icon name="terminal" className="text-[18px]" />
                 <span>TECHSOC REPOSITORIES</span>
               </a>
             </div>
@@ -473,10 +468,8 @@ export default function CommunityPage() {
                       TERMINAL / COMPETITION
                     </span>
                     <div className="flex items-center gap-1.5 text-ink-black font-label-sm text-label-sm font-bold">
-                      <span className="material-symbols-outlined text-[16px] text-accent-coral">
-                        terminal
-                      </span>
-                      <span>P-SOCIETY REPO</span>
+                      <Icon name="star" fill="currentColor" className="text-[16px] text-secondary" />
+                      <span>ACTIVE REPOSITORY</span>
                     </div>
                   </div>
 
@@ -543,10 +536,8 @@ export default function CommunityPage() {
                         STUDENT FORUM
                       </span>
                       <span className="font-label-sm text-label-sm font-bold text-ink-black flex items-center gap-1">
-                        <span className="material-symbols-outlined text-[16px] text-primary">
-                          forum
-                        </span>{" "}
-                        COMMUNITY
+                        <Icon name="star" fill="currentColor" className="text-[16px] text-secondary" />{" "}
+                        ACTIVE
                       </span>
                     </div>
 
@@ -604,10 +595,8 @@ export default function CommunityPage() {
                         DISCORD AUTOMATION
                       </span>
                       <span className="font-label-sm text-label-sm font-bold text-ink-black flex items-center gap-1">
-                        <span className="material-symbols-outlined text-[16px] text-accent-coral">
-                          smart_toy
-                        </span>{" "}
-                        BOT &amp; STREAKS
+                        <Icon name="star" fill="currentColor" className="text-[16px] text-secondary" />{" "}
+                        INDEXED
                       </span>
                     </div>
 

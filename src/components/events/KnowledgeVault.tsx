@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { Icon } from "@/components/ui/Icon";
 import { pastTechnicalSessions, PastSession } from "@/data/events";
 
 export type { PastSession };
@@ -46,9 +47,7 @@ export const KnowledgeVault: React.FC = () => {
               placeholder="SEARCH SESSIONS (GIT, ANDROID, AI, WEB...)"
               className="w-full bg-surface-white text-ink-black px-4 py-2.5 rounded-lg shadow-[3px_3px_0px_#121212] font-label-sm text-label-sm uppercase placeholder:text-outline border-2 border-ink-black focus:outline-none focus:shadow-[4px_4px_0px_#1d4ed8]"
             />
-            <span className="material-symbols-outlined absolute right-3 top-2.5 text-on-surface-variant text-[20px] pointer-events-none">
-              search
-            </span>
+            <Icon name="search" className="absolute right-3 top-2.5 text-on-surface-variant text-[20px] pointer-events-none" />
           </div>
         </div>
       </div>
@@ -108,7 +107,7 @@ export const KnowledgeVault: React.FC = () => {
                         rel="noopener noreferrer"
                         className="font-label-sm text-label-sm uppercase font-bold text-ink-black hover:text-primary flex items-center gap-1 transition-colors"
                       >
-                        <span className="material-symbols-outlined text-[16px]">play_circle</span>
+                        <Icon name="play_circle" className="text-[16px]" />
                         [ WATCH ]
                       </a>
                     )}
@@ -119,9 +118,7 @@ export const KnowledgeVault: React.FC = () => {
                         rel="noopener noreferrer"
                         className="font-label-sm text-label-sm uppercase font-bold text-ink-black hover:text-primary flex items-center gap-1 transition-colors"
                       >
-                        <span className="material-symbols-outlined text-[16px]">
-                          {session.resourceIcon || "link"}
-                        </span>
+                        <Icon name={session.resourceIcon || "link"} className="text-[16px]" />
                         [ {session.resourceType || "RESOURCE"} ]
                       </a>
                     )}
@@ -133,9 +130,7 @@ export const KnowledgeVault: React.FC = () => {
         </div>
       ) : (
         <div className="p-8 text-center bg-surface-white border-[2.5px] border-ink-black rounded-xl shadow-[4px_4px_0px_#121212]">
-          <span className="material-symbols-outlined text-[36px] text-accent-coral mb-2">
-            search_off
-          </span>
+          <Icon name="search_off" className="text-[36px] text-accent-coral mb-2" />
           <p className="font-headline-sm uppercase text-ink-black font-bold">
             No sessions match &quot;{searchQuery}&quot;
           </p>

@@ -15,6 +15,7 @@ import {
   facultyMentors,
   totalTeamSize,
 } from "@/data/team";
+import { ProfileLinks } from "@/components/team/ProfileLinks";
 
 export const metadata: Metadata = {
   title: "Team & Leadership | Tech Society IIIT Bhubaneswar",
@@ -165,6 +166,7 @@ export default function TeamPage() {
                     <span className="font-label-sm text-label-sm uppercase font-bold text-primary block mt-0.5">
                       {exec.role}
                     </span>
+                    <ProfileLinks member={member} className="mt-3" />
                   </div>
                 )),
               )}

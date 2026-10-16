@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Navbar, Footer, ContactForm, ConnectFaq, MarqueeTicker } from "@/components";
 import { faqs } from "@/data/faqs";
 import { siteConfig } from "@/data/siteConfig";
+import { Icon } from "@/components/ui/Icon";
 
 export const metadata: Metadata = {
   title: "Connect & Collaborate | Tech Society IIIT Bhubaneswar",
@@ -139,7 +140,7 @@ export default function ConnectPage() {
               <div className="bg-primary text-on-primary border-[3px] border-ink-black shadow-[8px_8px_0px_#121212] rounded-xl p-6 sm:p-8 lg:p-12 relative overflow-hidden">
                 {/* Background Grid Pattern Accent Watermark */}
                 <div className="absolute right-0 top-0 max-w-full overflow-hidden opacity-15 pointer-events-none text-white select-none">
-                  <span className="material-symbols-outlined text-[180px] sm:text-[240px]">forum</span>
+                  <Icon name="forum" strokeWidth={1} className="text-[180px] sm:text-[240px]" />
                 </div>
 
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 relative z-10">
@@ -163,33 +164,25 @@ export default function ConnectPage() {
                     {/* Server Features Pills Grid */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
                       <div className="flex items-center gap-2 p-2 bg-on-primary-fixed-variant border-2 border-ink-black shadow-[2px_2px_0px_#121212] rounded">
-                        <span className="material-symbols-outlined text-secondary-container text-[18px]">
-                          bolt
-                        </span>
+                        <Icon name="bolt" className="text-secondary-container text-[18px]" />
                         <span className="font-label-sm text-label-sm uppercase text-on-primary font-bold">
                           Peer Debug Help
                         </span>
                       </div>
                       <div className="flex items-center gap-2 p-2 bg-on-primary-fixed-variant border-2 border-ink-black shadow-[2px_2px_0px_#121212] rounded">
-                        <span className="material-symbols-outlined text-accent-mint text-[18px]">
-                          code
-                        </span>
+                        <Icon name="code" className="text-accent-mint text-[18px]" />
                         <span className="font-label-sm text-label-sm uppercase text-on-primary font-bold">
                           PR &amp; Code Review Hub
                         </span>
                       </div>
                       <div className="flex items-center gap-2 p-2 bg-on-primary-fixed-variant border-2 border-ink-black shadow-[2px_2px_0px_#121212] rounded">
-                        <span className="material-symbols-outlined text-tertiary-fixed text-[18px]">
-                          group_work
-                        </span>
+                        <Icon name="group_work" className="text-tertiary-fixed text-[18px]" />
                         <span className="font-label-sm text-label-sm uppercase text-on-primary font-bold">
                           Hackathon Team Match
                         </span>
                       </div>
                       <div className="flex items-center gap-2 p-2 bg-on-primary-fixed-variant border-2 border-ink-black shadow-[2px_2px_0px_#121212] rounded">
-                        <span className="material-symbols-outlined text-secondary-container text-[18px]">
-                          record_voice_over
-                        </span>
+                        <Icon name="record_voice_over" className="text-secondary-container text-[18px]" />
                         <span className="font-label-sm text-label-sm uppercase text-on-primary font-bold">
                           Live Dev Talks &amp; AMA
                         </span>
@@ -204,7 +197,7 @@ export default function ConnectPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <span className="material-symbols-outlined text-[24px] sm:text-[28px] shrink-0">sports_esports</span>
+                      <Icon name="sports_esports" className="text-[24px] sm:text-[28px] shrink-0" />
                       <span className="break-words text-center">[ 👾 JOIN DISCORD COMMUNITY ]</span>
                     </a>
                     <span className="font-label-sm text-label-sm text-on-primary-container uppercase tracking-wider font-semibold">
@@ -243,9 +236,7 @@ export default function ConnectPage() {
                         <div
                           className={`w-12 h-12 rounded ${channel.iconBg} border-2 border-ink-black flex items-center justify-center group-hover:bg-secondary-container transition-colors shadow-[2px_2px_0px_#121212]`}
                         >
-                          <span className="material-symbols-outlined text-ink-black text-[26px]">
-                            {channel.icon}
-                          </span>
+                          <Icon name={channel.icon} className="text-ink-black text-[26px]" />
                         </div>
                         <span
                           className={`px-2 py-0.5 ${channel.badgeColor} font-label-sm text-label-sm uppercase border-2 border-ink-black rounded font-bold`}
@@ -269,9 +260,7 @@ export default function ConnectPage() {
 
                     <div className="mt-6 pt-4 border-t-2 border-ink-black flex items-center justify-between text-ink-black font-label-md text-label-md uppercase font-bold group-hover:text-primary transition-colors">
                       <span>{channel.actionText}</span>
-                      <span className="material-symbols-outlined text-[18px]">
-                        arrow_forward
-                      </span>
+                      <Icon name="arrow_forward" className="text-[18px]" />
                     </div>
                   </a>
                 ))}
@@ -292,9 +281,7 @@ export default function ConnectPage() {
                 {/* Direct Channels Card */}
                 <div className="bg-surface-white border-[3px] border-ink-black shadow-[5px_5px_0px_#121212] rounded-xl p-6 flex flex-col gap-4">
                   <div className="flex items-center gap-2 pb-2 border-b-2 border-ink-black">
-                    <span className="material-symbols-outlined text-primary text-[24px]">
-                      alternate_email
-                    </span>
+                    <Icon name="alternate_email" className="text-primary text-[24px]" />
                     <h3 className="font-headline-sm text-headline-sm uppercase text-ink-black font-bold">
                       Direct Channels
                     </h3>
@@ -311,9 +298,7 @@ export default function ConnectPage() {
                           href={`mailto:${generalEmail}`}
                         >
                           <span>{generalEmail}</span>
-                          <span className="material-symbols-outlined text-[18px] shrink-0 ml-1">
-                            open_in_new
-                          </span>
+                          <Icon name="open_in_new" className="text-[18px] shrink-0 ml-1" />
                         </a>
                       ) : (
                         <a
@@ -321,9 +306,7 @@ export default function ConnectPage() {
                           href="#contact-form"
                         >
                           <span>Reach out via form</span>
-                          <span className="material-symbols-outlined text-[18px] shrink-0 ml-1">
-                            arrow_downward
-                          </span>
+                          <Icon name="arrow_downward" className="text-[18px] shrink-0 ml-1" />
                         </a>
                       )}
                     </div>
@@ -338,9 +321,7 @@ export default function ConnectPage() {
                           href={`mailto:${sponsorEmail}`}
                         >
                           <span>{sponsorEmail}</span>
-                          <span className="material-symbols-outlined text-[18px] shrink-0 ml-1">
-                            open_in_new
-                          </span>
+                          <Icon name="open_in_new" className="text-[18px] shrink-0 ml-1" />
                         </a>
                       ) : (
                         <a
@@ -348,9 +329,7 @@ export default function ConnectPage() {
                           href="#contact-form"
                         >
                           <span>Reach out via form</span>
-                          <span className="material-symbols-outlined text-[18px] shrink-0 ml-1">
-                            arrow_downward
-                          </span>
+                          <Icon name="arrow_downward" className="text-[18px] shrink-0 ml-1" />
                         </a>
                       )}
                     </div>
@@ -361,9 +340,7 @@ export default function ConnectPage() {
                 <div className="bg-surface-white border-[3px] border-ink-black shadow-[5px_5px_0px_#121212] rounded-xl p-6 flex flex-col gap-4">
                   <div className="flex items-center justify-between pb-2 border-b-2 border-ink-black">
                     <div className="flex items-center gap-2">
-                      <span className="material-symbols-outlined text-accent-coral text-[24px]">
-                        pin_drop
-                      </span>
+                      <Icon name="pin_drop" className="text-accent-coral text-[24px]" />
                       <h3 className="font-headline-sm text-headline-sm uppercase text-ink-black font-bold">
                         Campus Presence
                       </h3>
@@ -399,9 +376,7 @@ export default function ConnectPage() {
                     {/* Visual map pin indicator */}
                     <div className="absolute top-8 right-12 flex flex-col items-center">
                       <div className="w-8 h-8 rounded-full bg-accent-coral border-2 border-ink-black shadow-[2px_2px_0px_#121212] flex items-center justify-center animate-bounce">
-                        <span className="material-symbols-outlined text-surface-white text-[18px]">
-                          location_on
-                        </span>
+                        <Icon name="location_on" className="text-surface-white text-[18px]" />
                       </div>
                       <div className="w-4 h-1.5 rounded-full bg-ink-black/40 blur-[1px] mt-0.5" />
                     </div>

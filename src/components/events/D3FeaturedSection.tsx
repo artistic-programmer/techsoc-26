@@ -9,6 +9,7 @@ import {
   d3OfficialContact,
 } from "@/data/events";
 import { EventItem } from "@/types";
+import { Icon } from "@/components/ui/Icon";
 
 type ArenaFilter =
   | "all"
@@ -75,8 +76,8 @@ export const D3FeaturedSection: React.FC = () => {
               FEATURED EVENT
             </span>
             <span className="px-3.5 py-1 bg-secondary-container text-ink-black font-label-md text-label-sm sm:text-label-md uppercase tracking-wider rounded-full shadow-[2px_2px_0px_#121212] border border-ink-black font-extrabold flex items-center gap-1.5">
-              <span className="material-symbols-outlined text-[16px]">groups</span>
-              TECHSOC × TARS
+              <Icon name="groups" className="text-[16px]" />
+              TECHSOC × ARS
             </span>
           </div>
           <div className="flex items-center gap-2">
@@ -161,7 +162,7 @@ export const D3FeaturedSection: React.FC = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-secondary-container text-ink-black font-label-lg text-label-sm sm:text-label-md uppercase tracking-wider rounded-lg shadow-[4px_4px_0px_#121212] hover:shadow-[6px_6px_0px_#121212] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all font-extrabold border-2 border-ink-black"
               >
-                <span className="material-symbols-outlined text-[20px]">rocket_launch</span>
+                <Icon name="rocket_launch" className="text-[20px]" />
                 [ EXPLORE D³ FESTIVAL → ]
               </a>
               <a
@@ -170,8 +171,8 @@ export const D3FeaturedSection: React.FC = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-surface-white text-ink-black font-label-lg text-label-sm sm:text-label-md uppercase tracking-wider rounded-lg shadow-[4px_4px_0px_#121212] hover:bg-surface-container hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all font-extrabold border-2 border-ink-black"
               >
-                <span className="material-symbols-outlined text-[20px]">event</span>
-                OFFICIAL EVENTS DIRECTORY
+                <Icon name="event" className="text-[20px]" />
+                OFFICIAL EVENTS PAGE
               </a>
               <a
                 href={d3OfficialContact.aboutUrl}
@@ -209,9 +210,7 @@ export const D3FeaturedSection: React.FC = () => {
                     d3fest.techsoc-iiitbbsr.com
                   </span>
                 </div>
-                <span className="material-symbols-outlined text-[24px] text-accent-coral">
-                  military_tech
-                </span>
+                <Icon name="military_tech" className="text-[24px] text-accent-coral" />
               </div>
             </div>
 
@@ -225,9 +224,7 @@ export const D3FeaturedSection: React.FC = () => {
                   TechSoc × The Automation and Robotics Society (TARS)
                 </span>
               </div>
-              <span className="material-symbols-outlined text-[24px] text-ink-black">
-                handshake
-              </span>
+              <Icon name="handshake" className="text-[24px] text-ink-black" />
             </div>
           </div>
         </div>
@@ -416,7 +413,7 @@ export const D3FeaturedSection: React.FC = () => {
                     className="font-label-md text-label-sm uppercase text-primary font-bold hover:underline flex items-center gap-0.5 flex-shrink-0"
                   >
                     [ DETAILS ]
-                    <span className="material-symbols-outlined text-[15px]">arrow_outward</span>
+                    <Icon name="arrow_outward" className="text-[15px]" />
                   </a>
                 </div>
               </div>
@@ -428,9 +425,7 @@ export const D3FeaturedSection: React.FC = () => {
         <div className="p-5 bg-surface-white rounded-xl shadow-[4px_4px_0px_#121212] border-2 border-ink-black flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="flex flex-col gap-1">
             <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-[20px] text-accent-coral">
-                pin_drop
-              </span>
+              <Icon name="pin_drop" className="text-[20px] text-accent-coral" />
               <span className="font-headline-sm text-label-md uppercase font-extrabold text-ink-black">
                 FESTIVAL VENUE &amp; CONTACT
               </span>
@@ -456,7 +451,7 @@ export const D3FeaturedSection: React.FC = () => {
             className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-secondary-container text-ink-black font-label-md text-label-sm uppercase tracking-wider rounded-lg shadow-[3px_3px_0px_#121212] hover:shadow-[5px_5px_0px_#121212] hover:-translate-x-0.5 hover:-translate-y-0.5 font-extrabold border-2 border-ink-black flex-shrink-0 transition-all"
           >
             [ VISIT OFFICIAL PORTAL ]
-            <span className="material-symbols-outlined text-[16px]">arrow_outward</span>
+            <Icon name="arrow_outward" className="text-[15px]" />
           </a>
         </div>
       </div>

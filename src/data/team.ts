@@ -98,6 +98,7 @@ export interface RosterMember {
   image?: string;
   position?: string;
   linkedin?: string;
+  email?: string;
 }
 
 export interface ExecutiveRole {
@@ -257,27 +258,21 @@ export const facultyMentors: RosterMember[] = [
 export const executiveBoard: ExecutiveRole[] = [
   {
     role: "Secretary",
-    members: [
-      {
-        name: "Spandan Hota",
-        image: "/images/team/spandan.jpg",
-        linkedin: "https://www.linkedin.com/in/spandan-hota",
-      },
-    ],
+    members: [{ name: "Spandan Hota", image: "/images/team/spandan.jpg", linkedin: "https://www.linkedin.com/in/spandan-hota" }],
   },
   {
     role: "Joint Secretary",
     members: [
-      { name: "Aman Raj", image: "/images/team/aman.jpeg" },
-      { name: "Tirtha Desai", image: "/images/team/tirtha.jpg" },
+      { name: "Aman Raj", image: "/images/team/aman.jpeg", linkedin: "https://www.linkedin.com/in/aman-raj-xd", email: "b124011@iiit-bh.ac.in" },
+      { name: "Tirtha Desai", image: "/images/team/tirtha.jpg", linkedin: "https://www.linkedin.com/in/tirtha-desai-a16347321" },
     ],
   },
 ];
 
 export const gdgLeads: LabeledMember[] = [
   { name: "Hari Kishore", label: "Final Year Lead", image: "/images/team/hari.png" },
-  { name: "Aman Raj", label: "Pre-Final Year Lead", image: "/images/team/aman.jpeg" },
-  { name: "Pavitra Singh", label: "Pre-Final Year Lead", image: "/images/team/pavitra.jpg" },
+  { name: "Aman Raj", label: "Pre-Final Year Lead", image: "/images/team/aman.jpeg", linkedin: "https://www.linkedin.com/in/aman-raj-xd", email: "b124011@iiit-bh.ac.in" },
+  { name: "Pavitra Singh", label: "Pre-Final Year Lead", image: "/images/team/pavitra.jpg", linkedin: "https://www.linkedin.com/in/pavitra04" },
 ];
 
 export const domainTeams: DomainTeam[] = [
@@ -509,8 +504,8 @@ export const domainTeams: DomainTeam[] = [
     stack: ["Logistics", "Operations", "Event Coordination"],
     wing: "design",
     leads: [
-      { name: "Samikshya", image: "/images/team/samikshya.jpg" },
-      { name: "Viraj", image: "/images/team/viraj.png" },
+      { name: "Samikshya", image: "/images/team/samikshya.jpg", linkedin: "https://www.linkedin.com/in/samikshya-purohit-911a59348" },
+      { name: "Viraj", image: "/images/team/viraj.png", linkedin: "https://www.linkedin.com/in/viraj-shukla-4286ba3ba" },
     ],
   },
   {
@@ -523,8 +518,8 @@ export const domainTeams: DomainTeam[] = [
     stack: ["Branding", "Content Strategy", "Digital Outreach"],
     wing: "design",
     leads: [
-      { name: "Binimesha", image: "/images/team/binimesha.jpg" },
-      { name: "Pavitra Singh", image: "/images/team/pavitra.jpg" },
+      { name: "Binimesha", image: "/images/team/binimesha.jpg", linkedin: "https://www.linkedin.com/in/binimesha-naisargika-26b176291" },
+      { name: "Pavitra Singh", image: "/images/team/pavitra.jpg", linkedin: "https://www.linkedin.com/in/pavitra04" },
     ],
   },
 ];

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { Icon } from "@/components/ui/Icon";
 
 export interface NavItem {
   name: string;
@@ -97,9 +98,7 @@ export const Navbar: React.FC = () => {
             aria-controls="mobile-nav-drawer"
             className="md:hidden inline-flex items-center justify-center p-2 rounded border-2 border-ink-black bg-surface-white text-ink-black shadow-[2px_2px_0px_#121212] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
           >
-            <span className="material-symbols-outlined text-[24px]">
-              {mobileMenuOpen ? "close" : "menu"}
-            </span>
+            <Icon name={mobileMenuOpen ? "close" : "menu"} className="text-[24px]" />
           </button>
         </div>
       </div>
